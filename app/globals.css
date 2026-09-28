@@ -1,0 +1,52 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f8f7;
+  --surface: #ffffff;
+  --text: #10201a;
+  --muted: #64736c;
+  --line: #dfe7e2;
+  --accent: #138a5b;
+  --accent-soft: #e9f6ef;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+button, input { font: inherit; }
+
+.page { min-height: 100vh; }
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.brand { font-weight: 700; letter-spacing: -0.02em; }
+.badge { margin-left: 10px; padding: 4px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12px; }
+.layout { display: grid; grid-template-columns: 240px 1fr; min-height: calc(100vh - 64px); }
+.sidebar { padding: 24px 16px; background: var(--surface); border-right: 1px solid var(--line); }
+.nav-title { padding: 0 12px 10px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.nav-item { display: block; padding: 11px 12px; margin: 3px 0; border-radius: 9px; color: var(--text); text-decoration: none; }
+.nav-item.active, .nav-item:hover { background: var(--accent-soft); color: var(--accent); }
+.main { padding: 36px; max-width: 1400px; width: 100%; margin: 0 auto; }
+.eyebrow { color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+h1 { margin: 8px 0 8px; font-size: 34px; letter-spacing: -.04em; }
+.subtitle { margin: 0 0 28px; color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+.metric { font-size: 30px; font-weight: 700; margin-top: 8px; }
+.metric-label { color: var(--muted); font-size: 13px; }
+.section { margin-top: 24px; }
+.section h2 { margin: 0 0 12px; font-size: 18px; }
+.workflow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.workflow .card strong { display: block; margin-bottom: 8px; }
+.workflow .card p { margin: 0; color: var(--muted); line-height: 1.5; }
+@media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .sidebar { display: none; } .grid, .workflow { grid-template-columns: 1fr 1fr; } .main { padding: 24px; } }
+@media (max-width: 560px) { .grid, .workflow { grid-template-columns: 1fr; } .topbar { padding: 0 18px; } }
