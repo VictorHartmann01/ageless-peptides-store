@@ -1,0 +1,1 @@
+official logo asset is binary and will be added via git blob
