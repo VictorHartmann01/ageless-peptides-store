@@ -31,10 +31,11 @@ export default function Home() {
         <nav className="topnav" aria-label="Main navigation">
           <a href="#thesis">Thesis</a>
           <a href="#platform">Platform</a>
+          <a href="/shop">Research Catalog</a>
           <a href="#roadmap">Roadmap</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="top-cta" href="#contact">Investor Beta <span>→</span></a>
+        <a className="top-cta" href="/shop">Research Catalog <span>→</span></a>
       </header>
 
       <main id="top">
