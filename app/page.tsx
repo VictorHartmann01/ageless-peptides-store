@@ -25,8 +25,7 @@ export default function Home() {
     <div className="page">
       <header className="topbar">
         <a className="brand" href="#top" aria-label="AgeLess home">
-          <span className="brand-mark" aria-hidden="true"><span className="helix helix-a" /><span className="helix helix-b" /></span>
-          <span className="brand-name"><b>Age</b><em>Less</em><small>SCIENCE FOR A LONGER, BETTER LIFE</small></span>
+          <img className="brand-logo" src="/ageless-logo.svg" alt="AgeLess — Science for a Longer, Better Life" />
         </a>
         <nav className="topnav" aria-label="Main navigation">
           <a href="#thesis">Thesis</a>
@@ -139,7 +138,7 @@ export default function Home() {
       </main>
 
       <footer className="footer" id="footer">
-        <div className="footer-brand">Age<span>Less</span></div>
+        <img className="footer-logo" src="/ageless-logo.svg" alt="AgeLess — Science for a Longer, Better Life" />
         <p>Science for a longer, better life.</p>
         <div className="footer-meta">Investor beta · Research-led · Transparent by design</div>
       </footer>
