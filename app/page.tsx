@@ -1,3 +1,6 @@
+import heroD1 from './_assets/heroD1';
+import heroD2 from './_assets/heroD2';
+
 const products = [
   { name:'L-Lysine', meta:'Amino acid · Supplement', status:'LEGAL / FORMULIERUNGSPRÜFUNG', tone:'01' },
   { name:'L-Proline', meta:'Amino acid · Supplement', status:'LEGAL / FORMULIERUNGSPRÜFUNG', tone:'02' },
@@ -15,6 +18,7 @@ const pillars = [
 ];
 
 export default function Home(){
+ const hero = 'data:image/webp;base64,' + Buffer.from(heroD1 + heroD2, 'base64').toString('utf8');
  return <main className="hg" id="top">
   <header className="hg-nav">
     <a href="#top" className="hg-logo"><img src="/ageless-logo.svg" alt="AgeLess — Science for a Longer, Better Life"/></a>
@@ -23,7 +27,7 @@ export default function Home(){
   </header>
 
   <section className="hg-hero">
-    <div className="hg-hero-photo"/>
+    <div className="hg-hero-photo" style={{backgroundImage:`url("${hero}")`}}/>
     <div className="hg-hero-film"/>
     <div className="hg-hero-copy">
       <div className="hg-overline"><span>AGELESS</span><i/> VERIFIED LONGEVITY RESEARCH</div>
@@ -77,7 +81,7 @@ export default function Home(){
   </section>
 
   <section className="hg-editorial">
-    <div className="hg-editorial-photo"/>
+    <div className="hg-editorial-photo" style={{backgroundImage:`linear-gradient(180deg,rgba(4,34,49,.08),rgba(4,34,49,.34)),url("${hero}")`}}/>
     <div className="hg-editorial-copy">
       <span>RESEARCH / RESPONSIBILITY</span>
       <h2>Research Use Only<br/><em>ist keine Humananwendung.</em></h2>
