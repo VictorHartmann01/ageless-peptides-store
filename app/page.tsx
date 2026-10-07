@@ -138,11 +138,6 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="footer" id="footer">
-        <div className="footer-brand">Age<span>Less</span></div>
-        <p>Science for a longer, better life.</p>
-        <div className="footer-meta">Investor beta · Research-led · Transparent by design</div>
-      </footer>
     </div>
   );
 }
