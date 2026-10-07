@@ -15,8 +15,8 @@ type Product = {
 };
 
 export const metadata = {
-  title: 'Research Catalog | AgeLess',
-  description: 'Evidence-aware AgeLess research catalog. Products shown here are controlled by the platform compliance state.',
+  title: 'Produkte & Research | AgeLess',
+  description: 'Kuratiertes AgeLess Research- und Produktuniversum rund um Peptide, Longevity und transparente Einordnung.',
 };
 
 export default async function ShopPage() {
@@ -34,9 +34,9 @@ export default async function ShopPage() {
         <div className="catalog-shell">
           <Link href="/" className="catalog-back">← AgeLess</Link>
           <div className="catalog-error">
-            <span>CATALOG / SYSTEM STATUS</span>
-            <h1>The research catalog is temporarily unavailable.</h1>
-            <p>The storefront is fail-closed: if the data layer cannot be verified, products are not displayed.</p>
+            <span>RESEARCH CATALOG</span>
+            <h1>Die Produktübersicht ist vorübergehend nicht verfügbar.</h1>
+            <p>AgeLess zeigt Produkte nur dann öffentlich an, wenn die zugrunde liegenden Daten verlässlich geladen und geprüft werden können.</p>
           </div>
         </div>
       </main>
@@ -48,30 +48,32 @@ export default async function ShopPage() {
   return (
     <main className="catalog-page">
       <header className="catalog-header">
-        <Link href="/" className="catalog-brand"><b>Age</b><em>Less</em></Link>
-        <div className="catalog-status">RESEARCH CATALOG · COMPLIANCE-AWARE</div>
+        <Link href="/" className="catalog-brand" aria-label="AgeLess">
+          <img src="/ageless-logo.svg" alt="AgeLess — Science for a Longer, Better Life" />
+        </Link>
+        <div className="catalog-status">PEPTIDE · LONGEVITY · RESEARCH</div>
       </header>
 
       <section className="catalog-hero">
         <div>
-          <div className="section-kicker">AGELESS / KNOWLEDGE LAYER</div>
-          <h1>Research first.<br /><span>Commerce only when justified.</span></h1>
-          <p>Every visible item is filtered through the platform's product state. This catalog intentionally separates research information from purchasable commerce.</p>
+          <div className="ag-section-label">AGELESS / PRODUKTWELT</div>
+          <h1>Wissenschaftlich orientiert.<br /><span>Transparent eingeordnet.</span></h1>
+          <p>Die AgeLess Produktwelt verbindet Peptide, Longevity-Themen und Research-Substanzen mit klarer Einordnung zu Produktform, Evidenz und regulatorischem Kontext.</p>
         </div>
         <div className="catalog-rule">
-          <span>CORE RULE</span>
-          <strong>Unverified ≠ sellable.</strong>
-          <p>Compliance uncertainty keeps an item out of checkout.</p>
+          <span>AGELESS STANDARD</span>
+          <strong>Unklarheit wird sichtbar.</strong>
+          <p>Produkte mit offener Einordnung werden nicht als regulär kaufbar dargestellt.</p>
         </div>
       </section>
 
-      <section className="catalog-grid" aria-label="Research products">
+      <section className="catalog-grid" aria-label="AgeLess Produkte">
         {products.length === 0 ? (
           <div className="catalog-empty">
-            <span>CATALOG STATUS / 00</span>
-            <h2>No public products are currently approved for display.</h2>
-            <p>The database currently contains product records, but none are active in the public catalog. This is the intended fail-closed state until publication criteria are satisfied.</p>
-            <Link href="/" className="catalog-button">Back to AgeLess <span>→</span></Link>
+            <span>PRODUKTSTATUS</span>
+            <h2>Aktuell sind keine Produkte für die öffentliche Darstellung freigegeben.</h2>
+            <p>AgeLess priorisiert eine klare und verantwortungsvolle Einordnung. Produkte werden erst sichtbar, wenn die erforderlichen Veröffentlichungskriterien erfüllt sind.</p>
+            <Link href="/" className="catalog-button">Zurück zu AgeLess <span>→</span></Link>
           </div>
         ) : (
           products.map((product) => (
@@ -85,10 +87,10 @@ export default async function ShopPage() {
                   <span>{product.compliance_status.replaceAll('_', ' ').toUpperCase()}</span>
                 </div>
                 <h2>{product.name}</h2>
-                <p>{product.short_description ?? product.description ?? 'Research record.'}</p>
-                <div className="catalog-note">{product.jurisdiction_note ?? 'Jurisdiction-specific review applies before any commercial action.'}</div>
+                <p>{product.short_description ?? product.description ?? 'AgeLess Research Record.'}</p>
+                <div className="catalog-note">{product.jurisdiction_note ?? 'Vor einer kommerziellen Handlung gilt die jeweils erforderliche regulatorische Einordnung.'}</div>
                 <div className="catalog-card-foot">
-                  <span>Evidence-aware record</span>
+                  <span>Transparent eingeordnet</span>
                   <span>↗</span>
                 </div>
               </div>
