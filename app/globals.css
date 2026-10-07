@@ -257,3 +257,33 @@ a { color: inherit; }
   .deck-hero-panel{width:calc(100% - 40px);box-sizing:border-box}
   .deck-hero-panel strong{font-size:24px}
 }
+
+
+/* AgeLess High-Gloss Beta — visual rebuild */
+.deck-header{position:absolute;top:0;left:0;right:0;background:linear-gradient(180deg,rgba(3,28,43,.92),rgba(3,28,43,.15));border:0;color:#fff;z-index:50}
+.deck-header .deck-logo{filter:drop-shadow(0 2px 10px rgba(0,0,0,.22))}
+.deck-header .deck-nav a,.deck-header .deck-header-cta{color:#fff}.deck-header .deck-header-cta{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.08);backdrop-filter:blur(14px)}
+.lux-hero{position:relative;min-height:900px;background:#062b40;color:#fff;overflow:hidden}
+.lux-backdrop{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=2000&q=95') center/cover no-repeat;transform:scale(1.02)}
+.lux-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,25,39,.94) 0%,rgba(3,31,47,.83) 38%,rgba(5,38,55,.38) 67%,rgba(5,30,44,.12) 100%),linear-gradient(0deg,rgba(3,27,41,.72) 0%,transparent 44%)}
+.lux-hero-inner{position:relative;z-index:2;min-height:900px;padding:170px 7vw 80px 8.5vw;display:flex;align-items:center}
+.lux-copy{width:min(770px,61vw)}
+.lux-eyebrow{display:flex;align-items:center;gap:13px;margin-bottom:38px}.lux-eyebrow span{font-size:9px;letter-spacing:.24em;padding:8px 12px;border:1px solid rgba(226,196,126,.55);color:#e3c77e}.lux-eyebrow b{font-size:9px;font-weight:400;letter-spacing:.2em;color:rgba(255,255,255,.5)}
+.lux-kicker{color:#e0bd6a}.lux-copy h1{font-size:clamp(72px,7.6vw,118px);font-weight:200;line-height:.88;letter-spacing:-.065em;margin:22px 0 32px;text-shadow:0 10px 45px rgba(0,0,0,.2)}.lux-copy h1 span{color:#d5ad51}
+.lux-copy>p{font-size:18px;line-height:1.62;color:rgba(255,255,255,.73);max-width:590px;margin:0}
+.lux-actions{margin-top:37px}.lux-primary{background:linear-gradient(135deg,#d3ad55,#b88b34);color:#061f2d;box-shadow:0 14px 35px rgba(184,139,52,.22)}.lux-primary span{font-size:18px}.lux-secondary{color:#fff;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);backdrop-filter:blur(12px)}
+.lux-proof{display:flex;gap:35px;margin-top:58px;border-top:1px solid rgba(255,255,255,.15);padding-top:22px;max-width:650px}.lux-proof span{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.67)}.lux-proof i{font-style:normal;color:#d7b35d;margin-right:8px}
+.lux-card{position:absolute;right:6vw;bottom:72px;width:330px;padding:27px 28px;background:rgba(250,248,240,.93);color:#0a3448;box-shadow:0 24px 80px rgba(0,0,0,.28);backdrop-filter:blur(22px);border-top:2px solid #cda54d}.lux-card>span{font-size:8px;letter-spacing:.17em;color:#a77d2e}.lux-card>strong{display:block;font-size:31px;font-weight:300;letter-spacing:-.04em;margin:20px 0 8px}.lux-card>p{font-size:11px;line-height:1.55;color:#66777d;margin:0 0 22px}.lux-card-foot{display:flex;justify-content:space-between;align-items:center;padding-top:17px;border-top:1px solid rgba(10,52,72,.12)}.lux-card-foot b,.lux-card-foot a{font-size:8px;letter-spacing:.08em;text-transform:uppercase}.lux-card-foot b{font-weight:400;color:#a77d2e}.lux-card-foot a{text-decoration:none}
+.deck-status{box-shadow:0 -20px 50px rgba(2,24,36,.25);position:relative;z-index:4}
+.deck-product{transition:transform .25s ease,box-shadow .25s ease}.deck-product:hover{transform:translateY(-5px);box-shadow:0 20px 55px rgba(10,52,72,.12)}
+@media(max-width:950px){.lux-copy{width:75vw}.lux-card{right:4vw}.lux-hero,.lux-hero-inner{min-height:850px}}
+@media(max-width:620px){
+ .deck-header{height:76px;background:linear-gradient(180deg,rgba(3,28,43,.94),rgba(3,28,43,.3));padding:0 18px}.deck-header .deck-logo{width:184px}
+ .lux-hero{min-height:790px}.lux-backdrop{background-position:58% center}.lux-overlay{background:linear-gradient(180deg,rgba(2,25,39,.48) 0%,rgba(2,25,39,.82) 35%,rgba(2,25,39,.97) 100%)}
+ .lux-hero-inner{min-height:790px;padding:126px 24px 42px;display:block}
+ .lux-copy{width:100%}.lux-eyebrow{margin-bottom:105px}.lux-kicker{font-size:8px}
+ .lux-copy h1{font-size:clamp(55px,15vw,72px);line-height:.9;margin:17px 0 24px}.lux-copy>p{font-size:15px;line-height:1.55;color:rgba(255,255,255,.76)}
+ .lux-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:27px}.lux-actions .deck-btn{padding:14px 10px;font-size:9px}
+ .lux-proof{gap:12px;margin-top:30px;padding-top:16px}.lux-proof span{font-size:7px;letter-spacing:.08em}.lux-proof i{display:none}
+ .lux-card{display:none}
+}
