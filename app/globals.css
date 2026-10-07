@@ -238,3 +238,22 @@ a { color: inherit; }
 .deck-footer{min-height:78px;background:#061f2d;color:rgba(255,255,255,.55);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 6vw;font-size:9px;letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:950px){.deck-nav{display:none}.deck-hero{grid-template-columns:1fr}.deck-hero-visual{min-height:570px}.deck-status{grid-template-columns:1fr 1fr}.deck-research-head,.deck-catalog-head{grid-template-columns:1fr;gap:25px}.deck-products{grid-template-columns:1fr 1fr}.deck-standard{grid-template-columns:1fr}.deck-standard-image{min-height:540px}}
 @media(max-width:620px){.deck-header{height:76px;padding:0 17px}.deck-logo{width:175px}.deck-header-cta{font-size:8px;padding:10px 11px}.deck-hero-copy{padding:65px 22px}.deck-hero-logo{width:260px;margin-bottom:34px}.deck-hero h1{font-size:58px}.deck-hero-copy>p{font-size:15px}.deck-hero-visual{min-height:500px}.deck-hero-panel{left:20px;bottom:20px;width:265px}.deck-status{grid-template-columns:1fr}.deck-status div{border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}.deck-research,.deck-catalog{padding:80px 22px}.deck-standards{grid-template-columns:1fr}.deck-standards article{border-right:0;border-bottom:1px solid rgba(10,52,72,.12)}.deck-products{grid-template-columns:1fr}.deck-standard-copy{padding:80px 22px}.deck-standard-grid{grid-template-columns:1fr}.deck-final{padding:90px 22px}.deck-footer{padding:25px 22px;flex-direction:column;align-items:flex-start}}
+
+
+/* Mobile beta polish after real-device QA */
+@media(max-width:620px){
+  .deck-header{height:82px;padding:0 18px;background:#fff}
+  .deck-logo{width:205px;max-height:62px;object-fit:contain}
+  .deck-header-cta{display:none}
+  .deck-hero-copy{padding:44px 24px 58px}
+  .deck-hero-logo{width:285px;max-width:88%;margin:0 0 28px;display:block}
+  .deck-kicker{font-size:9px;line-height:1.45;letter-spacing:.18em}
+  .deck-hero h1{font-size:clamp(50px,14.2vw,66px);line-height:.91;letter-spacing:-.06em;margin:17px 0 25px}
+  .deck-hero-copy>p{font-size:16px;line-height:1.58}
+  .deck-actions{display:grid;grid-template-columns:1fr;margin-top:29px}
+  .deck-btn{justify-content:center;width:100%;box-sizing:border-box;padding:15px 18px}
+  .deck-proof{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;margin-top:30px;font-size:8px}
+  .deck-hero-visual{min-height:470px}
+  .deck-hero-panel{width:calc(100% - 40px);box-sizing:border-box}
+  .deck-hero-panel strong{font-size:24px}
+}
