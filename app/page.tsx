@@ -55,12 +55,35 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="ag-feature-card">
-          <span className="ag-mini">FEATURED RESEARCH</span>
-          <strong>NAD+</strong>
-          <p>Ein zentrales Molekül im Energiestoffwechsel und ein wichtiges Thema moderner Longevity-Forschung.</p>
-          <a href="/shop">Research entdecken <span>↗</span></a>
-        </aside>
+        <div className="ag-hero-visual-stack" aria-label="AgeLess Research Highlights">
+          <aside className="ag-feature-card">
+            <span className="ag-mini">FEATURED RESEARCH</span>
+            <strong>NAD+ <small>500 mg</small></strong>
+            <p>Energy metabolism · cellular function · redox balance</p>
+            <div className="ag-feature-meta">
+              <span>RESEARCH USE ONLY</span>
+              <span>STATUS VISIBLE</span>
+            </div>
+            <a href="/shop">Research entdecken <span>↗</span></a>
+          </aside>
+          <div className="ag-proof-card">
+            <span>AGELESS STANDARD</span>
+            <strong>Legalität · Evidenz · Preise · Risiken</strong>
+            <small>Klare Einordnung vor Vermarktung.</small>
+          </div>
+        </div>
+      </section>
+
+      <section className="ag-signature">
+        <div className="ag-signature-copy">
+          <span>AGELESS / PREMIUM BETA</span>
+          <strong>Research wird nicht versteckt. Es wird Teil des Designs.</strong>
+        </div>
+        <div className="ag-signature-points">
+          <span>Official sources preferred</span>
+          <span>Research Use Only ≠ Humananwendung</span>
+          <span>Keine Heilversprechen</span>
+        </div>
       </section>
 
       <section className="ag-category-strip" id="produkte">
