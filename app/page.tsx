@@ -30,27 +30,31 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="deck-hero">
-          <div className="deck-hero-copy">
-            <img src="/ageless-logo.svg" alt="AgeLess" className="deck-hero-logo" />
-            <div className="deck-kicker">PEPTIDE / NAD+ / LONGEVITY RESEARCH</div>
-            <h1>Science for a<br/><span>longer, better life.</span></h1>
-            <p>AgeLess verbindet hochwertige Produktwelten mit Research, Evidenz und klarer regulatorischer Einordnung. Eine Premium-Beta für erste Kunden — und gleichzeitig die sichtbare Grundlage einer skalierbaren Longevity-Plattform.</p>
-            <div className="deck-actions">
-              <a href="/shop" className="deck-btn deck-btn-primary">Produkte entdecken <span>→</span></a>
-              <a href="#research" className="deck-btn deck-btn-secondary">Warum AgeLess</a>
+        <section className="lux-hero">
+          <div className="lux-backdrop" />
+          <div className="lux-overlay" />
+          <div className="lux-hero-inner">
+            <div className="lux-copy">
+              <div className="lux-eyebrow"><span>PRIVATE BETA</span><b>2026</b></div>
+              <div className="deck-kicker lux-kicker">PEPTIDE / NAD+ / LONGEVITY RESEARCH</div>
+              <h1>Science for a<br/><span>longer, better life.</span></h1>
+              <p>Premium Longevity Research mit sichtbarer Evidenz, klarer regulatorischer Einordnung und einer kuratierten Produktwelt.</p>
+              <div className="deck-actions lux-actions">
+                <a href="/shop" className="deck-btn lux-primary">Produkte entdecken <span>→</span></a>
+                <a href="#research" className="deck-btn lux-secondary">AgeLess entdecken</a>
+              </div>
+              <div className="lux-proof">
+                <span><i>01</i> Research-led</span>
+                <span><i>02</i> Transparent</span>
+                <span><i>03</i> Premium curated</span>
+              </div>
             </div>
-            <div className="deck-proof">
-              <span>✓ Research-led</span><span>✓ Transparent</span><span>✓ Compliance-aware</span>
-            </div>
-          </div>
-          <div className="deck-hero-visual">
-            <div className="deck-hero-image"/>
-            <div className="deck-hero-panel">
-              <span>AGELESS / RESEARCH</span>
-              <strong>NAD+ · Peptides<br/>Research Chemicals</strong>
-              <small>Legalität · Evidenz · Preise · Risiken</small>
-            </div>
+            <aside className="lux-card">
+              <span>AGELESS / FEATURED RESEARCH</span>
+              <strong>NAD+ 500 mg</strong>
+              <p>Energy metabolism · cellular function · redox balance</p>
+              <div className="lux-card-foot"><b>Research Use Only</b><a href="/shop">View record ↗</a></div>
+            </aside>
           </div>
         </section>
 
