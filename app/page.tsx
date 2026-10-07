@@ -1,137 +1,195 @@
-const products = [
-  ['L-Lysine','Amino acid / supplement','LEGAL / FORMULIERUNGSPRÜFUNG'],
-  ['L-Proline','Amino acid / supplement','LEGAL / FORMULIERUNGSPRÜFUNG'],
-  ['Vitamin B12','10 ml · Produktform unklar','LEGAL / FORMULIERUNGSPRÜFUNG'],
-  ['GHK-Cu','50 / 100 mg','BEDINGT LEGAL — KOSMETIK'],
-  ['SNAP-8','10 ml · Acetyl Octapeptide-3','BEDINGT LEGAL — KOSMETIK'],
-  ['NAD+','500 mg · Research','BEDINGT / FORM OFFEN'],
+const categories = [
+  ['Peptide', 'Ausgewählte Research-Peptide mit klarer Einordnung zu Evidenz, Status und Verwendung.'],
+  ['NAD+', 'Longevity-orientierte Research-Themen rund um Zellenergie, Redoxbalance und Stoffwechsel.'],
+  ['Aminosäuren', 'Basisbausteine für Regeneration, Strukturproteine und biochemische Prozesse.'],
+  ['Kosmetik', 'Peptidbasierte Wirkstoffkonzepte für kosmetische Anwendungen und moderne Hautpflege.'],
 ];
 
-const standards = [
-  ['01','Legalität sichtbar machen','Lebensmittel, Kosmetik, Arzneimittel und Research werden klar nach Verwendungszweck getrennt.'],
-  ['02','Evidenz von Marketing trennen','Humanstudien, präklinische Daten und reine Mechanismen werden nicht vermischt.'],
-  ['03','Risiken nicht verstecken','Fehlende Zulassung, Produktform, Fälschungsrisiko und Unsicherheiten bleiben sichtbar.'],
+const highlights = [
+  ['Research zuerst', 'Wir trennen belastbare Evidenz, präklinische Daten und Mechanismen sichtbar voneinander.'],
+  ['Qualität sichtbar', 'Produktform, Einordnung und relevante Unsicherheiten bleiben Teil der Nutzererfahrung.'],
+  ['Compliance klar', 'Research, Kosmetik, Supplement und Arzneimittel werden nicht vermischt.'],
+];
+
+const products = [
+  ['GHK-Cu', 'Peptid / Kosmetik', 'KOSMETISCHE EINORDNUNG'],
+  ['NAD+', '500 mg · Research', 'RESEARCH'],
+  ['SNAP-8', 'Acetyl Octapeptide-3', 'KOSMETISCHE EINORDNUNG'],
 ];
 
 export default function Home() {
   return (
-    <div className="deck-page">
-      <header className="deck-header">
-        <a href="#top" className="deck-logo-link" aria-label="AgeLess">
-          <img src="/ageless-logo.svg" alt="AgeLess — Science for a Longer, Better Life" className="deck-logo" />
+    <main className="ag-home" id="top">
+      <header className="ag-header">
+        <a href="#top" className="ag-brand" aria-label="AgeLess">
+          <img src="/ageless-logo.svg" alt="AgeLess — Science for a Longer, Better Life" />
         </a>
-        <nav className="deck-nav">
+        <nav className="ag-nav" aria-label="Hauptnavigation">
+          <a href="#produkte">Produkte</a>
+          <a href="#longevity">Longevity Wissen</a>
           <a href="#research">Research</a>
-          <a href="#catalog">Produkte</a>
-          <a href="#standard">Standard</a>
-          <a href="/shop">Store Beta</a>
+          <a href="#compliance">Compliance</a>
+          <a href="#kontakt">Kontakt</a>
         </nav>
-        <a href="/shop" className="deck-header-cta">Research Catalog <span>→</span></a>
+        <a href="/shop" className="ag-shop-link">Shop <span>→</span></a>
       </header>
 
-      <main id="top">
-        <section className="lux-hero">
-          <div className="lux-backdrop" />
-          <div className="lux-overlay" />
-          <div className="lux-hero-inner">
-            <div className="lux-copy">
-              <div className="lux-eyebrow"><span>PRIVATE BETA</span><b>2026</b></div>
-              <div className="deck-kicker lux-kicker">PEPTIDE / NAD+ / LONGEVITY RESEARCH</div>
-              <h1>Science for a<br/><span>longer, better life.</span></h1>
-              <p>Premium Longevity Research mit sichtbarer Evidenz, klarer regulatorischer Einordnung und einer kuratierten Produktwelt.</p>
-              <div className="deck-actions lux-actions">
-                <a href="/shop" className="deck-btn lux-primary">Produkte entdecken <span>→</span></a>
-                <a href="#research" className="deck-btn lux-secondary">AgeLess entdecken</a>
-              </div>
-              <div className="lux-proof">
-                <span><i>01</i> Research-led</span>
-                <span><i>02</i> Transparent</span>
-                <span><i>03</i> Premium curated</span>
-              </div>
-            </div>
-            <aside className="lux-card">
-              <span>AGELESS / FEATURED RESEARCH</span>
-              <strong>NAD+ 500 mg</strong>
-              <p>Energy metabolism · cellular function · redox balance</p>
-              <div className="lux-card-foot"><b>Research Use Only</b><a href="/shop">View record ↗</a></div>
-            </aside>
+      <section className="ag-hero">
+        <div className="ag-hero-image" />
+        <div className="ag-hero-shade" />
+        <div className="ag-hero-content">
+          <div className="ag-kicker">AGELESS · LONGEVITY · PEPTIDE RESEARCH</div>
+          <h1>Longevity beginnt<br/><span>mit Wissenschaft.</span></h1>
+          <p>
+            AgeLess verbindet moderne Longevity-Themen mit einer kuratierten Auswahl hochwertiger
+            Peptide, Research-Wirkstoffe und klarer wissenschaftlicher Einordnung.
+          </p>
+          <div className="ag-actions">
+            <a href="/shop" className="ag-btn ag-btn-gold">Produkte entdecken <span>→</span></a>
+            <a href="#longevity" className="ag-btn ag-btn-ghost">Longevity entdecken</a>
           </div>
-        </section>
+          <div className="ag-trust">
+            <span>Wissenschaftlich orientiert</span>
+            <span>Transparent eingeordnet</span>
+            <span>Premium kuratiert</span>
+          </div>
+        </div>
 
-        <section className="deck-status">
-          <div><span>MARKENKERN</span><strong>Science + Premium Experience</strong></div>
-          <div><span>FOKUS</span><strong>Peptides · NAD+ · Longevity</strong></div>
-          <div><span>PRINZIP</span><strong>Evidence before marketing</strong></div>
-          <div><span>BETA</span><strong>Erste Kunden · Plattform im Aufbau</strong></div>
-        </section>
+        <aside className="ag-feature-card">
+          <span className="ag-mini">FEATURED RESEARCH</span>
+          <strong>NAD+</strong>
+          <p>Ein zentrales Molekül im Energiestoffwechsel und ein wichtiges Thema moderner Longevity-Forschung.</p>
+          <a href="/shop">Research entdecken <span>↗</span></a>
+        </aside>
+      </section>
 
-        <section className="deck-research" id="research">
-          <div className="deck-section-label">WARUM AGELESS</div>
-          <div className="deck-research-head">
-            <h2>Premium wirkt nur,<br/><span>wenn Vertrauen sichtbar ist.</span></h2>
-            <div>
-              <p className="deck-lead">AgeLess soll nicht wie ein beliebiger Supplement- oder Peptide-Shop wirken. Die Marke verbindet eine hochwertige visuelle Welt mit einer nachvollziehbaren Research-Systematik.</p>
-              <p>Genau deshalb werden Produktform, regulatorischer Status, Evidenz und Risiko nicht in Marketingtexten versteckt, sondern Teil der Nutzererfahrung.</p>
-            </div>
-          </div>
-          <div className="deck-standards">
-            {standards.map(([n,t,c]) => <article key={n}><span>{n}</span><div className="deck-rule"/><h3>{t}</h3><p>{c}</p></article>)}
-          </div>
-        </section>
+      <section className="ag-category-strip" id="produkte">
+        <div className="ag-strip-head">
+          <span>Produktwelt</span>
+          <strong>Ausgewählte Kategorien rund um Longevity und Peptide.</strong>
+        </div>
+        <div className="ag-category-grid">
+          {categories.map(([title, text], i) => (
+            <article key={title} className="ag-category-card">
+              <span className="ag-index">0{i + 1}</span>
+              <h2>{title}</h2>
+              <p>{text}</p>
+              <a href="/shop">Entdecken <span>→</span></a>
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <section className="deck-catalog" id="catalog">
-          <div className="deck-catalog-head">
-            <div><div className="deck-section-label">AUS DEM AKTUELLEN RESEARCH DECK</div><h2>Substanzen.<br/><span>Sauber eingeordnet.</span></h2></div>
-            <p>Die Beta zeigt zuerst die klarer einordenbaren Kategorien und Research-Objekte. Jede Karte macht den Status sichtbar, statt ihn hinter Werbeaussagen zu verstecken.</p>
+      <section className="ag-story" id="longevity">
+        <div className="ag-story-copy">
+          <span className="ag-section-label">LONGEVITY WISSEN</span>
+          <h2>Ein längeres Leben ist nur dann wertvoll,<br/><em>wenn es ein besseres Leben ist.</em></h2>
+          <p className="ag-lead">
+            Longevity verbindet Forschung zu Zellfunktion, Regeneration, Stoffwechsel und gesundem Altern.
+            AgeLess macht relevante Themen verständlich und trennt wissenschaftliche Erkenntnis von Marketing-Hype.
+          </p>
+          <p>
+            Unser Fokus liegt auf klarer Einordnung: Was ist gut belegt? Was ist vielversprechend? Wo bestehen
+            Unsicherheiten? Diese Transparenz ist ein Kern der Marke.
+          </p>
+        </div>
+        <div className="ag-story-visual">
+          <div className="ag-story-orb" />
+          <div className="ag-story-panel">
+            <span>AGELESS STANDARD</span>
+            <strong>Evidence before hype.</strong>
+            <p>Jede Aussage soll nachvollziehbar, differenziert und angemessen eingeordnet sein.</p>
           </div>
-          <div className="deck-products">
-            {products.map(([name,meta,status],i)=><article className="deck-product" key={name}>
-              <div className="deck-product-visual">
-                <div className="deck-vial">
+        </div>
+      </section>
+
+      <section className="ag-research" id="research">
+        <div className="ag-section-head">
+          <div>
+            <span className="ag-section-label">RESEARCH & QUALITÄT</span>
+            <h2>Vertrauen entsteht,<br/><em>wenn Details sichtbar werden.</em></h2>
+          </div>
+          <p>
+            Moderne Longevity-Produkte brauchen mehr als gutes Design. Entscheidend sind klare Produktinformationen,
+            transparente Einordnung und ein verantwortungsvoller Umgang mit wissenschaftlicher Evidenz.
+          </p>
+        </div>
+        <div className="ag-highlight-grid">
+          {highlights.map(([title, text], i) => (
+            <article key={title}>
+              <span>0{i + 1}</span>
+              <div className="ag-line" />
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="ag-products">
+        <div className="ag-section-head compact">
+          <div>
+            <span className="ag-section-label">AUSWAHL</span>
+            <h2>Peptide & Longevity<br/><em>im Fokus.</em></h2>
+          </div>
+          <a className="ag-text-link" href="/shop">Alle Produkte ansehen <span>→</span></a>
+        </div>
+        <div className="ag-product-grid">
+          {products.map(([name, meta, status]) => (
+            <article className="ag-product-card" key={name}>
+              <div className="ag-product-visual">
+                <div className="ag-halo" />
+                <div className="ag-vial">
                   <small>AGELESS</small>
                   <strong>{name}</strong>
                   <span>RESEARCH</span>
                 </div>
               </div>
-              <div className="deck-product-body">
-                <div className="deck-product-meta"><span>0{i+1}</span><em>{status}</em></div>
+              <div className="ag-product-body">
+                <span className="ag-product-status">{status}</span>
                 <h3>{name}</h3>
                 <p>{meta}</p>
-                <a href="/shop">Research Record <span>↗</span></a>
+                <a href="/shop">Details ansehen <span>↗</span></a>
               </div>
-            </article>)}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="ag-compliance" id="compliance">
+        <div className="ag-compliance-image" />
+        <div className="ag-compliance-copy">
+          <span className="ag-section-label light">COMPLIANCE CENTER</span>
+          <h2>Klarheit ist<br/><em>Teil der Qualität.</em></h2>
+          <p>
+            AgeLess trennt Research, Kosmetik, Nahrungsergänzung und arzneiliche Einordnung konsequent.
+            Research Use Only bedeutet keine Humananwendung. Unsicherheiten werden sichtbar markiert statt übergangen.
+          </p>
+          <div className="ag-compliance-grid">
+            <div><span>01</span><strong>Offizielle Quellen bevorzugt</strong></div>
+            <div><span>02</span><strong>Keine Heilversprechen</strong></div>
+            <div><span>03</span><strong>Produktform klar benannt</strong></div>
+            <div><span>04</span><strong>Unsicherheit transparent</strong></div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="deck-standard" id="standard">
-          <div className="deck-standard-image"/>
-          <div className="deck-standard-copy">
-            <div className="deck-section-label light">AGELESS / STANDARD</div>
-            <h2>Research first.<br/><span>Commerce only when justified.</span></h2>
-            <p>Research Use Only ist keine Humananwendung. Kosmetik bleibt Kosmetik. Supplements bleiben Lebensmittel. Genau diese Trennung ist Teil des Produkterlebnisses — nicht nur ein Hinweis im Kleingedruckten.</p>
-            <div className="deck-standard-grid">
-              <div><span>01</span><strong>Offizielle Quellen bevorzugt</strong></div>
-              <div><span>02</span><strong>Keine Heilversprechen</strong></div>
-              <div><span>03</span><strong>Produktform sichtbar</strong></div>
-              <div><span>04</span><strong>Unsicherheit markieren</strong></div>
-            </div>
-          </div>
-        </section>
+      <section className="ag-closing" id="kontakt">
+        <img src="/ageless-logo.svg" alt="AgeLess" />
+        <span className="ag-section-label">SCIENCE FOR A LONGER, BETTER LIFE</span>
+        <h2>Mehr Wissen. Mehr Klarheit.<br/><em>Mehr Zukunft.</em></h2>
+        <p>
+          Entdecken Sie die AgeLess Produktwelt und aktuelle Themen rund um Peptide, Longevity und wissenschaftlich
+          orientierte Gesundheitsoptimierung.
+        </p>
+        <a href="/shop" className="ag-btn ag-btn-navy">Produkte entdecken <span>→</span></a>
+      </section>
 
-        <section className="deck-final">
-          <img src="/ageless-logo.svg" alt="AgeLess" />
-          <div className="deck-section-label">PUBLIC BETA</div>
-          <h2>Ein Premium-Zwischenziel.<br/><span>Die Plattform wächst weiter.</span></h2>
-          <p>Jetzt: starke Marke, Research Catalog und klare Produktwelt. Danach werden Bestellung, Payment, Kundenbereich, Content, Research-Automation und weitere Plattformfunktionen Schritt für Schritt ergänzt.</p>
-          <a href="/shop" className="deck-btn deck-btn-primary">AgeLess Beta öffnen <span>→</span></a>
-        </section>
-      </main>
-
-      <footer className="deck-footer">
+      <footer className="ag-footer">
         <span>© 2026 AgeLess</span>
         <span>Science for a longer, better life.</span>
         <span>Research Use Only where applicable · No medical advice</span>
       </footer>
-    </div>
+    </main>
   );
 }
