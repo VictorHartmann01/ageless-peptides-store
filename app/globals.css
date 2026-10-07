@@ -287,3 +287,10 @@ a { color: inherit; }
  .lux-proof{gap:12px;margin-top:30px;padding-top:16px}.lux-proof span{font-size:7px;letter-spacing:.08em}.lux-proof i{display:none}
  .lux-card{display:none}
 }
+
+
+/* Final brand-bar polish: official logo stays on its intended light field */
+.deck-header{background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(10,52,72,.08);box-shadow:0 8px 30px rgba(2,24,36,.07)}
+.deck-header .deck-nav a,.deck-header .deck-header-cta{color:#0a3448}.deck-header .deck-header-cta{border-color:rgba(10,52,72,.18);background:rgba(255,255,255,.72)}
+.deck-header .deck-logo{filter:none}
+@media(max-width:620px){.deck-header{background:rgba(255,255,255,.96)}}
