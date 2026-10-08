@@ -89,10 +89,10 @@ export default async function ShopPage() {
                 <h2>{product.name}</h2>
                 <p>{product.short_description ?? product.description ?? 'AgeLess Research Record.'}</p>
                 <div className="catalog-note">{product.jurisdiction_note ?? 'Vor einer kommerziellen Handlung gilt die jeweils erforderliche regulatorische Einordnung.'}</div>
-                <div className="catalog-card-foot">
-                  <span>Transparent eingeordnet</span>
-                  <span>↗</span>
-                </div>
+                <Link className="catalog-card-foot catalog-card-link" href={`/shop/${encodeURIComponent(product.slug)}`}>
+                  <span>Produktinformationen ansehen</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </article>
           ))
