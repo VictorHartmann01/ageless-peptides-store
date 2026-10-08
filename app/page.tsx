@@ -1,8 +1,5 @@
 import Link from 'next/link';
-import heroD1 from './_assets/heroD1';
-import heroD2 from './_assets/heroD2';
-
-const hero = 'data:image/webp;base64,' + Buffer.from(heroD1 + heroD2, 'base64').toString('utf8');
+const hero = 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1800&q=85';
 
 const categories = [
   { title: 'Peptide & Forschung', eyebrow: 'WIRKSTOFFWELTEN', text: 'Entdecken Sie die wissenschaftlichen Hintergründe der Peptidforschung.', image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=82', style: 'science' },
@@ -36,7 +33,7 @@ export default function Home() {
         <div className="alv2-hero-actions"><Link className="alv2-gold-button" href="/shop">Jetzt entdecken <span aria-hidden="true">→</span></Link><a className="alv2-hero-link" href="#ueber">AgeLess kennenlernen ↗</a></div>
         <div className="alv2-hero-proof"><span><b aria-hidden="true">◇</b> Wissenschaft im Fokus</span><span><b aria-hidden="true">✧</b> Transparent erklärt</span><span><b aria-hidden="true">♧</b> Bewusst entdecken</span></div>
       </div>
-      <div className="alv2-hero-media"><div className="alv2-hero-photo" style={{backgroundImage:`url("${hero}")`}} role="img" aria-label="Paar mit Blick in die Zukunft"/><div className="alv2-hero-photo-shade"/><div className="alv2-hero-quote"><span>AGELESS PERSPECTIVE</span><strong>Wissen öffnet<br/><em>neue Horizonte.</em></strong></div></div>
+      <div className="alv2-hero-media"><div className="alv2-hero-photo" style={{backgroundImage:`url("${hero}")`}} role="img" aria-label="Menschen im Freien – Gesundheit und Lebensqualität"/><div className="alv2-hero-photo-shade"/><div className="alv2-hero-quote"><span>AGELESS PERSPECTIVE</span><strong>Wissen öffnet<br/><em>neue Horizonte.</em></strong></div></div>
     </section>
     <section className="alv2-category-section" id="wissen" aria-labelledby="alv2-categories-heading">
       <div className="alv2-section-head"><div><span className="alv2-overline">ENTDECKEN SIE DIE AGELESS WELT</span><h2 id="alv2-categories-heading">Wissen, das inspiriert.</h2></div><Link href="/shop">Alle Themen entdecken <span aria-hidden="true">↗</span></Link></div>
