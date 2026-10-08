@@ -283,3 +283,30 @@ a{color:inherit}
  .hg-editorial{grid-template-columns:1fr}.hg-editorial-photo{min-height:400px}.hg-editorial-copy{padding:65px 22px}.hg-editorial h2{font-size:49px}.hg-editorial-grid{grid-template-columns:1fr}
  .hg-close{padding:85px 22px 95px}.hg-close h2{font-size:61px}.hg-footer{grid-template-columns:1fr;text-align:center;gap:15px}.hg-footer img{margin:auto}.hg-footer>div{justify-content:center}.hg-footer p{text-align:center}
 }
+
+
+/* High-gloss navigation, trust bar, and mobile interaction */
+.hg-mobile-menu{display:none}
+.hg-trustbar{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-bottom:1px solid rgba(8,47,66,.08)}
+.hg-trustbar>div{display:flex;align-items:center;justify-content:center;gap:12px;padding:18px 22px;border-right:1px solid rgba(8,47,66,.08)}
+.hg-trustbar>div:last-child{border-right:0}
+.hg-trustbar b{font-size:8px;letter-spacing:.16em;color:var(--gold);font-weight:400}
+.hg-trustbar span{font-size:10px;letter-spacing:.05em;color:#536b76;text-transform:uppercase}
+
+@media(max-width:700px){
+ .hg-desktop-nav{display:none!important}
+ .hg-nav{grid-template-columns:1fr auto auto;gap:12px}
+ .hg-mobile-menu{display:block;position:relative}
+ .hg-mobile-menu summary{list-style:none;width:38px;height:38px;border:1px solid rgba(8,47,66,.14);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;background:rgba(255,255,255,.9)}
+ .hg-mobile-menu summary::-webkit-details-marker{display:none}
+ .hg-mobile-menu summary span{display:block;width:14px;height:1px;background:#123846}
+ .hg-mobile-panel{position:absolute;right:0;top:48px;width:min(82vw,320px);background:rgba(255,253,248,.98);backdrop-filter:blur(20px);box-shadow:0 24px 60px rgba(4,35,50,.18);border:1px solid rgba(8,47,66,.08);padding:16px;display:grid;z-index:80}
+ .hg-mobile-panel a{padding:13px 9px;border-bottom:1px solid rgba(8,47,66,.08);font-size:11px;letter-spacing:.07em;text-decoration:none;color:#244957}
+ .hg-mobile-panel a:last-child{border-bottom:0}
+ .hg-mobile-panel .hg-mobile-shop{margin-top:8px;background:#0a3448;color:#fff;border-radius:999px;text-align:center;border-bottom:0;padding:13px 16px}
+ .hg-mobile-panel .hg-mobile-shop span{color:#e1c57e;margin-left:8px}
+ .hg-trustbar{grid-template-columns:1fr}
+ .hg-trustbar>div{justify-content:flex-start;padding:14px 22px;border-right:0;border-bottom:1px solid rgba(8,47,66,.08)}
+ .hg-trustbar>div:last-child{border-bottom:0}
+ .hg-trustbar span{font-size:9px}
+}
