@@ -22,8 +22,19 @@ export default function Home(){
  return <main className="hg" id="top">
   <header className="hg-nav">
     <a href="#top" className="hg-logo"><img src="/ageless-logo.svg" alt="AgeLess — Science for a Longer, Better Life"/></a>
-    <nav><a href="#products">Produkte</a><a href="#standard">Longevity Wissen</a><a href="#research">Research</a><a href="#compliance">Compliance</a><a href="#kontakt">Kontakt</a></nav>
+    <nav className="hg-desktop-nav"><a href="#products">Produkte</a><a href="#standard">Longevity Wissen</a><a href="#research">Research</a><a href="#compliance">Compliance</a><a href="#kontakt">Kontakt</a></nav>
     <a href="/shop" className="hg-nav-cta">Shop <span>↗</span></a>
+    <details className="hg-mobile-menu">
+      <summary aria-label="Menü öffnen"><span></span><span></span><span></span></summary>
+      <div className="hg-mobile-panel">
+        <a href="#products">Produkte</a>
+        <a href="#standard">Longevity Wissen</a>
+        <a href="#research">Research</a>
+        <a href="#compliance">Compliance</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="/shop" className="hg-mobile-shop">Shop öffnen <span>→</span></a>
+      </div>
+    </details>
   </header>
 
   <section className="hg-hero">
@@ -48,6 +59,12 @@ export default function Home(){
       <div className="hg-feature-bottom"><span>FORMULIERUNG ENTSCHEIDEND</span><a href="/shop">Record ↗</a></div>
     </aside>
     <div className="hg-scroll">SCROLL TO DISCOVER <span>↓</span></div>
+  </section>
+
+  <section className="hg-trustbar" aria-label="AgeLess Qualitätsprinzipien">
+    <div><b>01</b><span>Wissenschaftlich orientiert</span></div>
+    <div><b>02</b><span>Transparente Einordnung</span></div>
+    <div><b>03</b><span>Compliance vor Commerce</span></div>
   </section>
 
   <section className="hg-manifesto" id="standard">
@@ -92,8 +109,8 @@ export default function Home(){
 
   <section className="hg-close" id="kontakt">
     <span>AGELESS / SCIENCE FOR A LONGER, BETTER LIFE</span>
-    <h2>Know more.<br/><em>Choose better.</em></h2>
-    <p>Entdecke die AgeLess Produkt- und Research-Welt.</p>
+    <h2>Mehr Wissen.<br/><em>Besser entscheiden.</em></h2>
+    <p>Entdecken Sie die AgeLess Produkt- und Research-Welt rund um Peptide, NAD+ und Longevity.</p>
     <a href="/shop" className="hg-gold">Produkte & Research <span>→</span></a>
   </section>
 
