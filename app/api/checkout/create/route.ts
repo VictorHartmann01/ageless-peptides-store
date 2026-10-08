@@ -6,6 +6,8 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
   try {
+    // Legal and operational go-live must be approved explicitly. Missing flag = no sales.
+    if (process.env.AGELESS_CHECKOUT_ENABLED !== 'true') return NextResponse.json({ error: 'CHECKOUT_NOT_RELEASED' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
     if (request.headers.get('content-type')?.split(';')[0] !== 'application/json') return NextResponse.json({ error: 'INVALID_CONTENT_TYPE' }, { status: 415 });
     const { cart, address } = parseOrderRequest(await request.json());
     const totals = await priceCart(cart, address.country);
