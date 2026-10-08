@@ -51,7 +51,7 @@ export default async function ShopPage() {
         <Link href="/" className="catalog-brand" aria-label="AgeLess">
           <img src="/ageless-logo.svg" alt="AgeLess — Science for a Longer, Better Life" />
         </Link>
-        <div className="catalog-status">PEPTIDE · LONGEVITY · RESEARCH</div>
+        <nav className="ag-shop-quicklinks"><Link href="/shop/angebote">Freigegebene Angebote →</Link><Link href="/shop/warenkorb">Warenkorb</Link></nav>
       </header>
 
       <section className="catalog-hero">
@@ -67,7 +67,7 @@ export default async function ShopPage() {
         </div>
       </section>
 
-      <section className="catalog-grid" aria-label="AgeLess Produkte">
+      <div className="ag-shop-offers-cta"><strong>Bestellbare Produkte</strong><span>Nur nach dokumentierter Freigabe.</span><Link href="/shop/angebote">Zu den freigegebenen Angeboten →</Link></div><section className="catalog-grid" aria-label="AgeLess Produkte">
         {products.length === 0 ? (
           <div className="catalog-empty">
             <span>PRODUKTSTATUS</span>
