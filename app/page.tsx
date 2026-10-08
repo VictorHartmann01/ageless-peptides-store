@@ -22,8 +22,8 @@ export default function Home(){
  return <main className="hg" id="top">
   <header className="hg-nav">
     <a href="#top" className="hg-logo"><img src="/ageless-logo.svg" alt="AgeLess — Science for a Longer, Better Life"/></a>
-    <nav><a href="#products">Produkte</a><a href="#standard">AgeLess Standard</a><a href="#research">Research</a></nav>
-    <a href="/shop" className="hg-nav-cta">Catalog <span>↗</span></a>
+    <nav><a href="#products">Produkte</a><a href="#standard">Longevity Wissen</a><a href="#research">Research</a><a href="#compliance">Compliance</a><a href="#kontakt">Kontakt</a></nav>
+    <a href="/shop" className="hg-nav-cta">Shop <span>↗</span></a>
   </header>
 
   <section className="hg-hero">
@@ -62,7 +62,7 @@ export default function Home(){
   <section className="hg-products" id="products">
     <div className="hg-products-head">
       <div><span>CURATED / FIRST RELEASE</span><h2>Die erste<br/><em>AgeLess Auswahl.</em></h2></div>
-      <p>Die Beta beginnt bewusst mit den klarer einordenbaren Kategorien. Keine künstlichen Heilversprechen. Keine versteckte regulatorische Grauzone.</p>
+      <p>Unsere erste Auswahl konzentriert sich bewusst auf klarer einordenbare Kategorien. Keine künstlichen Heilversprechen. Keine versteckte regulatorische Grauzone.</p>
     </div>
     <div className="hg-product-grid">
       {products.map((p,i)=><article className={"hg-product hg-product-"+p.tone} key={p.name}>
@@ -80,7 +80,7 @@ export default function Home(){
     </div>
   </section>
 
-  <section className="hg-editorial">
+  <section className="hg-editorial" id="compliance">
     <div className="hg-editorial-photo" style={{backgroundImage:`linear-gradient(180deg,rgba(4,34,49,.08),rgba(4,34,49,.34)),url("${hero}")`}}/>
     <div className="hg-editorial-copy">
       <span>RESEARCH / RESPONSIBILITY</span>
@@ -90,13 +90,13 @@ export default function Home(){
     </div>
   </section>
 
-  <section className="hg-close">
+  <section className="hg-close" id="kontakt">
     <span>AGELESS / SCIENCE FOR A LONGER, BETTER LIFE</span>
     <h2>Know more.<br/><em>Choose better.</em></h2>
     <p>Entdecke die AgeLess Produkt- und Research-Welt.</p>
-    <a href="/shop" className="hg-gold">Research Catalog <span>→</span></a>
+    <a href="/shop" className="hg-gold">Produkte & Research <span>→</span></a>
   </section>
 
-  <footer className="hg-footer"><img src="/ageless-logo.svg" alt="AgeLess"/><div><a href="#standard">Standard</a><a href="#research">Research</a><a href="/shop">Catalog</a></div><p>© 2026 AgeLess · Research Use Only where applicable · No medical advice</p></footer>
+  <footer className="hg-footer"><img src="/ageless-logo.svg" alt="AgeLess"/><div><a href="#standard">Longevity Wissen</a><a href="#research">Research</a><a href="#compliance">Compliance</a><a href="/shop">Shop</a></div><p>© 2026 AgeLess · Research Use Only where applicable · No medical advice</p></footer>
  </main>
 }
