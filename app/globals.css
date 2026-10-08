@@ -213,7 +213,7 @@ a{color:inherit}
 }
 
 
-/* Premium beta finish — visual depth and deck alignment */
+/* Premium visual depth and deck alignment */
 .ag-hero{min-height:820px}
 .ag-hero-image{background-image:url('https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=2400&q=94');filter:saturate(.88) contrast(1.04)}
 .ag-hero-shade{background:linear-gradient(90deg,rgba(3,25,39,.97) 0%,rgba(4,33,49,.88) 39%,rgba(6,44,62,.42) 66%,rgba(7,46,62,.14) 100%),linear-gradient(0deg,rgba(3,24,36,.72),transparent 58%)}
@@ -245,7 +245,7 @@ a{color:inherit}
  .ag-signature{padding:23px 22px;gap:14px}.ag-signature-points{display:grid;gap:7px}.ag-signature-points span{white-space:normal}
 }
 
-/* ===== AgeLess High-Gloss Editorial Beta / 2026-10-07 ===== */
+/* ===== AgeLess High-Gloss Editorial / 2026-10-07 ===== */
 .hg{--ink:#082f42;--deep:#031f2d;--gold:#c89d43;--gold2:#e0c477;--ivory:#f7f4ec;--mist:#eaf1ef;font-family:"Arial Narrow","Aptos Narrow","Helvetica Neue",Arial,sans-serif;background:var(--ivory);color:var(--ink);overflow:hidden}
 .hg *{box-sizing:border-box}.hg a{color:inherit;text-decoration:none}
 .hg-nav{height:92px;position:absolute;z-index:50;top:0;left:0;right:0;display:grid;grid-template-columns:260px 1fr 150px;align-items:center;padding:0 5vw;background:rgba(250,248,241,.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(8,47,66,.09)}
