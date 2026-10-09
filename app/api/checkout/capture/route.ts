@@ -11,15 +11,21 @@ export async function POST(request: NextRequest) {
     const body = await request.json() as Record<string, unknown>;
     if (typeof body.orderId !== 'string' || !uuid.test(body.orderId) || typeof body.paypalOrderId !== 'string' || !/^[A-Z0-9]{10,30}$/i.test(body.paypalOrderId)) return NextResponse.json({ error: 'INVALID_REQUEST' }, { status: 400 });
     const db = getAdminClient();
-    const { data: order, error } = await db.from('ageless_orders').select('id,status,paypal_order_id,total_cents,country_code').eq('id', body.orderId).maybeSingle();
+    const { data: order, error } = await db.from('ageless_orders').select('id,status,paypal_order_id,total_cents,country_code,payment_mode').eq('id', body.orderId).maybeSingle();
     if (error || !order || order.paypal_order_id !== body.paypalOrderId) return NextResponse.json({ error: 'ORDER_NOT_FOUND' }, { status: 404 });
-    if (order.status === 'paid' || order.status === 'paid_manual_review') return NextResponse.json({ status: order.status }, { headers: { 'Cache-Control': 'no-store' } });
+    if (order.status === 'paid' || order.status === 'sandbox_paid' || order.status === 'paid_manual_review') return NextResponse.json({ status: order.status }, { headers: { 'Cache-Control': 'no-store' } });
     if (order.status !== 'payment_created') return NextResponse.json({ error: 'ORDER_NOT_PAYABLE' }, { status: 409 });
+    if (process.env.PAYPAL_ENVIRONMENT !== order.payment_mode) return NextResponse.json({ error: 'PAYMENT_MODE_MISMATCH' }, { status: 409, headers: { 'Cache-Control': 'no-store' } });
     // Capture is idempotent at PayPal and in the database. Never trust a browser-reported payment status.
     const result = await paypalRequest('/v2/checkout/orders/' + encodeURIComponent(body.paypalOrderId) + '/capture', 'POST', {}, 'ageless-capture-' + order.id);
     const units = result.purchase_units as Array<{ reference_id?: string; payments?: { captures?: Array<{ id: string; status: string; amount: { currency_code: string; value: string } }> } }> | undefined;
     const capture = units?.[0]?.payments?.captures?.[0];
     if (result.id !== body.paypalOrderId || units?.length !== 1 || units[0].reference_id !== order.id || capture?.status !== 'COMPLETED' || capture.amount?.currency_code !== 'EUR' || capture.amount.value !== money(order.total_cents)) throw new Error('PAYMENT_VERIFICATION_FAILED');
+    if (order.payment_mode === 'sandbox') {
+      const { error: sandboxError } = await db.from('ageless_orders').update({ status: 'sandbox_paid', paypal_capture_id: capture.id, paid_at: new Date().toISOString() }).eq('id', order.id).eq('status', 'payment_created');
+      if (sandboxError) throw new Error('SANDBOX_ORDER_COMPLETION_FAILED');
+      return NextResponse.json({ status: 'sandbox_paid' }, { headers: { 'Cache-Control': 'no-store' } });
+    }
     const { data: state, error: completeError } = await db.rpc('ageless_complete_paid_order', { p_order_id: order.id, p_capture_id: capture.id });
     if (completeError) throw new Error('ORDER_COMPLETION_FAILED');
     return NextResponse.json({ status: state }, { headers: { 'Cache-Control': 'no-store' } });
