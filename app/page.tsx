@@ -2,13 +2,13 @@ import Link from 'next/link';
 import { createPublicClient } from '../lib/supabase/public';
 import MobileMenu from './components/MobileMenu';
 // Freely licensed Unsplash editorial imagery; no fictional AgeLess packaging or product claims.
-const hero = 'https://unsplash.com/photos/yXyX7gBNtFc/download?force=true&w=1800';
+const hero = '/images/ageless/hero-couple.webp';
 const heroFallback = 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1800&q=85';
 
 const categories = [
-  { title: 'Peptide entdecken', eyebrow: 'WIRKSTOFFWELTEN', text: 'Peptide im Überblick: Produktformen, Hintergründe und transparente Informationen.', image: 'https://unsplash.com/photos/PG4EzttydRk/download?force=true&w=900', style: 'science' },
-  { title: 'NAD+ & Longevity', eyebrow: 'ZELLBIOLOGIE', text: 'Entdecken Sie NAD+-Themen und erfahren Sie mehr über die Produktwelt.', image: 'https://unsplash.com/photos/RP33OJzDXaE/download?force=true&w=900', style: 'nad' },
-  { title: 'Essentials & Vitamine', eyebrow: 'GRUNDLAGEN', text: 'Essentials entdecken und Inhaltsstoffe auf einen Blick kennenlernen.', image: 'https://unsplash.com/photos/tX5DpDZsCBs/download?force=true&w=900', style: 'nature' },
+  { title: 'Peptide entdecken', eyebrow: 'WIRKSTOFFWELTEN', text: 'Peptide im Überblick: Produktformen, Hintergründe und transparente Informationen.', image: '/images/ageless/category-peptides.webp', fallback: 'https://unsplash.com/photos/PG4EzttydRk/download?force=true&w=900', style: 'science' },
+  { title: 'NAD+ & Longevity', eyebrow: 'ZELLBIOLOGIE', text: 'Entdecken Sie NAD+-Themen und erfahren Sie mehr über die Produktwelt.', image: '/images/ageless/category-nad-longevity.webp', fallback: 'https://unsplash.com/photos/RP33OJzDXaE/download?force=true&w=900', style: 'nad' },
+  { title: 'Essentials & Vitamine', eyebrow: 'GRUNDLAGEN', text: 'Essentials entdecken und Inhaltsstoffe auf einen Blick kennenlernen.', image: '/images/ageless/category-essentials.webp', fallback: 'https://unsplash.com/photos/tX5DpDZsCBs/download?force=true&w=900', style: 'nature' },
 ];
 
 type Offer = { id: string; name: string; description: string | null; image_url: string | null; price_cents: number };
@@ -48,7 +48,7 @@ export default async function Home() {
     <section className="alv2-category-section" id="wissen" aria-labelledby="alv2-categories-heading">
       <div className="alv2-section-head"><div><span className="alv2-overline">UNSERE PRODUKTWELTEN</span><h2 id="alv2-categories-heading">Finden Sie Ihre Produktwelt.</h2></div><Link href="/shop">Alle Produkte ansehen <span aria-hidden="true">↗</span></Link></div>
       <div className="alv2-category-grid">{categories.map((item) => <Link href="/shop" className={`alv2-category-card alv2-category-${item.style}`} key={item.title}>
-        <div className="alv2-category-photo" style={{backgroundImage:`url("${item.image}"), linear-gradient(135deg, #24465a, #bdad88)`}} role="img" aria-label={item.title}/><div className="alv2-category-overlay"/><div className="alv2-category-content"><span>{item.eyebrow}</span><h3>{item.title}</h3><p>{item.text}</p><b>Produkte entdecken <span aria-hidden="true">→</span></b></div>
+        <div className="alv2-category-photo" style={{backgroundImage:`url("${item.image}"), url("${item.fallback}"), linear-gradient(135deg, #24465a, #bdad88)`}} role="img" aria-label={item.title}/><div className="alv2-category-overlay"/><div className="alv2-category-content"><span>{item.eyebrow}</span><h3>{item.title}</h3><p>{item.text}</p><b>Produkte entdecken <span aria-hidden="true">→</span></b></div>
       </Link>)}</div>
     </section>
     <section className="alv2-products" aria-labelledby="alv2-products-heading">
