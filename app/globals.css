@@ -624,6 +624,74 @@ a{color:inherit}
 }
 
 
+/* AgeLess storefront responsive polish: safe overrides, no changes to admin/checkout. */
+.alv2 :is(a,summary):focus-visible{outline:3px solid #b58a41;outline-offset:4px}
+.alv2-header,.alv2-hero,.alv2-category-grid,.alv2-product-grid{min-width:0}
+.alv2-hero-copy,.alv2-hero-media,.alv2-category-card,.alv2-product-card{min-width:0}
+.alv2-category-content h3,.alv2-product-info h3{overflow-wrap:break-word}
+.alv2-offer-image{display:block;width:100%;height:100%;object-fit:contain;padding:16px}
+.alv2-mobile-menu summary{touch-action:manipulation}
+.alv2-mobile-menu[open] summary{border-color:#c49a47;background:#faf5ea}
+.alv2-mobile-menu[open] summary span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.alv2-mobile-menu[open] summary span:nth-child(2){opacity:0}
+.alv2-mobile-menu[open] summary span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.alv2-mobile-menu summary span{transition:transform .2s ease,opacity .2s ease}
+@media (min-width:901px) and (max-width:1100px){
+ .alv2-header{padding-inline:clamp(18px,3vw,35px);gap:16px}
+ .alv2-nav{gap:clamp(12px,1.5vw,20px)}
+ .alv2-hero h1{font-size:clamp(43px,5vw,55px)}
+ .alv2-hero-copy{padding-right:20px}
+}
+@media (max-width:900px){
+ .alv2-mobile-menu{z-index:100}
+ .alv2-mobile-menu summary{min-width:44px;min-height:44px;width:44px;height:44px;border-radius:4px}
+ .alv2-mobile-menu nav{width:min(320px,calc(100vw - 32px));max-height:min(70vh,580px);overflow-y:auto;overscroll-behavior:contain;border:1px solid #e3e7e5;border-top:3px solid #c49a47;border-radius:0 0 8px 8px;padding:8px 12px;top:calc(100% + 8px)}
+ .alv2-mobile-menu nav a{min-height:46px;display:flex;align-items:center;font-size:15px}
+ .alv2-nav-shop{min-height:44px;display:inline-flex;align-items:center}
+ .alv2-hero-media{min-height:clamp(310px,55vw,460px)}
+ .alv2-footer-bottom{flex-wrap:wrap}
+}
+@media (max-width:600px){
+ .alv2-header{padding-inline:14px;gap:8px}
+ .alv2-logo img{width:clamp(135px,40vw,166px);max-width:100%}
+ .alv2-nav-shop{padding:10px 12px}
+ .alv2-mobile-menu nav{right:0;top:calc(100% + 7px)}
+ .alv2-hero-media{min-height:clamp(240px,75vw,340px)}
+ .alv2-hero-quote{max-width:82%}
+ .alv2-hero-actions .alv2-gold-button{min-width:155px}
+ .alv2-hero-proof{row-gap:8px}
+ .alv2-category-photo{background-position:center 38%}
+ .alv2-category-content{padding:18px}
+ .alv2-category-content h3{font-size:clamp(22px,6.3vw,28px);line-height:1.1}
+ .alv2-category-content p{font-size:12px;line-height:1.35}
+ .alv2-category-content b{font-size:12px}
+ .alv2-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .alv2-product-art{height:clamp(145px,42vw,195px)}
+ .alv2-product-info{padding:14px}
+ .alv2-product-info h3{font-size:clamp(18px,5vw,23px)}
+ .alv2-product-info p{min-height:0;overflow-wrap:anywhere}
+ .alv2-standard h2,.alv2-end h2{font-size:clamp(35px,10vw,49px)}
+ .alv2-footer-bottom span:last-child{line-height:2}
+}
+@media (max-width:380px){
+ .alv2-trustbar{justify-content:space-evenly;gap:6px;font-size:7px}
+ .alv2-trustbar span:nth-of-type(3),.alv2-trustbar i:nth-of-type(2){display:none}
+ .alv2-header{padding-inline:10px;gap:6px}
+ .alv2-logo img{width:clamp(118px,39vw,145px)}
+ .alv2-nav-shop{font-size:11px;padding:9px 10px}
+ .alv2-mobile-menu summary{min-width:44px}
+ .alv2-hero-copy{padding-inline:17px}
+ .alv2-hero h1{font-size:clamp(37px,11vw,43px);letter-spacing:-.06em}
+ .alv2-category-section,.alv2-products{padding-inline:13px}
+ .alv2-product-grid{gap:8px}
+ .alv2-product-info{padding:11px}
+ .alv2-product-info h3{font-size:18px}
+ .alv2-footer{padding-inline:17px}
+}
+@media (prefers-reduced-motion:reduce){
+ .alv2-mobile-menu summary span{transition:none}
+}
+
 /* AgeLess owner console: responsive, accessible, isolated from storefront */
 .age-admin{min-height:100vh;background:#f5f7f5;color:#0b3045;font-family:"Arial Narrow","Liberation Sans Narrow",Arial,sans-serif}
 .age-admin *{box-sizing:border-box}
