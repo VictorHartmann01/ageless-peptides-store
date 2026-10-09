@@ -21,12 +21,13 @@ async function authorize(req: NextRequest) {
 }
 async function status() {
   const db = getAdminClient();
-  const [settings, pages, offers] = await Promise.all([
+  const [settings, pages, offers, orders] = await Promise.all([
     db.from('ageless_store_settings').select('*').eq('id', 1).single(),
     db.from('ageless_legal_pages').select('*').order('slug'),
     db.from('ageless_offers').select('id,name,slug,description,image_url,price_cents,shipping_cents,stock_quantity,allowed_countries,compliance_status,manual_approved,approval_reference,reviewed_at,is_published').order('created_at', { ascending: false }),
+    db.from('ageless_orders').select('id,buyer_name,email,country_code,items,total_cents,status,payment_mode,paypal_order_id,paypal_capture_id,created_at,paid_at').order('created_at', { ascending: false }).limit(50),
   ]);
-  if (settings.error || pages.error || offers.error) throw new Error('ADMIN_DATABASE_MIGRATION_REQUIRED');
+  if (settings.error || pages.error || offers.error || orders.error) throw new Error('ADMIN_DATABASE_MIGRATION_REQUIRED');
   const env = {
     supabase: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
     paypal: !!((process.env.PAYPAL_SANDBOX_CLIENT_ID && process.env.PAYPAL_SANDBOX_CLIENT_SECRET) || (process.env.PAYPAL_ENVIRONMENT === 'sandbox' && process.env.PAYPAL_CLIENT_ID && process.env.PAYPAL_CLIENT_SECRET)),
@@ -37,7 +38,7 @@ async function status() {
   };
   const legalReady = legalSlugs.every(slug => pages.data?.some(p => p.slug === slug && p.published && p.body?.trim().length >= 30));
   const offersReady = (offers.data || []).some(o => o.is_published && o.manual_approved && o.compliance_status === 'approved' && o.stock_quantity > 0 && o.approval_reference && o.reviewed_at);
-  return { settings: settings.data, pages: pages.data, offers: offers.data, env, legalReady, offersReady };
+  return { settings: settings.data, pages: pages.data, offers: offers.data, orders: orders.data ?? [], env, legalReady, offersReady };
 }
 export async function GET(req: NextRequest) {
   if (!await authorize(req)) return fail('UNAUTHORIZED', 401);
