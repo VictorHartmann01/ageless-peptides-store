@@ -66,11 +66,10 @@ export async function priceCart(cart: CartLine[], country: string) {
 
 export function money(cents: number) { return (cents / 100).toFixed(2); }
 
-export async function paypalRequest(path: string, method: 'GET' | 'POST', body?: unknown, requestId?: string) {
-  const clientId = process.env.PAYPAL_CLIENT_ID;
-  const secret = process.env.PAYPAL_CLIENT_SECRET;
-  const environment = process.env.PAYPAL_ENVIRONMENT;
-  if (!clientId || !secret || !['sandbox','live'].includes(environment || '')) throw new Error('PAYPAL_NOT_CONFIGURED');
+export async function paypalRequest(path: string, method: 'GET' | 'POST', body?: unknown, requestId?: string, environment: 'sandbox' | 'live' = 'sandbox') {
+  const clientId = environment === 'live' ? process.env.PAYPAL_LIVE_CLIENT_ID : (process.env.PAYPAL_SANDBOX_CLIENT_ID || (process.env.PAYPAL_ENVIRONMENT === 'sandbox' ? process.env.PAYPAL_CLIENT_ID : undefined));
+  const secret = environment === 'live' ? process.env.PAYPAL_LIVE_CLIENT_SECRET : (process.env.PAYPAL_SANDBOX_CLIENT_SECRET || (process.env.PAYPAL_ENVIRONMENT === 'sandbox' ? process.env.PAYPAL_CLIENT_SECRET : undefined));
+  if (!clientId || !secret) throw new Error('PAYPAL_NOT_CONFIGURED');
   const host = environment === 'live' ? 'https://api-m.paypal.com' : 'https://api-m.sandbox.paypal.com';
   const auth = Buffer.from(clientId + ':' + secret).toString('base64');
   const tokenResponse = await fetch(host + '/v1/oauth2/token', {
