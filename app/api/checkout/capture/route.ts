@@ -15,9 +15,8 @@ export async function POST(request: NextRequest) {
     if (error || !order || order.paypal_order_id !== body.paypalOrderId) return NextResponse.json({ error: 'ORDER_NOT_FOUND' }, { status: 404 });
     if (order.status === 'paid' || order.status === 'sandbox_paid' || order.status === 'paid_manual_review') return NextResponse.json({ status: order.status }, { headers: { 'Cache-Control': 'no-store' } });
     if (order.status !== 'payment_created') return NextResponse.json({ error: 'ORDER_NOT_PAYABLE' }, { status: 409 });
-    if (process.env.PAYPAL_ENVIRONMENT !== order.payment_mode) return NextResponse.json({ error: 'PAYMENT_MODE_MISMATCH' }, { status: 409, headers: { 'Cache-Control': 'no-store' } });
     // Capture is idempotent at PayPal and in the database. Never trust a browser-reported payment status.
-    const result = await paypalRequest('/v2/checkout/orders/' + encodeURIComponent(body.paypalOrderId) + '/capture', 'POST', {}, 'ageless-capture-' + order.id);
+    const result = await paypalRequest('/v2/checkout/orders/' + encodeURIComponent(body.paypalOrderId) + '/capture', 'POST', {}, 'ageless-capture-' + order.id, order.payment_mode as 'sandbox' | 'live');
     const units = result.purchase_units as Array<{ reference_id?: string; payments?: { captures?: Array<{ id: string; status: string; amount: { currency_code: string; value: string } }> } }> | undefined;
     const capture = units?.[0]?.payments?.captures?.[0];
     if (result.id !== body.paypalOrderId || units?.length !== 1 || units[0].reference_id !== order.id || capture?.status !== 'COMPLETED' || capture.amount?.currency_code !== 'EUR' || capture.amount.value !== money(order.total_cents)) throw new Error('PAYMENT_VERIFICATION_FAILED');
