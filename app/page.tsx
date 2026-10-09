@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { createPublicClient } from '../lib/supabase/public';
 const hero = 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1800&q=85';
 
 const categories = [
@@ -7,14 +8,20 @@ const categories = [
   { title: 'Essentials & Vitamine', eyebrow: 'GRUNDLAGEN', text: 'Aminosäuren, Vitamine und bewusstes Verständnis von Inhaltsstoffen.', image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=82', style: 'nature' },
 ];
 
-const features = [
-  { number: '01', label: 'NAD+', group: 'Zellbiologie & Forschung', text: 'Einblicke in die Rolle von Nicotinamidadenindinukleotid.' },
-  { number: '02', label: 'GHK-Cu', group: 'Peptidforschung', text: 'Forschungswissen rund um ein kupferbindendes Peptid.' },
-  { number: '03', label: 'L-Proline', group: 'Aminosäuren', text: 'Grundlagenwissen zu einer proteinogenen Aminosäure.' },
-  { number: '04', label: 'Vitamin B12', group: 'Essentielle Nährstoffe', text: 'Einordnung eines wichtigen Vitamins im Nährstoffkontext.' },
-];
+type Offer = { id: string; name: string; description: string | null; image_url: string | null; price_cents: number };
+export const dynamic = 'force-dynamic';
+async function getApprovedOffers(): Promise<Offer[]> {
+  try {
+    const { data, error } = await createPublicClient().from('ageless_offers')
+      .select('id,name,description,image_url,price_cents')
+      .eq('is_published', true).eq('manual_approved', true)
+      .eq('compliance_status', 'approved').gt('stock_quantity', 0).order('name').limit(4);
+    return error ? [] : (data ?? []) as Offer[];
+  } catch { return []; }
+}
 
-export default function Home() {
+export default async function Home() {
+  const offers = await getApprovedOffers();
   return <main className="alv2" id="top">
     <a className="alv2-skip" href="#main-content">Zum Inhalt springen</a>
     <div className="alv2-trustbar"><span>PRODUKTE ENTDECKEN</span><i/><span>KLAR INFORMIERT</span><i/><span>VERANTWORTUNGSBEWUSST</span><span className="alv2-trustbar-right">AGELESS · LONGEVITY & SCIENCE</span></div>
@@ -43,8 +50,13 @@ export default function Home() {
     </section>
     <section className="alv2-products" aria-labelledby="alv2-products-heading">
       <div className="alv2-section-head"><div><span className="alv2-overline">AGELESS PRODUKTAUSWAHL</span><h2 id="alv2-products-heading">Entdecken Sie unsere Auswahl.</h2></div><Link href="/shop">Zum gesamten Sortiment <span aria-hidden="true">↗</span></Link></div>
-      <div className="alv2-product-grid">{features.map((item) => <article className="alv2-product-card" key={item.label}><div className="alv2-product-art"><span className="alv2-product-index">{item.number} / AGELESS</span><div className="alv2-product-bottle"><div className="alv2-bottle-cap"/><div className="alv2-bottle-glass"><div className="alv2-bottle-label"><small>AGELESS</small><strong>{item.label}</strong><span>SCIENCE / RESEARCH</span></div></div></div></div><div className="alv2-product-info"><span>{item.group}</span><h3>{item.label}</h3><p>{item.text}</p><Link href="/shop">Produktdetails ansehen <span aria-hidden="true">↗</span></Link></div></article>)}</div>
-      <p className="alv2-product-disclaimer">Illustrative Produktwelt und redaktionelle Forschungsinformationen. Keine Kauf- oder Anwendungsempfehlung; eine Verkaufsfreigabe wird für jedes Produkt gesondert geprüft.</p>
+      {offers.length > 0 ? <div className="alv2-product-grid">{offers.map((item) => <article className="alv2-product-card" key={item.id}>
+        <div className="alv2-product-art alv2-offer-art">{item.image_url ? <img className="alv2-offer-image" src={item.image_url} alt={item.name} loading="lazy" /> : <span className="alv2-offer-placeholder">AGELESS</span>}</div>
+        <div className="alv2-product-info"><span>AGELESS / FREIGEGEBENES ANGEBOT</span><h3>{item.name}</h3><p>{item.description ?? 'Alle Produktdetails und Bestellmöglichkeiten finden Sie im Shop.'}</p>
+        <strong className="alv2-offer-price">{(item.price_cents / 100).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })}</strong>
+        <Link href="/shop/angebote">Produkt ansehen <span aria-hidden="true">↗</span></Link></div>
+      </article>)}</div> : <div className="alv2-no-offers"><div><span className="alv2-overline">AGELESS SORTIMENT</span><h3>Entdecken Sie die AgeLess Produktwelt.</h3><p>Entdecken Sie Produktinformationen und ausgewählte Themen. Sobald Artikel für den Verkauf freigegeben sind, erscheinen hier die bestellbaren Angebote.</p></div><Link className="alv2-gold-button" href="/shop">Zum Sortiment <span aria-hidden="true">→</span></Link></div>}
+      <p className="alv2-product-disclaimer">Nur dokumentiert freigegebene Angebote sind bestellbar. Research-Produkte sind nicht zur Anwendung am Menschen bestimmt.</p>
     </section>
     <section className="alv2-standard" id="qualitaet"><div className="alv2-standard-heading"><span className="alv2-overline">UNSER VERSPRECHEN AN SIE</span><h2>Bewusst auswählen.<br/><em>Mit gutem Gefühl.</em></h2><p>Entdecken Sie Produktinformationen, die Ihnen die Auswahl erleichtern – übersichtlich, nachvollziehbar und ohne unbelegte Versprechen.</p></div><div className="alv2-standard-grid"><article><span>01 / SCIENCE</span><h3>Produkte entdecken.</h3><p>Lernen Sie unser Sortiment und die Besonderheiten einzelner Produktwelten kennen.</p></article><article><span>02 / CLARITY</span><h3>Einfach vergleichen.</h3><p>Produktdetails und Hinweise unterstützen Ihre informierte Entscheidung.</p></article><article><span>03 / RESPONSIBILITY</span><h3>Transparent einkaufen.</h3><p>Nur dokumentiert freigegebene Angebote können bestellt werden.</p></article></div></section>
     <section className="alv2-end" id="ueber"><span className="alv2-overline">SCIENCE FOR A LONGER, BETTER LIFE</span><h2>Ihre AgeLess Welt.<br/><em>Jetzt entdecken.</em></h2><p>Entdecken Sie unsere Kollektionen und finden Sie Ihre Favoriten – mit klaren Informationen und einem modernen Einkaufserlebnis.</p><Link href="/shop/angebote" className="alv2-gold-button">Zum Shop <span aria-hidden="true">→</span></Link></section>
