@@ -75,6 +75,10 @@ export async function POST(req: NextRequest) {
       const shipping = Number(input.shipping_cents);
       const name = String(input.name || '').trim();
       const ref = String(input.approval_reference || '').trim();
+      const description = String(input.description || '').trim();
+      const image = String(input.image_url || '').trim();
+      const countries = String(input.allowed_countries || 'DE').split(',').map(x => x.trim().toUpperCase()).filter(Boolean);
+      if (description.length > 5000 || (image && (!/^https:\/\/[a-z0-9.-]+(?:[:][0-9]+)?(?:\/[^\\s]*)?$/i.test(image) || image.length > 1000)) || !countries.length || countries.length > 20 || countries.some(x => !/^[A-Z]{2}$/.test(x))) return fail('PRODUCT_DETAILS_INVALID');
       const approved = input.manual_approved === true;
       const published = input.is_published === true;
       if (!Number.isSafeInteger(stock) || stock < 0 || stock > 1000000 || !Number.isSafeInteger(price) || price < 1 || price > 100000000 || !Number.isSafeInteger(shipping) || shipping < 0 || shipping > 10000000 || name.length < 2 || name.length > 120 || ref.length > 500) return fail('OFFER_INVALID');
@@ -83,7 +87,7 @@ export async function POST(req: NextRequest) {
       if (lookupError || !old) return fail('OFFER_NOT_FOUND', 404);
       const changedApproval = !old.manual_approved || old.approval_reference !== ref;
       const { error } = await db.from('ageless_offers').update({
-        name, price_cents: price, shipping_cents: shipping, stock_quantity: stock,
+        name, description, image_url: image || null, allowed_countries: countries, price_cents: price, shipping_cents: shipping, stock_quantity: stock,
         approval_reference: ref || null, manual_approved: approved,
         compliance_status: approved ? 'approved' : 'manual_review',
         reviewed_at: approved ? (changedApproval ? new Date().toISOString() : old.reviewed_at) : null,
