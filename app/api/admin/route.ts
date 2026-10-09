@@ -29,8 +29,9 @@ async function status() {
   if (settings.error || pages.error || offers.error) throw new Error('ADMIN_DATABASE_MIGRATION_REQUIRED');
   const env = {
     supabase: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
-    paypal: !!process.env.PAYPAL_CLIENT_ID && !!process.env.PAYPAL_CLIENT_SECRET,
-    paypalEnvironment: process.env.PAYPAL_ENVIRONMENT || 'unset',
+    paypal: !!((process.env.PAYPAL_SANDBOX_CLIENT_ID && process.env.PAYPAL_SANDBOX_CLIENT_SECRET) || (process.env.PAYPAL_ENVIRONMENT === 'sandbox' && process.env.PAYPAL_CLIENT_ID && process.env.PAYPAL_CLIENT_SECRET)),
+    paypalLive: !!process.env.PAYPAL_LIVE_CLIENT_ID && !!process.env.PAYPAL_LIVE_CLIENT_SECRET,
+    paypalEnvironment: 'separate sandbox / live',
     checkoutEnabled: process.env.AGELESS_CHECKOUT_ENABLED === 'true',
     origin: !!process.env.AGELESS_PUBLIC_ORIGIN,
   };
@@ -95,7 +96,7 @@ export async function POST(req: NextRequest) {
       if (!['draft','sandbox','live'].includes(mode)) return fail('INVALID_MODE');
       if (mode !== 'draft') {
         const state = await status();
-        if (!state.env.paypal || !state.env.checkoutEnabled || !state.env.origin || state.env.paypalEnvironment !== mode) return fail('PAYMENT_ENVIRONMENT_NOT_READY', 409);
+        if (!(mode === 'live' ? state.env.paypalLive : state.env.paypal) || !state.env.checkoutEnabled || !state.env.origin) return fail('PAYMENT_ENVIRONMENT_NOT_READY', 409);
         if (mode === 'live' && (!state.legalReady || !state.offersReady)) return fail('LEGAL_OR_PRODUCTS_NOT_READY', 409);
         if (mode === 'live' && input.confirm !== 'LIVE FREIGEBEN') return fail('LIVE_CONFIRMATION_REQUIRED', 409);
       }
