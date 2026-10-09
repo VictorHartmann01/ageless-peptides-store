@@ -681,3 +681,17 @@ a{color:inherit}
 .age-legal footer{display:flex;flex-wrap:wrap;gap:20px;background:#0b3045;color:white;padding:25px 6vw}
 .ag-checkout-terms{display:flex!important;align-items:flex-start;gap:10px!important}
 @media(max-width:780px){.age-admin-header{height:70px;padding:8px 16px}.age-admin-header img{width:135px}.age-admin-header>span{font-size:8px}.age-admin-layout{grid-template-columns:1fr}.age-admin-sidebar{min-height:0;padding:12px;flex-direction:row;flex-wrap:wrap;gap:4px}.age-admin-sidebar h2,.age-admin-sidebar>a{display:none}.age-admin-sidebar button{padding:10px!important;font-size:12px!important}.age-admin-main{padding:22px 15px}.age-admin-heading{align-items:flex-start;flex-direction:column}.age-admin-cards{grid-template-columns:1fr}.age-admin-fields{grid-template-columns:1fr}.age-admin-panel{padding:20px 15px}.age-admin-checks{flex-direction:column;gap:12px}}
+
+
+/* Shop-first homepage — real, approved product offers only */
+.alv2-offer-art{background:radial-gradient(circle at 50% 45%,#fff,#f4f6f5 90%);overflow:hidden}
+.alv2-offer-image{display:block;width:100%;height:100%;object-fit:contain;padding:22px;mix-blend-mode:multiply}
+.alv2-offer-placeholder{display:flex;align-items:center;justify-content:center;width:80%;height:65%;border:1px solid #d8e1df;background:linear-gradient(140deg,#fff,#f2f3ee);font-family:"Arial Narrow","Liberation Sans Narrow",Arial,sans-serif;font-size:clamp(22px,2.8vw,42px);letter-spacing:.18em;color:#b08b4b}
+.alv2-offer-price{display:block;margin:8px 0 15px;font-size:24px;color:#0b3045;font-weight:700}
+.alv2-no-offers{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:40px clamp(24px,4vw,60px);border:1px solid #e6e9e5;background:linear-gradient(115deg,#fff,#f3f4ef);border-radius:8px}
+.alv2-no-offers h3{font-size:clamp(28px,3vw,43px);font-weight:400;letter-spacing:-.035em;margin:12px 0}
+.alv2-no-offers p{max-width:600px;color:#526f7b;line-height:1.65;font-size:15px}
+.alv2-no-offers .alv2-gold-button{flex-shrink:0}
+@media(max-width:700px){.alv2-no-offers{align-items:stretch;flex-direction:column;padding:27px 22px;gap:14px}.alv2-no-offers .alv2-gold-button{align-self:flex-start}.alv2-offer-image{padding:10px}}
+/* Mobile touch and legibility improvements */
+@media(max-width:600px){.alv2-mobile-menu nav a{min-height:44px;display:flex;align-items:center}.alv2-nav-shop{min-height:44px;display:flex;align-items:center}.alv2-hero-actions .alv2-gold-button{min-height:48px}.alv2-category-content b{font-size:13px}.alv2-product-info a{min-height:44px;align-items:center}.alv2-hero-proof{line-height:1.4}}
