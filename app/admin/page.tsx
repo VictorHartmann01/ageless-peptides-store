@@ -80,7 +80,7 @@ export default function AdminPage() {
     } catch (e) { setMessage(e instanceof Error ? e.message : 'Speichern fehlgeschlagen'); }
     finally { setBusy(false); }
   }
-  function changeOffer(id: string, key: keyof Offer, value: string | number | boolean) {
+  function changeOffer(id: string, key: keyof Offer, value: string | number | boolean | string[]) {
     setData(current => current ? { ...current, offers: current.offers.map(o => o.id === id ? { ...o, [key]: value } : o) } : null);
   }
   function changeLegal(slug: string, key: keyof Legal, value: string | boolean) {
