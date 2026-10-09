@@ -624,6 +624,18 @@ a{color:inherit}
 }
 
 
+/* AgeLess four-asset responsive focal-point map */
+.alv2-hero-photo{background-position:50% 50%}
+.alv2-category-science .alv2-category-photo{background-position:52% 42%}
+.alv2-category-nad .alv2-category-photo{background-position:54% 44%}
+.alv2-category-nature .alv2-category-photo{background-position:50% 62%}
+@media(max-width:600px){
+ .alv2-hero-photo{background-position:26% 45%}
+ .alv2-category-science .alv2-category-photo{background-position:50% 38%}
+ .alv2-category-nad .alv2-category-photo{background-position:53% 40%}
+ .alv2-category-nature .alv2-category-photo{background-position:50% 62%}
+}
+
 /* AgeLess storefront responsive polish: safe overrides, no changes to admin/checkout. */
 .alv2 :is(a,summary):focus-visible{outline:3px solid #b58a41;outline-offset:4px}
 .alv2-header,.alv2-hero,.alv2-category-grid,.alv2-product-grid{min-width:0}
