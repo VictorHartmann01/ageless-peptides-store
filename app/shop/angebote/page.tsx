@@ -28,6 +28,6 @@ export default async function OffersPage() {
       <div className="ag-buy-image">{offer.image_url ? <img src={offer.image_url} alt={offer.name} /> : <span>AGELESS</span>}</div>
       <div className="ag-buy-body"><span className="ag-section-label">DOKUMENTIERT FREIGEGEBEN</span><h2>{offer.name}</h2><p>{offer.description ?? 'AgeLess Produkt.'}</p><strong>{(offer.price_cents / 100).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })}</strong><small>Versand ab {(offer.shipping_cents / 100).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })} · Lieferländer: {offer.allowed_countries.join(', ')}</small><AddToCart offer={offer} /></div>
     </article>)}</section>}
-    <footer className="ag-buy-footer"><Link href="/">AgeLess</Link><Link href="/shop">Produktinformationen</Link><span>Compliance vor Commerce</span></footer>
+    <footer className="ag-buy-footer"><Link href="/">AgeLess</Link><Link href="/shop">Produktinformationen</Link><Link href="/rechtliches/impressum">Impressum</Link><Link href="/rechtliches/datenschutz">Datenschutz</Link><Link href="/rechtliches/agb">AGB</Link><Link href="/rechtliches/widerruf">Widerruf</Link></footer>
   </main>;
 }
