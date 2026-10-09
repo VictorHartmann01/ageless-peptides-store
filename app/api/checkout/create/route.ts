@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
       shipping_address: { line1: address.line1, line2: address.line2, city: address.city, postalCode: address.postalCode, country: address.country },
       country_code: address.country, items: totals.items,
       subtotal_cents: totals.subtotal, shipping_cents: totals.shipping, total_cents: totals.total,
-      status: 'pending_payment',
+      status: 'pending_payment', payment_mode: gate.mode,
     }).select('id').single();
     if (error || !order) throw new Error('ORDER_DATABASE_ERROR');
     try {
