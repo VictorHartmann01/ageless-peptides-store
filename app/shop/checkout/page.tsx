@@ -10,6 +10,7 @@ export default function CheckoutPage() {
   const [cart, setCart] = useState<SavedCartItem[]>([]);
   const [form, setForm] = useState<Form>(initial);
   const [busy, setBusy] = useState(false);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [error, setError] = useState('');
   const [cancelled, setCancelled] = useState(false);
   useEffect(() => { setCart(readCart()); setCancelled(new URLSearchParams(window.location.search).get('cancelled') === '1'); }, []);
@@ -17,7 +18,7 @@ export default function CheckoutPage() {
   const shipping = cart.length ? Math.max(...cart.map((x) => x.shippingCents)) : 0;
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (busy || !cart.length) return;
+    if (busy || !cart.length || !acceptedTerms) return;
     setBusy(true); setError('');
     try {
       const response = await fetch('/api/checkout/create', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ cart: cart.map((x) => ({ offerId: x.offerId, quantity: x.quantity })), address: form }) });
@@ -38,9 +39,10 @@ export default function CheckoutPage() {
       <label>Adresszusatz (optional)<input maxLength={200} autoComplete="address-line2" value={form.line2} onChange={(e) => setForm({ ...form, line2: e.target.value })} /></label>
       <div className="ag-form-pair"><label>Postleitzahl<input required minLength={2} maxLength={20} autoComplete="postal-code" value={form.postalCode} onChange={(e) => setForm({ ...form, postalCode: e.target.value })} /></label><label>Ort<input required minLength={2} maxLength={120} autoComplete="address-level2" value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} /></label></div>
       <label>Lieferland<select value={form.country} onChange={(e) => setForm({ ...form, country: e.target.value })}><option value="DE">Deutschland</option><option value="AT">Österreich</option><option value="CH">Schweiz</option></select></label>
-      <p className="ag-cart-hint">Bitte prüfen Sie vor der Bestellung die Angaben zu Versand, Rückgabe und Datenschutz. Der Kauf wird erst durch die bestätigte PayPal-Zahlung abgeschlossen.</p>
+      <p className="ag-cart-hint">Bitte lesen Sie unsere <Link href="/rechtliches/agb" target="_blank">AGB</Link>, <Link href="/rechtliches/datenschutz" target="_blank">Datenschutzhinweise</Link> und <Link href="/rechtliches/widerruf" target="_blank">Widerrufsbelehrung</Link>.</p>
+      <label className="ag-checkout-terms"><input type="checkbox" required checked={acceptedTerms} onChange={e => setAcceptedTerms(e.target.checked)} /> Ich habe die AGB und die Widerrufsbelehrung zur Kenntnis genommen.</label>
       {error && <p className="ag-checkout-alert" role="alert">{error}</p>}
-      <button className="ag-buy-button" type="submit" disabled={busy || !cart.length}>{busy ? 'Sichere Zahlung wird vorbereitet …' : 'Weiter zu PayPal →'}</button>
+      <button className="ag-buy-button" type="submit" disabled={busy || !cart.length || !acceptedTerms}>{busy ? 'Sichere Zahlung wird vorbereitet …' : 'Weiter zu PayPal →'}</button>
     </form>
     <aside className="ag-checkout-summary"><h2>Ihre Bestellung</h2>{cart.length ? <>{cart.map((x) => <div className="ag-cart-summary-line" key={x.offerId}><span>{x.name} × {x.quantity}</span><strong>{euro(x.priceCents * x.quantity)}</strong></div>)}<div className="ag-cart-summary-line"><span>Zwischensumme</span><strong>{euro(subtotal)}</strong></div><div className="ag-cart-summary-line"><span>Voraussichtlicher Versand</span><strong>{euro(shipping)}</strong></div><div className="ag-cart-summary-line ag-summary-total"><span>Voraussichtliche Gesamtsumme</span><strong>{euro(subtotal + shipping)}</strong></div><small>Verbindliche Preis- und Lieferlandprüfung erfolgt auf dem Server.</small></> : <p>Ihr Warenkorb ist leer. <Link href="/shop/angebote">Angebote ansehen</Link></p>}</aside></section>
   </main>;
