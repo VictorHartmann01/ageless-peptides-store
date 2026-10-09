@@ -8,6 +8,16 @@ export async function POST(request: NextRequest) {
   try {
     // Legal and operational go-live must be approved explicitly. Missing flag = no sales.
     if (process.env.AGELESS_CHECKOUT_ENABLED !== 'true') return NextResponse.json({ error: 'CHECKOUT_NOT_RELEASED' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+    // Server-side payment mode: the admin dashboard cannot be bypassed by calling the API directly.
+    const gateDb = getAdminClient();
+    const { data: gate, error: gateError } = await gateDb.from('ageless_store_settings').select('mode').eq('id', 1).single();
+    if (gateError || !gate || gate.mode === 'draft') return NextResponse.json({ error: 'CHECKOUT_NOT_RELEASED' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+    if (!['sandbox','live'].includes(gate.mode) || process.env.PAYPAL_ENVIRONMENT !== gate.mode) return NextResponse.json({ error: 'PAYMENT_MODE_MISMATCH' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+    if (gate.mode === 'live') {
+      const { data: pages, error: pagesError } = await gateDb.from('ageless_legal_pages').select('slug,body,published');
+      const required = ['impressum','datenschutz','agb','widerruf'];
+      if (pagesError || !required.every(slug => pages?.some(p => p.slug === slug && p.published && p.body?.trim().length >= 30))) return NextResponse.json({ error: 'LEGAL_NOT_READY' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+    }
     if (request.headers.get('content-type')?.split(';')[0] !== 'application/json') return NextResponse.json({ error: 'INVALID_CONTENT_TYPE' }, { status: 415 });
     const { cart, address } = parseOrderRequest(await request.json());
     const totals = await priceCart(cart, address.country);
