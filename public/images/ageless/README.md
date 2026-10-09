@@ -8,7 +8,7 @@ Der Bildsatz stammt ausschließlich aus dem textfreien, im AgeLess-Beta-Front-Ch
 
 | Datei | Abmessungen | SHA-256 |
 |---|---|---|
-| `hero-couple.webp` | 915 × 466 | `TO_BE_VERIFIED_ON_UPLOAD` |
+| `hero-couple.webp` | 915 × 466 | `d03d9d4c720945dacf13728e009e7ce3148f54eace97b9bf32f1e2d179e474ec` |
 | `category-peptides.webp` | 540 × 451 | `4f76614120783e1567b9ccf8fbd614925bc25ea7ff1a701a1cc9240955b2e1bb` |
 | `category-nad-longevity.webp` | 555 × 451 | `31e266924b9ed5079cf4ed31ffb91fc154f5ec22919b372fba6b5e14128d89c3` |
 | `category-essentials.webp` | 558 × 451 | `55c844c97e95ab40977b8cff57719e79df9195346811b875aee1ac320c6d9d55` |
