@@ -20,6 +20,8 @@ const euro = (c: number) => (c / 100).toLocaleString('de-DE', { style: 'currency
 export default function AdminPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [authMode, setAuthMode] = useState<'login' | 'signup' | 'forgot' | 'reset'>('login');
+  const [newPassword, setNewPassword] = useState('');
   const [token, setToken] = useState('');
   const [data, setData] = useState<Dashboard | null>(null);
   const [tab, setTab] = useState('overview');
@@ -45,7 +47,8 @@ export default function AdminPage() {
       const t = session.session?.access_token;
       if (t) { setToken(t); load(t).catch(e => setMessage(String(e.message))); }
     });
-    const { data: listener } = client.auth.onAuthStateChange((_event, session) => {
+    const { data: listener } = client.auth.onAuthStateChange((event, session) => {
+      if (event === 'PASSWORD_RECOVERY') setAuthMode('reset');
       setToken(session?.access_token || '');
       if (!session) setData(null);
     });
@@ -63,6 +66,36 @@ export default function AdminPage() {
       await load(session.session.access_token);
       setPassword('');
     } catch (e) { setMessage(e instanceof Error ? e.message : 'Fehler'); }
+    finally { setBusy(false); }
+  }
+
+  async function accountAction(event: React.FormEvent) {
+    event.preventDefault(); setBusy(true); setMessage('');
+    try {
+      const client = auth();
+      if (!client) throw new Error('Anmeldedienst nicht konfiguriert.');
+      const redirectTo = window.location.origin + '/admin';
+      if (authMode === 'signup') {
+        if (password.length < 12) throw new Error('Bitte mindestens 12 Zeichen als Passwort wählen.');
+        const { error } = await client.auth.signUp({ email, password, options: { emailRedirectTo: redirectTo } });
+        if (error) throw error;
+        setMessage('Anfrage eingereicht. Bitte E-Mail bestätigen. Der Zugang bleibt bis zur Freigabe durch den Betreiber gesperrt.');
+        setAuthMode('login');
+      } else if (authMode === 'forgot') {
+        const { error } = await client.auth.resetPasswordForEmail(email, { redirectTo });
+        if (error) throw error;
+        setMessage('Falls das Konto existiert, erhältst du einen Link zum Zurücksetzen des Passworts.');
+        setAuthMode('login');
+      } else if (authMode === 'reset') {
+        if (newPassword.length < 12) throw new Error('Bitte mindestens 12 Zeichen als Passwort wählen.');
+        const { error } = await client.auth.updateUser({ password: newPassword });
+        if (error) throw error;
+        setNewPassword(''); setAuthMode('login');
+        setMessage('Passwort geändert. Bitte erneut anmelden.');
+        await client.auth.signOut();
+      }
+      setPassword('');
+    } catch (error) { setMessage(error instanceof Error ? error.message : 'Anfrage fehlgeschlagen'); }
     finally { setBusy(false); }
   }
 
@@ -89,7 +122,7 @@ export default function AdminPage() {
   }
   return <main className="age-admin">
     <header className="age-admin-header"><Link href="/"><img src="/ageless-logo.svg" alt="AgeLess" /></Link><span>STORE CONTROL CENTER</span>{token && <button type="button" onClick={async () => { await auth()?.auth.signOut(); setToken(''); setData(null); }}>Abmelden</button>}</header>
-    {!data ? <section className="age-admin-login"><span>GESCHÜTZTER BEREICH</span><h1>AgeLess Verwaltung</h1><p>Nur für freigeschaltete Administratoren. Keine öffentliche Registrierung.</p><form onSubmit={signIn}><label>E-Mail-Adresse<input type="email" required autoComplete="username" value={email} onChange={e => setEmail(e.target.value)} /></label><label>Passwort<input type="password" required autoComplete="current-password" value={password} onChange={e => setPassword(e.target.value)} /></label><button disabled={busy} type="submit">{busy ? 'Anmeldung läuft …' : 'Sicher anmelden →'}</button></form>{message && <p role="alert">{message}</p>}</section>
+    {!data ? <section className="age-admin-login"><span>GESCHÜTZTER BEREICH</span><h1>{authMode === 'signup' ? 'Zugang beantragen' : authMode === 'forgot' ? 'Passwort vergessen' : authMode === 'reset' ? 'Neues Passwort' : 'AgeLess Verwaltung'}</h1><p>{authMode === 'signup' ? 'Nach E-Mail-Bestätigung ist eine persönliche Freigabe durch den Betreiber erforderlich.' : authMode === 'forgot' ? 'Wir senden einen Link zum Zurücksetzen an deine E-Mail-Adresse.' : authMode === 'reset' ? 'Vergib ein neues, sicheres Passwort.' : 'Nur bestätigte und freigegebene Administratoren können sich anmelden.'}</p><form onSubmit={authMode === 'login' ? signIn : accountAction}>{authMode !== 'reset' && <label>E-Mail-Adresse<input type="email" required autoComplete="username" value={email} onChange={e => setEmail(e.target.value)} /></label>}{(authMode === 'login' || authMode === 'signup') && <label>Passwort<input type="password" required minLength={authMode === 'signup' ? 12 : undefined} autoComplete={authMode === 'signup' ? 'new-password' : 'current-password'} value={password} onChange={e => setPassword(e.target.value)} /></label>}{authMode === 'reset' && <label>Neues Passwort<input type="password" required minLength={12} autoComplete="new-password" value={newPassword} onChange={e => setNewPassword(e.target.value)} /></label>}<button disabled={busy} type="submit">{busy ? 'Bitte warten …' : authMode === 'signup' ? 'Freigabe beantragen' : authMode === 'forgot' ? 'Reset-Link senden' : authMode === 'reset' ? 'Passwort speichern' : 'Sicher anmelden →'}</button></form><div className="age-admin-auth-links">{authMode !== 'login' && <button type="button" onClick={() => { setAuthMode('login'); setMessage(''); }}>Zum Log-in</button>}{authMode === 'login' && <><button type="button" onClick={() => { setAuthMode('signup'); setMessage(''); }}>Sign-up / Zugang beantragen</button><button type="button" onClick={() => { setAuthMode('forgot'); setMessage(''); }}>Passwort vergessen?</button></>}</div>{message && <p role="alert">{message}</p>}</section>
     : <div className="age-admin-layout">
       <aside className="age-admin-sidebar"><h2>Verwaltung</h2>{[['overview','Übersicht'],['products','Produkte & Bestand'],['orders','Bestellungen'],['legal','Rechtstexte'],['payment','Zahlung & Livegang']].map(([id,label]) => <button key={id} type="button" className={tab === id ? 'active' : ''} onClick={() => { setTab(id); setMessage(''); }}>{label}</button>)}<Link href="/shop/angebote">Öffentlichen Shop ansehen ↗</Link></aside>
       <div className="age-admin-main">
