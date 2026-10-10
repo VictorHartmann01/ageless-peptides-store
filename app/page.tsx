@@ -36,11 +36,11 @@ export default async function Home() {
     </header>
     <section className="alv2-hero" id="main-content" aria-labelledby="alv2-title">
       <div className="alv2-hero-copy">
-        <p className="alv2-eyebrow">AGELESS · LONGEVITY & LIFESTYLE</p>
+        <p className="alv2-eyebrow">AGELESS · PEPTIDES & LONGEVITY</p>
         <h1 id="alv2-title">Mehr Lebensqualität.<br/><em>Mehr Du.</em></h1>
-        <p className="alv2-hero-lead">Für alle, die neugierig bleiben.</p>
-        <p className="alv2-hero-description">Entdecken Sie Peptide, NAD+ und Essentials in einer klar gestalteten Auswahl. Vergleichen Sie Produktdetails in Ruhe und finden Sie, was zu Ihren Interessen passt.</p>
-        <div className="alv2-hero-actions"><Link className="alv2-gold-button" href="/shop/angebote">Zum Shop <span aria-hidden="true">→</span></Link><a className="alv2-hero-link" href="#wissen">Produktwelten entdecken ↗</a></div>
+        <p className="alv2-hero-lead">Entdecke die Welt von Peptiden, NAD+ und Longevity.</p>
+        <p className="alv2-hero-description">Ausgewählte Produkte, verständliche Informationen und klare Preise. Entdecke unser Sortiment und finde, was zu dir passt.</p>
+        <div className="alv2-hero-actions"><Link className="alv2-gold-button" href="/shop/angebote">Jetzt Produkte entdecken <span aria-hidden="true">→</span></Link><a className="alv2-hero-link" href="#wissen">Produktwelten entdecken ↗</a></div>
         <div className="alv2-hero-proof"><span><b aria-hidden="true">◇</b> In Ruhe entdecken</span><span><b aria-hidden="true">✧</b> Details auf einen Blick</span><span><b aria-hidden="true">♧</b> Transparent einkaufen</span></div>
       </div>
       <div className="alv2-hero-media"><div className="alv2-hero-photo" style={{backgroundImage:`url("${hero}"), url("${heroFallback}")`}} role="img" aria-label="Lebensfreude und gemeinsame Zeit im Freien"/><div className="alv2-hero-photo-shade"/><div className="alv2-hero-quote"><span>AGELESS · PREMIUM STORE</span><strong>Entdecken, was<br/><em>zu Ihnen passt.</em></strong></div></div>
