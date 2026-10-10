@@ -776,16 +776,56 @@ a{color:inherit}
 /* Mobile touch and legibility improvements */
 @media(max-width:600px){.alv2-mobile-menu nav a{min-height:44px;display:flex;align-items:center}.alv2-nav-shop{min-height:44px;display:flex;align-items:center}.alv2-hero-actions .alv2-gold-button{min-height:48px}.alv2-category-content b{font-size:13px}.alv2-product-info a{min-height:44px;align-items:center}.alv2-hero-proof{line-height:1.4}}
 
-/* Keep the original couple photograph fully visible at every viewport width. */
+/* Wide photographic hero: keep both faces clear of the copy and frame. */
+.alv2-hero{
+ position:relative;
+ display:block;
+ min-height:clamp(460px,42vw,640px);
+ overflow:hidden;
+ background:#f8faf6;
+}
 .alv2-hero-media{
+ position:absolute;
+ inset:0 0 0 36%;
  min-height:0;
- aspect-ratio:915 / 466;
- align-self:center;
- width:100%;
+ width:auto;
 }
 .alv2-hero-photo{
- background-size:contain;
+ background-size:cover;
  background-repeat:no-repeat;
- background-position:center;
+ background-position:left center;
  transform:none;
+}
+.alv2-hero-photo-shade{
+ background:linear-gradient(90deg,#f8faf6 0%,rgba(248,250,246,.75) 9%,rgba(248,250,246,0) 28%);
+}
+.alv2-hero-copy{
+ position:relative;
+ z-index:2;
+ width:48%;
+ padding:clamp(38px,4.5vw,70px) 3vw clamp(38px,4.5vw,70px) 4.5vw;
+}
+.alv2-hero h1{font-size:clamp(42px,4.4vw,68px);line-height:1.04}
+.alv2-hero-description{max-width:430px}
+.alv2-hero-proof{gap:14px;flex-wrap:wrap;margin-top:24px}
+.alv2-hero-quote{display:none}
+.alv2-category-section{padding-top:38px;padding-bottom:42px}
+.alv2-category-card{height:clamp(270px,25vw,380px)}
+.alv2-category-photo{background-size:cover;background-position:center}
+.alv2-category-content{max-width:58%}
+.alv2-category-overlay{background:linear-gradient(90deg,rgba(255,253,247,.95),rgba(255,253,247,.78) 28%,rgba(255,253,247,0) 70%)}
+@media(max-width:900px){
+ .alv2-hero{display:flex;flex-direction:column;min-height:0}
+ .alv2-hero-media{position:relative;inset:auto;order:-1;width:100%;aspect-ratio:915 / 466;min-height:0}
+ .alv2-hero-photo{background-size:contain;background-position:center}
+ .alv2-hero-photo-shade{background:none}
+ .alv2-hero-copy{width:100%;padding:30px 6vw 38px}
+ .alv2-hero h1{font-size:clamp(40px,6vw,60px)}
+ .alv2-category-content{max-width:65%}
+}
+@media(max-width:600px){
+ .alv2-hero-copy{padding:25px 20px 32px}
+ .alv2-hero h1{font-size:clamp(37px,10.5vw,52px)}
+ .alv2-category-card{height:clamp(270px,75vw,380px)}
+ .alv2-category-content{max-width:60%;padding:18px}
 }
