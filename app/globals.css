@@ -775,3 +775,17 @@ a{color:inherit}
 @media(max-width:700px){.alv2-no-offers{align-items:stretch;flex-direction:column;padding:27px 22px;gap:14px}.alv2-no-offers .alv2-gold-button{align-self:flex-start}.alv2-offer-image{padding:10px}}
 /* Mobile touch and legibility improvements */
 @media(max-width:600px){.alv2-mobile-menu nav a{min-height:44px;display:flex;align-items:center}.alv2-nav-shop{min-height:44px;display:flex;align-items:center}.alv2-hero-actions .alv2-gold-button{min-height:48px}.alv2-category-content b{font-size:13px}.alv2-product-info a{min-height:44px;align-items:center}.alv2-hero-proof{line-height:1.4}}
+
+/* Keep the original couple photograph fully visible at every viewport width. */
+.alv2-hero-media{
+ min-height:0;
+ aspect-ratio:915 / 466;
+ align-self:center;
+ width:100%;
+}
+.alv2-hero-photo{
+ background-size:contain;
+ background-repeat:no-repeat;
+ background-position:center;
+ transform:none;
+}
