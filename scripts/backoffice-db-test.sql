@@ -14,8 +14,8 @@ begin
   if public.ageless_evidence_valid(v,array['AT']) then raise exception 'country_bypass'; end if;
   if public.ageless_evidence_valid(v || v,array['DE']) then raise exception 'duplicate_country'; end if;
   if public.ageless_evidence_valid(jsonb_set(v,'{0,valid_until}',to_jsonb((current_date-1)::text)),array['DE']) then raise exception 'expired_evidence'; end if;
-  insert into public.ageless_offers(slug,name,price_cents,stock_quantity,shipping_cents)
-    values('__bo_fixture__','Rollback fixture',null,null,0) returning id into offer;
+  insert into public.ageless_offers(slug,name,price_cents,stock_quantity,shipping_cents,catalog_visible)
+    values('__bo_fixture__','Rollback fixture',null,null,0,true) returning id into offer;
   begin
     update public.ageless_offers set manual_approved=true,compliance_status='approved',reviewed_at=now(),approval_reference='TEST',approved_by='fixture@example.invalid',legal_evidence=v where id=offer;
     raise exception 'unknown_values_approved';
