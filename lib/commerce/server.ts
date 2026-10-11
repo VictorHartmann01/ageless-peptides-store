@@ -56,7 +56,7 @@ export async function priceCart(cart: CartLine[], country: string) {
   let shipping = 0;
   const items = cart.map((line) => {
     const o = offers.find((x) => x.id === line.offerId);
-    if (!o || o.on_hold || !o.is_published || !o.manual_approved || o.compliance_status !== 'approved' || !o.reviewed_at || !o.approval_reference || !validEvidence(o.legal_evidence, [country]) || !o.allowed_countries.includes(country) || o.stock_quantity < line.quantity) throw new Error('OFFER_NOT_AVAILABLE');
+    if (!o || !Number.isSafeInteger(o.price_cents) || o.price_cents < 1 || !Number.isSafeInteger(o.stock_quantity) || o.on_hold || !o.is_published || !o.manual_approved || o.compliance_status !== 'approved' || !o.reviewed_at || !o.approval_reference || !validEvidence(o.legal_evidence, [country]) || !o.allowed_countries.includes(country) || o.stock_quantity < line.quantity) throw new Error('OFFER_NOT_AVAILABLE');
     subtotal += o.price_cents * line.quantity;
     shipping = Math.max(shipping, o.shipping_cents);
     return { offer_id: o.id, name: o.name, quantity: line.quantity, unit_price_cents: o.price_cents };
