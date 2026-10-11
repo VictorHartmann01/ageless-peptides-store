@@ -68,6 +68,7 @@ export async function priceCart(cart: CartLine[], country: string) {
 export function money(cents: number) { return (cents / 100).toFixed(2); }
 
 export async function paypalRequest(path: string, method: 'GET' | 'POST', body?: unknown, requestId?: string, environment: 'sandbox' | 'live' = 'sandbox') {
+  if (environment === 'live' && process.env.AGELESS_LIVE_RELEASE_APPROVED !== 'true') throw new Error('LIVE_RELEASE_NOT_APPROVED');
   const clientId = environment === 'live' ? process.env.PAYPAL_LIVE_CLIENT_ID : (process.env.PAYPAL_SANDBOX_CLIENT_ID || (process.env.PAYPAL_ENVIRONMENT === 'sandbox' ? process.env.PAYPAL_CLIENT_ID : undefined));
   const secret = environment === 'live' ? process.env.PAYPAL_LIVE_CLIENT_SECRET : (process.env.PAYPAL_SANDBOX_CLIENT_SECRET || (process.env.PAYPAL_ENVIRONMENT === 'sandbox' ? process.env.PAYPAL_CLIENT_SECRET : undefined));
   if (!clientId || !secret) throw new Error('PAYPAL_NOT_CONFIGURED');

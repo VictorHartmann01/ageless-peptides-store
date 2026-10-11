@@ -46,6 +46,7 @@ async function run() {
   check('staff cannot activate checkout',(await route.POST(req({action:'mode',mode:'live'}))).status,403);
   const payload={action:'offer',...offer,allowed_countries:'DE',image_url:'',stock_quantity:0};
   check('approved staff may set stock zero',(await route.POST(req(payload))).status,200);
+  check('staff cannot change approved image',(await route.POST(req({...payload,image_url:'https://example.invalid/image.jpg'}))).status,403);
   check('stale stock update rejected',(await route.POST(req({...payload,updated_at:'old'}))).status,409);
   concurrent=true;
   check('concurrent stock update rejected',(await route.POST(req(payload))).status,409);
