@@ -829,3 +829,8 @@ a{color:inherit}
  .alv2-category-card{height:clamp(270px,75vw,380px)}
  .alv2-category-content{max-width:60%;padding:18px}
 }
+
+/* Public entry to the authenticated backoffice. */
+.alv2-login{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border:1px solid #12384d;border-radius:4px;color:#12384d;font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0}
+.alv2-login:focus-visible{outline:3px solid #c49a47;outline-offset:3px}
+@media(max-width:480px){.alv2-header .alv2-nav-shop{display:none}.alv2-login{margin-left:auto;padding:10px 12px}}
