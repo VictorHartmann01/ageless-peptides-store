@@ -9,6 +9,7 @@ function moduleAt(path, mocks = {}) {
   return exports;
 }
 const approval = moduleAt('lib/commerce/approval.ts');
+const catalog = moduleAt('lib/commerce/catalog.ts', {'./approval':approval});
 const row = {country:'DE',intended_use:'Dokumentierter Verwendungszweck',valid_from:'2026-01-01',valid_until:'2026-12-31',evidence_url:'https://authority.example/document',restrictions:'',status:'verified'};
 const now = new Date('2026-10-11T12:00:00Z');
 let checks = 0;
@@ -25,7 +26,7 @@ process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY='test';
 process.env.AGELESS_OWNER_EMAILS='owner@example.com';
 let user = null, access = null, writes = [], concurrent = false;
 const id = '11111111-1111-4111-8111-111111111111';
-const offer = {id,on_hold:false,hold_reason:null,name:'Product',description:'',approval_reference:'Review',manual_approved:true,is_published:true,approved_by:'owner@example.com',legal_evidence:[row],allowed_countries:['DE'],updated_at:'version1',reviewed_at:'2026-10-01',stock_quantity:2,price_cents:1000,shipping_cents:0};
+const offer = {id,compliance_status:'approved',on_hold:false,hold_reason:null,name:'Product',description:'',approval_reference:'Review',manual_approved:true,is_published:true,approved_by:'owner@example.com',legal_evidence:[row],allowed_countries:['DE'],updated_at:'version1',reviewed_at:'2026-10-01',stock_quantity:2,price_cents:1000,shipping_cents:0};
 const db = {from(table) {
   let update = null;
   const q = {select(){return q;},eq(){return q;},order(){return q;},limit(){return q;},update(v){update=v;writes.push({table,value:v});return q;},upsert(v){writes.push({table,value:v});return q;},
@@ -44,6 +45,7 @@ async function run() {
   access={status:'approved',email:user.email};
   check('staff cannot approve users',(await route.POST(req({action:'access',user_id:id,status:'approved'}))).status,403);
   check('staff cannot activate checkout',(await route.POST(req({action:'mode',mode:'live'}))).status,403);
+  check('staff cannot publish catalogue',(await route.POST(req({action:'offer',...offer,allowed_countries:'DE',image_url:'',catalog_visible:true}))).status,403);
   const payload={action:'offer',...offer,allowed_countries:'DE',image_url:'',stock_quantity:0};
   check('approved staff may set stock zero',(await route.POST(req(payload))).status,200);
   check('stale stock update rejected',(await route.POST(req({...payload,updated_at:'old'}))).status,409);
@@ -64,6 +66,13 @@ async function run() {
   check('unknown draft values stay editable',(await route.POST(req({...payload,price_cents:null,stock_quantity:null,manual_approved:false,is_published:false}))).status,200);
   check('unknown draft price stays null',writes.at(-1).value.price_cents,null);
   check('unknown draft stock stays null',writes.at(-1).value.stock_quantity,null);
+  check('visible unapproved product blocks ordering',catalog.catalogBlockReason({...offer,manual_approved:false},true),'Dieses Produkt ist noch nicht vom Betreiber für den Verkauf freigegeben.');
+  check('hold blocks ordering',catalog.catalogBlockReason({...offer,on_hold:true},true),'Der Verkauf dieses Produkts ist vorübergehend pausiert.');
+  check('missing proof blocks ordering',catalog.catalogBlockReason({...offer,legal_evidence:[]},true),'Die Rechtsprüfung für dieses Produkt ist offen oder die Nachweise sind abgelaufen.');
+  check('unknown price blocks ordering',catalog.catalogBlockReason({...offer,price_cents:null},true),'Für dieses Produkt ist noch kein Preis freigegeben.');
+  check('unknown stock blocks ordering',catalog.catalogBlockReason({...offer,stock_quantity:null},true),'Dieses Produkt ist derzeit nicht bestellbar.');
+  check('global switch blocks ordering',catalog.catalogBlockReason(offer,false),'Die Bestellfunktion ist derzeit noch nicht aktiviert.');
+  check('ready offer may enter cart',catalog.catalogBlockReason(offer,true),undefined);
   console.log(`${checks} backoffice checks passed (mocked API; no live DB or payment).`);
 }
 run().catch(e=>{console.error(e);process.exitCode=1;});
