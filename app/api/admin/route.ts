@@ -89,16 +89,16 @@ export async function POST(req: NextRequest) {
     } else if (action === 'create_offer') {
       const name = String(input.name || '').trim();
       const slug = String(input.slug || '').trim().toLowerCase();
-      const price = Number(input.price_cents);
-      const stock = Number(input.stock_quantity);
-      if (name.length < 2 || name.length > 120 || !/^[a-z0-9-]{3,100}$/.test(slug) || !Number.isSafeInteger(price) || price < 1 || price > 100000000 || !Number.isSafeInteger(stock) || stock < 0 || stock > 1000000) return fail('OFFER_INVALID');
+      const price = input.price_cents === null ? null : Number(input.price_cents);
+      const stock = input.stock_quantity === null ? null : Number(input.stock_quantity);
+      if (name.length < 2 || name.length > 120 || !/^[a-z0-9-]{3,100}$/.test(slug) || (price !== null && (!Number.isSafeInteger(price) || price < 1 || price > 100000000)) || (stock !== null && (!Number.isSafeInteger(stock) || stock < 0 || stock > 1000000))) return fail('OFFER_INVALID');
       const { error } = await db.from('ageless_offers').insert({ name, slug, price_cents: price, stock_quantity: stock, shipping_cents: 0, allowed_countries: ['DE'], compliance_status: 'manual_review', manual_approved: false, is_published: false });
       if (error) throw error;
     } else if (action === 'offer') {
       const id = String(input.id || '');
       if (!/^[0-9a-f-]{36}$/i.test(id)) return fail('INVALID_ID');
-      const stock = Number(input.stock_quantity);
-      const price = Number(input.price_cents);
+      const stock = input.stock_quantity === null ? null : Number(input.stock_quantity);
+      const price = input.price_cents === null ? null : Number(input.price_cents);
       const shipping = Number(input.shipping_cents);
       const name = String(input.name || '').trim();
       const ref = String(input.approval_reference || '').trim();
@@ -111,7 +111,8 @@ export async function POST(req: NextRequest) {
       if (holdReason.length > 2000 || (onHold && !holdReason)) return fail('HOLD_REASON_REQUIRED');
       const approved = !onHold && input.manual_approved === true;
       const published = !onHold && input.is_published === true;
-      if (!Number.isSafeInteger(stock) || stock < 0 || stock > 1000000 || !Number.isSafeInteger(price) || price < 1 || price > 100000000 || !Number.isSafeInteger(shipping) || shipping < 0 || shipping > 10000000 || name.length < 2 || name.length > 120 || ref.length > 500) return fail('OFFER_INVALID');
+      if ((stock !== null && (!Number.isSafeInteger(stock) || stock < 0 || stock > 1000000)) || (price !== null && (!Number.isSafeInteger(price) || price < 1 || price > 100000000)) || !Number.isSafeInteger(shipping) || shipping < 0 || shipping > 10000000 || name.length < 2 || name.length > 120 || ref.length > 500) return fail('OFFER_INVALID');
+      if ((approved || published) && (price === null || stock === null)) return fail('PRICE_AND_STOCK_REQUIRED_FOR_APPROVAL');
       if ((approved || published) && (!approved || !ref )) return fail('APPROVAL_REFERENCE_REQUIRED');
       const evidence = input.legal_evidence;
       if (!Array.isArray(evidence) || evidence.length > 20 || JSON.stringify(evidence).length > 50000 || evidence.some(r => !r || typeof r !== 'object' || !['pending','verified','blocked'].includes(r.status) || ['country','intended_use','valid_from','valid_until','evidence_url','restrictions'].some(key => typeof r[key] !== 'string' || r[key].length > 2000))) return fail('LEGAL_EVIDENCE_INVALID');
