@@ -59,6 +59,11 @@ async function run() {
   check('hold unpublishes',writes.at(-1).value.is_published,false);
   check('owner can approve requested user',(await route.POST(req({action:'access',user_id:id,status:'approved'}))).status,200);
   check('owner cannot self-approve',(await route.POST(req({action:'access',user_id:user.id,status:'approved'}))).status,400);
+  check('unknown price cannot be approved',(await route.POST(req({...payload,price_cents:null}))).status,400);
+  check('unknown stock cannot be approved',(await route.POST(req({...payload,stock_quantity:null}))).status,400);
+  check('unknown draft values stay editable',(await route.POST(req({...payload,price_cents:null,stock_quantity:null,manual_approved:false,is_published:false}))).status,200);
+  check('unknown draft price stays null',writes.at(-1).value.price_cents,null);
+  check('unknown draft stock stays null',writes.at(-1).value.stock_quantity,null);
   console.log(`${checks} backoffice checks passed (mocked API; no live DB or payment).`);
 }
 run().catch(e=>{console.error(e);process.exitCode=1;});
