@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { validEvidence } from '../../../lib/commerce/approval';
 import { getAdminClient } from '../../../lib/commerce/server';
 
 export const runtime = 'nodejs';
@@ -10,21 +11,32 @@ const fail = (message: string, status = 400) => NextResponse.json({ error: messa
 
 async function authorize(req: NextRequest) {
   const bearer = req.headers.get('authorization');
-  if (!bearer?.startsWith('Bearer ')) return false;
+  if (!bearer?.startsWith('Bearer ')) return null;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  const allow = (process.env.AGELESS_ADMIN_EMAILS || '').split(',').map(x => x.trim().toLowerCase()).filter(Boolean);
-  if (!url || !anon || !allow.length) return false;
+  if (!url || !anon) return null;
   const auth = createClient(url, anon, { auth: { persistSession: false, autoRefreshToken: false } });
   const { data, error } = await auth.auth.getUser(bearer.slice(7));
-  return !error && !!data.user?.email_confirmed_at && !!data.user.email && allow.includes(data.user.email.toLowerCase());
+  const user = data.user;
+  if (error || !user?.email_confirmed_at || !user.email) return null;
+  const email = user.email.toLowerCase();
+  const owners = (process.env.AGELESS_OWNER_EMAILS || process.env.AGELESS_ADMIN_APPROVER_EMAIL || '').split(',').map(x => x.trim().toLowerCase()).filter(Boolean);
+  if (owners.includes(email)) return { user, owner: true };
+  const db = getAdminClient();
+  const { data: access, error: lookupError } = await db.from('ageless_admin_access_requests').select('status,email').eq('user_id', user.id).maybeSingle();
+  if (lookupError) throw lookupError;
+  if (!access) {
+    const { error: insertError } = await db.from('ageless_admin_access_requests').upsert({ user_id: user.id, email, status: 'pending' }, { onConflict: 'user_id', ignoreDuplicates: true });
+    if (insertError) throw insertError;
+  }
+  return access?.status === 'approved' && access.email.toLowerCase() === email ? { user, owner: false } : null;
 }
-async function status() {
+async function status(owner = false) {
   const db = getAdminClient();
   const [settings, pages, offers, orders] = await Promise.all([
     db.from('ageless_store_settings').select('*').eq('id', 1).single(),
     db.from('ageless_legal_pages').select('*').order('slug'),
-    db.from('ageless_offers').select('id,name,slug,description,image_url,price_cents,shipping_cents,stock_quantity,allowed_countries,compliance_status,manual_approved,approval_reference,reviewed_at,is_published').order('created_at', { ascending: false }),
+    db.from('ageless_offers').select('id,name,slug,description,image_url,price_cents,shipping_cents,stock_quantity,allowed_countries,compliance_status,manual_approved,approval_reference,reviewed_at,is_published,legal_evidence,approved_by,updated_at,on_hold,hold_reason').order('created_at', { ascending: false }),
     db.from('ageless_orders').select('id,buyer_name,email,country_code,items,total_cents,status,payment_mode,paypal_order_id,paypal_capture_id,created_at,paid_at').order('created_at', { ascending: false }).limit(50),
   ]);
   if (settings.error || pages.error || offers.error || orders.error) throw new Error('ADMIN_DATABASE_MIGRATION_REQUIRED');
@@ -37,23 +49,37 @@ async function status() {
     origin: !!process.env.AGELESS_PUBLIC_ORIGIN,
   };
   const legalReady = legalSlugs.every(slug => pages.data?.some(p => p.slug === slug && p.published && p.body?.trim().length >= 30));
-  const offersReady = (offers.data || []).some(o => o.is_published && o.manual_approved && o.compliance_status === 'approved' && o.stock_quantity > 0 && o.approval_reference && o.reviewed_at);
-  return { settings: settings.data, pages: pages.data, offers: offers.data, orders: orders.data ?? [], env, legalReady, offersReady };
+  const offersReady = (offers.data || []).some(o => o.is_published && o.manual_approved && o.compliance_status === 'approved' && o.stock_quantity > 0 && o.approval_reference && !o.on_hold && o.reviewed_at && validEvidence(o.legal_evidence, o.allowed_countries));
+  const requests = owner ? await db.from('ageless_admin_access_requests').select('user_id,email,status,requested_at,approved_at,approved_by').order('requested_at', { ascending: false }) : { data: [], error: null };
+  if (requests.error) throw requests.error;
+  return { owner, accessRequests: requests.data, settings: settings.data, pages: pages.data, offers: offers.data, orders: orders.data ?? [], env, legalReady, offersReady };
 }
 export async function GET(req: NextRequest) {
-  if (!await authorize(req)) return fail('UNAUTHORIZED', 401);
-  try { return NextResponse.json(await status(), { headers: noStore }); }
+  try {
+    const actor = await authorize(req);
+    if (!actor) return fail('ACCESS_PENDING_OR_UNAUTHORIZED', 403);
+    return NextResponse.json(await status(actor.owner), { headers: noStore });
+  }
   catch { return fail('ADMIN_DATABASE_MIGRATION_REQUIRED', 503); }
 }
 export async function POST(req: NextRequest) {
-  if (!await authorize(req)) return fail('UNAUTHORIZED', 401);
+  let actor;
+  try { actor = await authorize(req); } catch { return fail('ADMIN_DATABASE_MIGRATION_REQUIRED', 503); }
+  if (!actor) return fail('ACCESS_PENDING_OR_UNAUTHORIZED', 403);
   if (req.headers.get('content-type')?.split(';')[0] !== 'application/json') return fail('INVALID_CONTENT_TYPE', 415);
   let input: Record<string, unknown>;
   try { input = await req.json(); } catch { return fail('INVALID_JSON'); }
-  const db = getAdminClient();
   try {
+    const db = getAdminClient();
     const action = input.action;
-    if (action === 'legal') {
+    if (action === 'access') {
+      if (!actor.owner) return fail('OWNER_REQUIRED', 403);
+      const id = String(input.user_id || '');
+      if (!/^[0-9a-f-]{36}$/i.test(id) || id === actor.user.id || !['approved','rejected','pending'].includes(String(input.status))) return fail('ACCESS_INVALID');
+      const { data: target, error } = await db.from('ageless_admin_access_requests').update({ status: input.status, approved_at: input.status === 'approved' ? new Date().toISOString() : null, approved_by: actor.user.email }).eq('user_id', id).select('user_id').single();
+      if (error || !target) return fail('ACCESS_REQUEST_NOT_FOUND', 404);
+    } else if (action === 'legal') {
+      if (!actor.owner) return fail('OWNER_REQUIRED', 403);
       const slug = String(input.slug || '');
       const body = String(input.body || '').trim();
       const published = input.published === true;
@@ -80,23 +106,35 @@ export async function POST(req: NextRequest) {
       const image = String(input.image_url || '').trim();
       const countries = String(input.allowed_countries || 'DE').split(',').map(x => x.trim().toUpperCase()).filter(Boolean);
       if (description.length > 5000 || (image && (!/^https:\/\/[a-z0-9.-]+(?:[:][0-9]+)?(?:\/[^\\s]*)?$/i.test(image) || image.length > 1000)) || !countries.length || countries.length > 20 || countries.some(x => !/^[A-Z]{2}$/.test(x))) return fail('PRODUCT_DETAILS_INVALID');
-      const approved = input.manual_approved === true;
-      const published = input.is_published === true;
+      const onHold = input.on_hold === true;
+      const holdReason = String(input.hold_reason || '').trim();
+      if (holdReason.length > 2000 || (onHold && !holdReason)) return fail('HOLD_REASON_REQUIRED');
+      const approved = !onHold && input.manual_approved === true;
+      const published = !onHold && input.is_published === true;
       if (!Number.isSafeInteger(stock) || stock < 0 || stock > 1000000 || !Number.isSafeInteger(price) || price < 1 || price > 100000000 || !Number.isSafeInteger(shipping) || shipping < 0 || shipping > 10000000 || name.length < 2 || name.length > 120 || ref.length > 500) return fail('OFFER_INVALID');
-      if ((approved || published) && (!approved || !ref || stock < 1)) return fail('APPROVAL_REFERENCE_AND_STOCK_REQUIRED');
-      const { data: old, error: lookupError } = await db.from('ageless_offers').select('reviewed_at,approval_reference,manual_approved').eq('id', id).single();
+      if ((approved || published) && (!approved || !ref )) return fail('APPROVAL_REFERENCE_REQUIRED');
+      const evidence = input.legal_evidence;
+      if (!Array.isArray(evidence) || evidence.length > 20 || JSON.stringify(evidence).length > 50000 || evidence.some(r => !r || typeof r !== 'object' || !['pending','verified','blocked'].includes(r.status) || ['country','intended_use','valid_from','valid_until','evidence_url','restrictions'].some(key => typeof r[key] !== 'string' || r[key].length > 2000))) return fail('LEGAL_EVIDENCE_INVALID');
+      const { data: old, error: lookupError } = await db.from('ageless_offers').select('reviewed_at,approval_reference,name,description,manual_approved,is_published,approved_by,legal_evidence,allowed_countries,updated_at,on_hold,hold_reason').eq('id', id).single();
       if (lookupError || !old) return fail('OFFER_NOT_FOUND', 404);
-      const changedApproval = !old.manual_approved || old.approval_reference !== ref;
+      if (input.updated_at !== old.updated_at) return fail('PRODUCT_CHANGED_RELOAD', 409);
+      const evidenceChanged = old.on_hold !== onHold || (old.hold_reason || '') !== holdReason || old.name !== name || (old.description || '') !== description || old.approval_reference !== ref || JSON.stringify(old.legal_evidence) !== JSON.stringify(evidence) || JSON.stringify(old.allowed_countries) !== JSON.stringify(countries);
+      const changedApproval = !old.manual_approved || evidenceChanged;
+      if (!actor.owner && (approved !== old.manual_approved || published !== old.is_published || evidenceChanged)) return fail('OWNER_REQUIRED', 403);
+      if (approved && !validEvidence(evidence, countries)) return fail('LEGAL_EVIDENCE_MISSING_EXPIRED_OR_UNVERIFIED', 409);
       const { error } = await db.from('ageless_offers').update({
         name, description, image_url: image || null, allowed_countries: countries, price_cents: price, shipping_cents: shipping, stock_quantity: stock,
+        on_hold: onHold, hold_reason: holdReason || null,
+        legal_evidence: evidence, approved_by: approved ? (changedApproval ? actor.user.email : old.approved_by) : null,
         approval_reference: ref || null, manual_approved: approved,
         compliance_status: approved ? 'approved' : 'manual_review',
         reviewed_at: approved ? (changedApproval ? new Date().toISOString() : old.reviewed_at) : null,
         is_published: published && approved,
         updated_at: new Date().toISOString(),
-      }).eq('id', id);
-      if (error) throw error;
+      }).eq('id', id).eq('updated_at', old.updated_at).select('id').single();
+      if (error) return fail('PRODUCT_CHANGED_RELOAD', 409);
     } else if (action === 'mode') {
+      if (!actor.owner) return fail('OWNER_REQUIRED', 403);
       const mode = String(input.mode || '');
       if (!['draft','sandbox','live'].includes(mode)) return fail('INVALID_MODE');
       if (mode !== 'draft') {
@@ -113,3 +151,4 @@ export async function POST(req: NextRequest) {
     return fail('SAVE_FAILED_CHECK_SCHEMA_OR_VALUES', 503);
   }
 }
+
