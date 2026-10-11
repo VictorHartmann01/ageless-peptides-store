@@ -19,6 +19,33 @@ function auth() {
 }
 const euro = (c: number) => (c / 100).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
 
+
+function PasswordField({ value, onChange, autoComplete, minLength }: {
+  value: string; onChange: (value: string) => void;
+  autoComplete: string; minLength?: number;
+}) {
+  const [visible, setVisible] = useState(false);
+  return <span style={{ display: 'block', position: 'relative' }}>
+    <input type={visible ? 'text' : 'password'} required minLength={minLength}
+      autoComplete={autoComplete} value={value} onChange={e => onChange(e.target.value)}
+      style={{ paddingRight: '56px' }} />
+    <button type="button" aria-label={visible ? 'Passwort verbergen' : 'Passwort anzeigen'}
+      aria-pressed={visible} title={visible ? 'Passwort verbergen' : 'Passwort anzeigen'}
+      onClick={() => setVisible(current => !current)}
+      style={{ position: 'absolute', right: '4px', top: '50%', transform: 'translateY(-50%)',
+        width: '44px', height: '44px', minHeight: '44px', margin: 0, padding: 0,
+        display: 'grid', placeItems: 'center', background: 'transparent', color: '#123443',
+        border: 0, borderRadius: '6px', cursor: 'pointer' }}>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+        <circle cx="12" cy="12" r="3" />
+        {visible && <path d="m3 3 18 18" />}
+      </svg>
+    </button>
+  </span>;
+}
+
 export default function AdminPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -126,7 +153,7 @@ export default function AdminPage() {
   }
   return <main className="age-admin">
     <header className="age-admin-header"><Link href="/"><img src="/ageless-logo.svg" alt="AgeLess" /></Link><span>STORE CONTROL CENTER</span>{token && <button type="button" onClick={async () => { await auth()?.auth.signOut(); setToken(''); setData(null); }}>Abmelden</button>}</header>
-    {!data ? <section className="age-admin-login"><span>GESCHÜTZTER BEREICH</span><h1>{authMode === 'signup' ? 'Zugang beantragen' : authMode === 'forgot' ? 'Passwort vergessen' : authMode === 'reset' ? 'Neues Passwort' : 'AgeLess Verwaltung'}</h1><p>{authMode === 'signup' ? 'Nach E-Mail-Bestätigung ist eine persönliche Freigabe durch den Betreiber erforderlich.' : authMode === 'forgot' ? 'Wir senden einen Link zum Zurücksetzen an deine E-Mail-Adresse.' : authMode === 'reset' ? 'Vergib ein neues, sicheres Passwort.' : 'Nur bestätigte und freigegebene Administratoren können sich anmelden.'}</p><form onSubmit={authMode === 'login' ? signIn : accountAction}>{authMode !== 'reset' && <label>E-Mail-Adresse<input type="email" required autoComplete="username" value={email} onChange={e => setEmail(e.target.value)} /></label>}{(authMode === 'login' || authMode === 'signup') && <label>Passwort<input type="password" required minLength={authMode === 'signup' ? 12 : undefined} autoComplete={authMode === 'signup' ? 'new-password' : 'current-password'} value={password} onChange={e => setPassword(e.target.value)} /></label>}{authMode === 'reset' && <label>Neues Passwort<input type="password" required minLength={12} autoComplete="new-password" value={newPassword} onChange={e => setNewPassword(e.target.value)} /></label>}<button disabled={busy} type="submit">{busy ? 'Bitte warten …' : authMode === 'signup' ? 'Freigabe beantragen' : authMode === 'forgot' ? 'Reset-Link senden' : authMode === 'reset' ? 'Passwort speichern' : 'Sicher anmelden →'}</button></form><div className="age-admin-auth-links">{authMode !== 'login' && <button type="button" onClick={() => { setAuthMode('login'); setMessage(''); }}>Zum Log-in</button>}{authMode === 'login' && <><button type="button" onClick={() => { setAuthMode('signup'); setMessage(''); }}>Sign-up / Zugang beantragen</button><button type="button" onClick={() => { setAuthMode('forgot'); setMessage(''); }}>Passwort vergessen?</button></>}</div>{message && <p role="alert">{message}</p>}</section>
+    {!data ? <section className="age-admin-login"><span>GESCHÜTZTER BEREICH</span><h1>{authMode === 'signup' ? 'Zugang beantragen' : authMode === 'forgot' ? 'Passwort vergessen' : authMode === 'reset' ? 'Neues Passwort' : 'AgeLess Verwaltung'}</h1><p>{authMode === 'signup' ? 'Nach E-Mail-Bestätigung ist eine persönliche Freigabe durch den Betreiber erforderlich.' : authMode === 'forgot' ? 'Wir senden einen Link zum Zurücksetzen an deine E-Mail-Adresse.' : authMode === 'reset' ? 'Vergib ein neues, sicheres Passwort.' : 'Nur bestätigte und freigegebene Administratoren können sich anmelden.'}</p><form onSubmit={authMode === 'login' ? signIn : accountAction}>{authMode !== 'reset' && <label>E-Mail-Adresse<input type="email" required autoComplete="username" value={email} onChange={e => setEmail(e.target.value)} /></label>}{(authMode === 'login' || authMode === 'signup') && <label>Passwort<PasswordField key={authMode} minLength={authMode === 'signup' ? 12 : undefined} autoComplete={authMode === 'signup' ? 'new-password' : 'current-password'} value={password} onChange={setPassword} /></label>}{authMode === 'reset' && <label>Neues Passwort<PasswordField key="reset" minLength={12} autoComplete="new-password" value={newPassword} onChange={setNewPassword} /></label>}<button disabled={busy} type="submit">{busy ? 'Bitte warten …' : authMode === 'signup' ? 'Freigabe beantragen' : authMode === 'forgot' ? 'Reset-Link senden' : authMode === 'reset' ? 'Passwort speichern' : 'Sicher anmelden →'}</button></form><div className="age-admin-auth-links">{authMode !== 'login' && <button type="button" onClick={() => { setAuthMode('login'); setMessage(''); }}>Zum Log-in</button>}{authMode === 'login' && <><button type="button" onClick={() => { setAuthMode('signup'); setMessage(''); }}>Sign-up / Zugang beantragen</button><button type="button" onClick={() => { setAuthMode('forgot'); setMessage(''); }}>Passwort vergessen?</button></>}</div>{message && <p role="alert">{message}</p>}</section>
     : <div className="age-admin-layout">
       <aside className="age-admin-sidebar"><h2>Verwaltung</h2>{[['overview','Übersicht'],['products','Produkte & Bestand'],['orders','Bestellungen'],['legal','Rechtstexte'],['payment','Zahlung & Livegang'],...(data.owner ? [['users','Nutzerfreigabe']] : [])].map(([id,label]) => <button key={id} type="button" className={tab === id ? 'active' : ''} onClick={() => { setTab(id); setMessage(''); }}>{label}</button>)}<Link href="/shop/angebote">Öffentlichen Shop ansehen ↗</Link></aside>
       <div className="age-admin-main">
