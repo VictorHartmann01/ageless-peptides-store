@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test:backoffice": "node scripts/backoffice-test.cjs",
+    "test:migrations": "node scripts/migration-test.cjs"
   },
   "dependencies": {
     "@supabase/ssr": "0.7.0",
@@ -15,6 +17,7 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
     "@types/node": "24.5.0",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",

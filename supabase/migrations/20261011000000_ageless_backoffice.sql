@@ -10,18 +10,21 @@ create or replace function public.ageless_evidence_valid(evidence jsonb, countri
 returns boolean language plpgsql stable set search_path = public as $$
 declare country text; r jsonb; covered boolean;
 begin
-  if jsonb_typeof(evidence) <> 'array' or coalesce(cardinality(countries),0) = 0 then return false; end if;
+  if evidence is null or jsonb_typeof(evidence) <> 'array' or coalesce(cardinality(countries),0) not between 1 and 20 then return false; end if;
+  if jsonb_array_length(evidence) not between 1 and 20 then return false; end if;
   if (select count(*) <> count(distinct value->>'country') from jsonb_array_elements(evidence)) then return false; end if;
   foreach country in array countries loop
     covered := false;
     for r in select value from jsonb_array_elements(evidence) loop
-      if r->>'country' = country and r->>'status' = 'verified'
-        and length(trim(r->>'intended_use')) >= 3
+      if jsonb_typeof(r) = 'object' and country ~ '^[A-Z]{2}$' and r->>'country' = country and r->>'status' = 'verified'
+        and length(trim(r->>'intended_use')) >= 3 and length(r->>'intended_use') <= 500
+        and jsonb_typeof(r->'restrictions') = 'string' and length(r->>'restrictions') <= 2000
+        and length(r->>'evidence_url') <= 2000
         and r->>'evidence_url' ~ '^https://[^[:space:]]+$'
         and r->>'valid_from' ~ '^\d{4}-\d{2}-\d{2}$'
         and (r->>'valid_from')::date <= (now() at time zone 'UTC')::date
         and (coalesce(r->>'valid_until','') = '' or
-          ((r->>'valid_until')::date >= (now() at time zone 'UTC')::date and (r->>'valid_until')::date >= (r->>'valid_from')::date))
+          (r->>'valid_until' ~ '^\d{4}-\d{2}-\d{2}$' and (r->>'valid_until')::date >= (now() at time zone 'UTC')::date and (r->>'valid_until')::date >= (r->>'valid_from')::date))
       then covered := true; end if;
     end loop;
     if not covered then return false; end if;
@@ -30,10 +33,13 @@ begin
 exception when others then return false;
 end; $$;
 
--- Legacy approvals require a fresh, evidenced owner review.
-update public.ageless_offers set manual_approved=false, is_published=false,
-  compliance_status='manual_review', reviewed_at=null
-  where manual_approved or is_published;
+-- Never silently withdraw existing approvals during deployment.
+-- Existing installations require a backup and separately reviewed data transition.
+do $$ begin
+  if exists (select 1 from public.ageless_offers where manual_approved or is_published) then
+    raise exception 'EXISTING_APPROVALS_REQUIRE_BACKUP_AND_REVIEW';
+  end if;
+end $$;
 alter table public.ageless_offers add constraint ageless_evidence_guard check (
   not manual_approved or (nullif(trim(approved_by),'') is not null
     and public.ageless_evidence_valid(legal_evidence, allowed_countries))
@@ -46,7 +52,7 @@ for select to anon, authenticated using (
   and public.ageless_evidence_valid(legal_evidence,allowed_countries)
 );
 -- Internal evidence and reviewer identity stay private.
-revoke select on public.ageless_offers from anon, authenticated;
+revoke all on public.ageless_offers from anon, authenticated;
 grant select (id,product_id,slug,name,description,image_url,currency,price_cents,
   shipping_cents,stock_quantity,allowed_countries,compliance_status,manual_approved,
   reviewed_at,approval_reference,is_published,created_at,updated_at)
@@ -68,8 +74,24 @@ declare
 begin
   select * into o from public.ageless_orders where id = p_order_id for update;
   if not found then raise exception 'order_not_found'; end if;
-  if o.status in ('paid','paid_manual_review') then return o.status; end if;
+  if o.status in ('paid','paid_manual_review','sandbox_paid') then return o.status; end if;
   if o.status <> 'payment_created' then raise exception 'invalid_order_state'; end if;
+  if nullif(trim(p_capture_id),'') is null then raise exception 'capture_required'; end if;
+  if jsonb_typeof(o.items) <> 'array' or jsonb_array_length(o.items) not between 1 and 20 then
+    raise exception 'invalid_order_items';
+  end if;
+  if (select count(*) <> count(distinct value->>'offer_id') from jsonb_array_elements(o.items)) then
+    raise exception 'duplicate_order_items';
+  end if;
+  for item in select value from jsonb_array_elements(o.items) loop
+    if (item->>'quantity')::integer not between 1 and 10 or item->>'quantity' is null then
+      raise exception 'invalid_quantity';
+    end if;
+  end loop;
+  if o.payment_mode = 'sandbox' then
+    update public.ageless_orders set status='sandbox_paid', paypal_capture_id=p_capture_id, paid_at=now() where id=p_order_id;
+    return 'sandbox_paid';
+  end if;
   -- Lock offer rows deterministically to prevent overselling.
   perform 1 from public.ageless_offers
     where id in (select (value->>'offer_id')::uuid from jsonb_array_elements(o.items))
@@ -78,6 +100,8 @@ begin
     offer_id := (item->>'offer_id')::uuid;
     qty := (item->>'quantity')::integer;
     select stock_quantity, (not on_hold and is_published and manual_approved and compliance_status='approved'
+      and reviewed_at is not null and nullif(trim(approval_reference),'') is not null
+      and price_cents = (item->>'unit_price_cents')::integer
       and o.country_code = any(allowed_countries)
       and public.ageless_evidence_valid(legal_evidence,array[o.country_code]))
     into available, eligible from public.ageless_offers where id = offer_id;
@@ -103,4 +127,14 @@ revoke all on function public.ageless_complete_paid_order(uuid,text) from public
 grant execute on function public.ageless_complete_paid_order(uuid,text) to service_role;
 
 
+-- Explicit server grants: do not depend on project-specific default privileges.
+grant all on public.ageless_offers, public.ageless_orders, public.ageless_store_settings,
+ public.ageless_legal_pages, public.ageless_admin_access_requests to service_role;
+-- Legacy operations roles must not become a parallel path around owner approvals.
+revoke all on public.substances, public.inventory_movements, public.due_diligence_reports,
+ public.research_sources, public.news_articles, public.social_campaigns,
+ public.social_campaign_assets, public.ai_tasks, public.audit_log from public, anon, authenticated;
+grant all on public.substances, public.inventory_movements, public.due_diligence_reports,
+ public.research_sources, public.news_articles, public.social_campaigns,
+ public.social_campaign_assets, public.ai_tasks, public.audit_log to service_role;
 commit;

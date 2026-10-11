@@ -15,6 +15,14 @@ export async function POST(request: NextRequest) {
     if (error || !order || order.paypal_order_id !== body.paypalOrderId) return NextResponse.json({ error: 'ORDER_NOT_FOUND' }, { status: 404 });
     if (order.status === 'paid' || order.status === 'sandbox_paid' || order.status === 'paid_manual_review') return NextResponse.json({ status: order.status }, { headers: { 'Cache-Control': 'no-store' } });
     if (order.status !== 'payment_created') return NextResponse.json({ error: 'ORDER_NOT_PAYABLE' }, { status: 409 });
+    if (process.env.AGELESS_CHECKOUT_ENABLED !== 'true') return NextResponse.json({ error: 'CHECKOUT_NOT_RELEASED' }, { status: 503 });
+    const { data: gate, error: gateError } = await db.from('ageless_store_settings').select('mode').eq('id', 1).single();
+    if (gateError || !gate || gate.mode !== order.payment_mode || !['sandbox', 'live'].includes(gate.mode)) return NextResponse.json({ error: 'CHECKOUT_NOT_RELEASED' }, { status: 503 });
+    if (order.payment_mode === 'live') {
+      if (process.env.AGELESS_LIVE_RELEASE_APPROVED !== 'true') return NextResponse.json({ error: 'LIVE_RELEASE_NOT_APPROVED' }, { status: 503 });
+      const { data: pages, error: pagesError } = await db.from('ageless_legal_pages').select('slug,body,published');
+      if (pagesError || !['impressum','datenschutz','agb','widerruf'].every(slug => pages?.some(p => p.slug === slug && p.published && p.body?.trim().length >= 30))) return NextResponse.json({ error: 'LEGAL_NOT_READY' }, { status: 503 });
+    }
     // Re-check current product/country approval before requesting a charge.
     try {
       const price = await priceCart(order.items.map((item: { offer_id: string; quantity: number }) => ({ offerId: item.offer_id, quantity: item.quantity })), order.country_code);

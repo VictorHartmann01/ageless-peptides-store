@@ -14,6 +14,7 @@ export async function POST(request: NextRequest) {
     if (gateError || !gate || gate.mode === 'draft') return NextResponse.json({ error: 'CHECKOUT_NOT_RELEASED' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
     if (!['sandbox','live'].includes(gate.mode)) return NextResponse.json({ error: 'PAYMENT_MODE_MISMATCH' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
     if (gate.mode === 'live') {
+      if (process.env.AGELESS_LIVE_RELEASE_APPROVED !== 'true') return NextResponse.json({ error: 'LIVE_RELEASE_NOT_APPROVED' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
       const { data: pages, error: pagesError } = await gateDb.from('ageless_legal_pages').select('slug,body,published');
       const required = ['impressum','datenschutz','agb','widerruf'];
       if (pagesError || !required.every(slug => pages?.some(p => p.slug === slug && p.published && p.body?.trim().length >= 30))) return NextResponse.json({ error: 'LEGAL_NOT_READY' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
