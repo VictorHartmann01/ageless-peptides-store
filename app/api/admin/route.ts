@@ -36,7 +36,7 @@ async function status(owner = false) {
   const [settings, pages, offers, orders] = await Promise.all([
     db.from('ageless_store_settings').select('*').eq('id', 1).single(),
     db.from('ageless_legal_pages').select('*').order('slug'),
-    db.from('ageless_offers').select('id,name,slug,description,image_url,price_cents,shipping_cents,stock_quantity,allowed_countries,compliance_status,manual_approved,approval_reference,reviewed_at,is_published,legal_evidence,approved_by,updated_at,on_hold,hold_reason').order('created_at', { ascending: false }),
+    db.from('ageless_offers').select('id,name,slug,description,image_url,price_cents,shipping_cents,stock_quantity,allowed_countries,compliance_status,manual_approved,approval_reference,reviewed_at,is_published,legal_evidence,approved_by,updated_at,on_hold,hold_reason,catalog_visible').order('created_at', { ascending: false }),
     db.from('ageless_orders').select('id,buyer_name,email,country_code,items,total_cents,status,payment_mode,paypal_order_id,paypal_capture_id,created_at,paid_at').order('created_at', { ascending: false }).limit(50),
   ]);
   if (settings.error || pages.error || offers.error || orders.error) throw new Error('ADMIN_DATABASE_MIGRATION_REQUIRED');
@@ -111,13 +111,15 @@ export async function POST(req: NextRequest) {
       if (holdReason.length > 2000 || (onHold && !holdReason)) return fail('HOLD_REASON_REQUIRED');
       const approved = !onHold && input.manual_approved === true;
       const published = !onHold && input.is_published === true;
+      const catalogVisible = input.catalog_visible === true;
       if ((stock !== null && (!Number.isSafeInteger(stock) || stock < 0 || stock > 1000000)) || (price !== null && (!Number.isSafeInteger(price) || price < 1 || price > 100000000)) || !Number.isSafeInteger(shipping) || shipping < 0 || shipping > 10000000 || name.length < 2 || name.length > 120 || ref.length > 500) return fail('OFFER_INVALID');
       if ((approved || published) && (price === null || stock === null)) return fail('PRICE_AND_STOCK_REQUIRED_FOR_APPROVAL');
       if ((approved || published) && (!approved || !ref )) return fail('APPROVAL_REFERENCE_REQUIRED');
       const evidence = input.legal_evidence;
       if (!Array.isArray(evidence) || evidence.length > 20 || JSON.stringify(evidence).length > 50000 || evidence.some(r => !r || typeof r !== 'object' || !['pending','verified','blocked'].includes(r.status) || ['country','intended_use','valid_from','valid_until','evidence_url','restrictions'].some(key => typeof r[key] !== 'string' || r[key].length > 2000))) return fail('LEGAL_EVIDENCE_INVALID');
-      const { data: old, error: lookupError } = await db.from('ageless_offers').select('reviewed_at,approval_reference,name,description,manual_approved,is_published,approved_by,legal_evidence,allowed_countries,updated_at,on_hold,hold_reason').eq('id', id).single();
+      const { data: old, error: lookupError } = await db.from('ageless_offers').select('reviewed_at,approval_reference,name,description,manual_approved,is_published,approved_by,legal_evidence,allowed_countries,updated_at,on_hold,hold_reason,catalog_visible').eq('id', id).single();
       if (lookupError || !old) return fail('OFFER_NOT_FOUND', 404);
+      if (!actor.owner && catalogVisible !== (old.catalog_visible === true)) return fail('OWNER_REQUIRED', 403);
       if (input.updated_at !== old.updated_at) return fail('PRODUCT_CHANGED_RELOAD', 409);
       const evidenceChanged = old.on_hold !== onHold || (old.hold_reason || '') !== holdReason || old.name !== name || (old.description || '') !== description || old.approval_reference !== ref || JSON.stringify(old.legal_evidence) !== JSON.stringify(evidence) || JSON.stringify(old.allowed_countries) !== JSON.stringify(countries);
       const changedApproval = !old.manual_approved || evidenceChanged;
@@ -125,6 +127,7 @@ export async function POST(req: NextRequest) {
       if (approved && !validEvidence(evidence, countries)) return fail('LEGAL_EVIDENCE_MISSING_EXPIRED_OR_UNVERIFIED', 409);
       const { error } = await db.from('ageless_offers').update({
         name, description, image_url: image || null, allowed_countries: countries, price_cents: price, shipping_cents: shipping, stock_quantity: stock,
+        catalog_visible: catalogVisible,
         on_hold: onHold, hold_reason: holdReason || null,
         legal_evidence: evidence, approved_by: approved ? (changedApproval ? actor.user.email : old.approved_by) : null,
         approval_reference: ref || null, manual_approved: approved,
