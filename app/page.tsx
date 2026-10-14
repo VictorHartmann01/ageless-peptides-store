@@ -3,7 +3,6 @@ import { getAdminClient } from '../lib/commerce/server';
 import MobileMenu from './components/MobileMenu';
 // Freely licensed Unsplash editorial imagery; no fictional AgeLess packaging or product claims.
 const hero = '/images/ageless/hero-couple.webp';
-const heroFallback = 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1800&q=85';
 
 const categories = [
   { title: 'Peptide entdecken', eyebrow: 'WIRKSTOFFWELTEN', text: 'Peptide entdecken: übersichtlich erklärt, mit klaren Angaben zu jedem verfügbaren Produkt.', image: '/images/ageless/category-peptides.webp', fallback: 'https://unsplash.com/photos/PG4EzttydRk/download?force=true&w=900', style: 'science' },
@@ -44,7 +43,7 @@ export default async function Home() {
         <div className="alv2-hero-actions"><Link className="alv2-gold-button" href="/shop/angebote">Jetzt Produkte entdecken <span aria-hidden="true">→</span></Link><a className="alv2-hero-link" href="#wissen">Produktwelten entdecken ↗</a></div>
         <div className="alv2-hero-proof"><span><b aria-hidden="true">◇</b> In Ruhe entdecken</span><span><b aria-hidden="true">✧</b> Details auf einen Blick</span><span><b aria-hidden="true">♧</b> Transparent einkaufen</span></div>
       </div>
-      <div className="alv2-hero-media"><div className="alv2-hero-photo" style={{backgroundImage:`url("${hero}"), url("${heroFallback}")`}} role="img" aria-label="Lebensfreude und gemeinsame Zeit im Freien"/><div className="alv2-hero-photo-shade"/><div className="alv2-hero-quote"><span>AGELESS · PREMIUM STORE</span><strong>Entdecken, was<br/><em>zu Ihnen passt.</em></strong></div></div>
+      <div className="alv2-hero-media"><div className="alv2-hero-photo" style={{backgroundImage:`url("${hero}")`}} role="img" aria-label="Lebensfreude und gemeinsame Zeit im Freien"/><div className="alv2-hero-photo-shade"/><div className="alv2-hero-quote"><span>AGELESS · PREMIUM STORE</span><strong>Entdecken, was<br/><em>zu Ihnen passt.</em></strong></div></div>
     </section>
     <section className="alv2-category-section" id="wissen" aria-labelledby="alv2-categories-heading">
       <div className="alv2-section-head"><div><span className="alv2-overline">UNSERE PRODUKTWELTEN</span><h2 id="alv2-categories-heading">Drei Welten. Ihre Entdeckung.</h2></div><Link href="/shop">Alle Produkte ansehen <span aria-hidden="true">↗</span></Link></div>
