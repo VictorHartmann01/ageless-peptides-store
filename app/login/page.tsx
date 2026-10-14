@@ -16,6 +16,7 @@ export default function CustomerLogin() {
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
+  const [accessApproved, setAccessApproved] = useState(false);
 
   useEffect(() => { if (new URLSearchParams(window.location.search).get('reset') === '1') setMode('reset'); }, []);
 
@@ -50,9 +51,26 @@ export default function CustomerLogin() {
       } else {
         const { error } = await client.auth.signInWithPassword({ email, password });
         if (error) throw new Error('Anmeldung fehlgeschlagen. Bitte Zugangsdaten und E-Mail-Bestätigung prüfen.');
+        const { data: signedIn } = await client.auth.getSession();
+        const accessToken = signedIn.session?.access_token;
+        if (!accessToken) throw new Error('Keine gültige Sitzung. Bitte erneut anmelden.');
+        const response = await fetch('/api/customer-access', { headers: { Authorization: 'Bearer ' + accessToken }, cache: 'no-store' });
+        if (!response.ok) throw new Error('Testerzugang konnte nicht geprüft werden.');
+        const access = await response.json();
+        let status = access.owner ? 'approved' : access.status;
+        if (status === 'not_requested') {
+          const request = await fetch('/api/customer-access', { method: 'POST',
+            headers: { Authorization: 'Bearer ' + accessToken, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'request' }) });
+          if (!request.ok) throw new Error('Testerfreigabe konnte nicht beantragt werden.');
+          status = (await request.json()).status;
+        }
         setAuthenticated(true);
+        setAccessApproved(status === 'approved');
         setPassword('');
-        setMessage('Anmeldung erfolgreich. Der Shopzugang wird serverseitig geprüft.');
+        setMessage(status === 'approved' ? 'Anmeldung erfolgreich. Du kannst den Testshop öffnen.' :
+          status === 'rejected' ? 'Dein Testzugang wurde gesperrt.' :
+          'Anmeldung erfolgreich. Deine persönliche Testerfreigabe steht noch aus.');
       }
     } catch (error) {
       setMessage(error instanceof Error ? error.message : 'Ein Fehler ist aufgetreten.');
@@ -75,7 +93,7 @@ export default function CustomerLogin() {
           <button className="al-customer-submit" type="submit" disabled={busy}>{busy ? 'Bitte warten …' : mode === 'register' ? 'Konto erstellen →' : mode === 'forgot' ? 'Link anfordern →' : mode === 'reset' ? 'Passwort speichern →' : 'Jetzt anmelden →'}</button>
         </form>
         {message && <p role="status" className="al-customer-auth-message">{message}</p>}
-        {authenticated && <Link className="al-customer-shop-link" href="/shop">Zum geschützten Shop →</Link>}
+        {authenticated && accessApproved && <Link className="al-customer-shop-link" href="/shop">Zum geschützten Shop →</Link>}
         <div className="al-customer-auth-options">
           {mode === 'login' ? <><button type="button" onClick={() => {setMode('forgot');setMessage('');}}>Passwort vergessen?</button><button type="button" onClick={() => {setMode('register');setMessage('');}}>Konto erstellen</button></> : <button type="button" onClick={() => {setMode('login');setMessage('');}}>Zur Anmeldung</button>}
         </div>
