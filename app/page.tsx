@@ -32,6 +32,7 @@ export default async function Home() {
       <Link className="alv2-logo" href="/" aria-label="AgeLess Startseite"><img src="/ageless-logo.svg" alt="AgeLess – Science for a Longer, Better Life" /></Link>
       <nav className="alv2-nav" aria-label="Hauptnavigation"><a className="alv2-nav-active" href="#top">Home</a><Link href="/shop/angebote">Shop</Link><a href="#wissen">Produktwelten</a><a href="#qualitaet">Qualität</a><a href="#ueber">Über AgeLess</a></nav>
       <Link className="alv2-nav-shop" href="/shop/angebote">Zum Shop <span aria-hidden="true">↗</span></Link>
+      <Link className="alv2-login" href="/admin" aria-label="Zur geschützten AgeLess Verwaltung anmelden">Login</Link>
       <MobileMenu />
     </header>
     <section className="alv2-hero" id="main-content" aria-labelledby="alv2-title">

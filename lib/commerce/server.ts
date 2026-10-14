@@ -1,10 +1,11 @@
 import 'server-only';
+import { validEvidence } from './approval';
 import { createClient } from '@supabase/supabase-js';
 import { randomUUID } from 'node:crypto';
 
 export type CartLine = { offerId: string; quantity: number };
 export type Address = { name: string; email: string; line1: string; line2?: string; city: string; postalCode: string; country: string };
-type Offer = { id: string; name: string; price_cents: number; shipping_cents: number; stock_quantity: number; allowed_countries: string[]; compliance_status: string; manual_approved: boolean; reviewed_at: string | null; approval_reference: string | null; is_published: boolean };
+type Offer = { on_hold: boolean; legal_evidence: unknown; id: string; name: string; price_cents: number; shipping_cents: number; stock_quantity: number; allowed_countries: string[]; compliance_status: string; manual_approved: boolean; reviewed_at: string | null; approval_reference: string | null; is_published: boolean };
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 export function getAdminClient() {
@@ -47,7 +48,7 @@ export function parseOrderRequest(value: unknown): { cart: CartLine[]; address: 
 
 export async function priceCart(cart: CartLine[], country: string) {
   const db = getAdminClient();
-  const { data, error } = await db.from('ageless_offers').select('id,name,price_cents,shipping_cents,stock_quantity,allowed_countries,compliance_status,manual_approved,reviewed_at,approval_reference,is_published').in('id', cart.map((x) => x.offerId));
+  const { data, error } = await db.from('ageless_offers').select('id,name,price_cents,shipping_cents,stock_quantity,allowed_countries,compliance_status,manual_approved,reviewed_at,approval_reference,is_published,legal_evidence,on_hold').in('id', cart.map((x) => x.offerId));
   if (error) throw new Error('COMMERCE_DATABASE_NOT_READY');
   const offers = (data ?? []) as Offer[];
   if (offers.length !== cart.length) throw new Error('OFFER_NOT_AVAILABLE');
@@ -55,7 +56,7 @@ export async function priceCart(cart: CartLine[], country: string) {
   let shipping = 0;
   const items = cart.map((line) => {
     const o = offers.find((x) => x.id === line.offerId);
-    if (!o || !o.is_published || !o.manual_approved || o.compliance_status !== 'approved' || !o.reviewed_at || !o.approval_reference || !o.allowed_countries.includes(country) || o.stock_quantity < line.quantity) throw new Error('OFFER_NOT_AVAILABLE');
+    if (!o || !Number.isSafeInteger(o.price_cents) || o.price_cents < 1 || !Number.isSafeInteger(o.stock_quantity) || o.on_hold || !o.is_published || !o.manual_approved || o.compliance_status !== 'approved' || !o.reviewed_at || !o.approval_reference || !validEvidence(o.legal_evidence, [country]) || !o.allowed_countries.includes(country) || o.stock_quantity < line.quantity) throw new Error('OFFER_NOT_AVAILABLE');
     subtotal += o.price_cents * line.quantity;
     shipping = Math.max(shipping, o.shipping_cents);
     return { offer_id: o.id, name: o.name, quantity: line.quantity, unit_price_cents: o.price_cents };
@@ -93,3 +94,4 @@ export async function paypalRequest(path: string, method: 'GET' | 'POST', body?:
 }
 
 export function newRequestId() { return randomUUID(); }
+
