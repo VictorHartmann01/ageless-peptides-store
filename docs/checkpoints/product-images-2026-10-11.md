@@ -50,3 +50,16 @@ Quelle: `AgeLess_Info Deck DE_2026-10-06.pptx`, Folien 4–41.
 2. Für jede Substanz ein eigenes, eigenständiges Premium-Motiv statt Rasterausschnitt/Komposition erzeugen.
 3. Produktinformationen gegen reale Lieferanten-/Freigabedaten prüfen.
 4. Erst danach Veröffentlichung durch Website Live 02.
+
+
+## Aktualisierung Beta Front 14.10.2026
+
+Aktuelle Teamrolle laut Issue #3: Beta Front liefert Design, Premium-Produktbilder, Texte und mobile UX; Research verantwortet Produkt- und Rechtsprüfung; Back03 ersetzt Back02; Live02 koordiniert Integration/Veröffentlichung. Bildperfektion darf den minimalen Verkaufsstart nicht blockieren.
+
+Klarstellung Bildbestand: 38 bisherige JPG-Entwürfe sind keine 38 individuell fertigen Premiumbilder. Im Chat gezeigte separate neuere Visualisierungen NAD+ und L-Lysine sind nicht als GitHub-Bilddateien verifiziert. ZIP-Download ist keine gemeinsame GitHub-Bildbibliothek.
+
+Verbindliche visuelle Vorgabe: fotorealistische Premiumqualität für Website und Pitch-Deck; auf Fläschchen nur AgeLess-Branding und Substanzname, keine zusätzlichen Claims, Bildüberschriften oder unbestätigte Dosierungen. Produkte und rechtliche Verkaufsfähigkeit prüft Research. Bis dahin ausschließlich Konzeptvisualisierungen, nicht als echte Produktfotos ausgeben.
+
+Nächste separate Motive: L-Proline, Vitamin B12, GHK-Cu, SNAP-8. Nach jedem Upload Binärdatei in GitHub prüfen und erst nach Research-Freigabe an Live02 zur Produktzuordnung übergeben.
+
+Prüfstand dieser Aktualisierung: Issue #3 und existierenden Checkpoint tatsächlich gelesen, ausschließlich Checkpoint-Text geändert; keine Bilddatei hochgeladen, keine reale Browser-/Shop-Prüfung und kein Deployment durchgeführt.
