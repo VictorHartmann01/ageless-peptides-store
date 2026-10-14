@@ -117,12 +117,17 @@ export async function POST(req: NextRequest) {
       if ((approved || published) && (!approved || !ref )) return fail('APPROVAL_REFERENCE_REQUIRED');
       const evidence = input.legal_evidence;
       if (!Array.isArray(evidence) || evidence.length > 20 || JSON.stringify(evidence).length > 50000 || evidence.some(r => !r || typeof r !== 'object' || !['pending','verified','blocked'].includes(r.status) || ['country','intended_use','valid_from','valid_until','evidence_url','restrictions'].some(key => typeof r[key] !== 'string' || r[key].length > 2000))) return fail('LEGAL_EVIDENCE_INVALID');
-      const { data: old, error: lookupError } = await db.from('ageless_offers').select('reviewed_at,approval_reference,name,description,manual_approved,is_published,approved_by,legal_evidence,allowed_countries,updated_at,on_hold,hold_reason,catalog_visible').eq('id', id).single();
+      const { data: old, error: lookupError } = await db.from('ageless_offers').select('reviewed_at,approval_reference,name,description,image_url,price_cents,shipping_cents,stock_quantity,manual_approved,is_published,approved_by,legal_evidence,allowed_countries,updated_at,on_hold,hold_reason,catalog_visible').eq('id', id).single();
       if (lookupError || !old) return fail('OFFER_NOT_FOUND', 404);
       if (!actor.owner && catalogVisible !== (old.catalog_visible === true)) return fail('OWNER_REQUIRED', 403);
       if (input.updated_at !== old.updated_at) return fail('PRODUCT_CHANGED_RELOAD', 409);
       const evidenceChanged = old.on_hold !== onHold || (old.hold_reason || '') !== holdReason || old.name !== name || (old.description || '') !== description || old.approval_reference !== ref || JSON.stringify(old.legal_evidence) !== JSON.stringify(evidence) || JSON.stringify(old.allowed_countries) !== JSON.stringify(countries);
-      const changedApproval = !old.manual_approved || evidenceChanged;
+      // Any edit affecting the sold product requires a fresh owner approval.
+      const commercialChanged = evidenceChanged || old.image_url !== (image || null) ||
+        old.price_cents !== price || old.shipping_cents !== shipping || old.stock_quantity !== stock;
+      const changedApproval = !old.manual_approved || commercialChanged;
+      if (!actor.owner && old.manual_approved && commercialChanged) return fail('OWNER_REAPPROVAL_REQUIRED', 403);
+      if (old.manual_approved && commercialChanged && (approved || published)) return fail('OWNER_REAPPROVAL_REQUIRED', 409);
       if (!actor.owner && (approved !== old.manual_approved || published !== old.is_published || evidenceChanged)) return fail('OWNER_REQUIRED', 403);
       if (approved && !validEvidence(evidence, countries)) return fail('LEGAL_EVIDENCE_MISSING_EXPIRED_OR_UNVERIFIED', 409);
       const { error } = await db.from('ageless_offers').update({
