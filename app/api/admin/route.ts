@@ -123,22 +123,29 @@ export async function POST(req: NextRequest) {
       if (input.updated_at !== old.updated_at) return fail('PRODUCT_CHANGED_RELOAD', 409);
       const evidenceChanged = old.on_hold !== onHold || (old.hold_reason || '') !== holdReason || old.name !== name || (old.description || '') !== description || old.approval_reference !== ref || JSON.stringify(old.legal_evidence) !== JSON.stringify(evidence) || JSON.stringify(old.allowed_countries) !== JSON.stringify(countries);
       // Any edit affecting the sold product requires a fresh owner approval.
-      const commercialChanged = evidenceChanged || old.image_url !== (image || null) ||
+      const commercialChanged = evidenceChanged || (old.image_url || null) !== (image || null) ||
         old.price_cents !== price || old.shipping_cents !== shipping || old.stock_quantity !== stock;
+      // Approved staff may immediately remove a product from sale by zeroing stock,
+      // without obtaining an owner signature. This emergency action REVOKES approval.
+      const emergencyStockStop = !actor.owner && old.manual_approved && stock === 0 &&
+        old.stock_quantity !== 0 && !evidenceChanged &&
+        (old.image_url || null) === (image || null) &&
+        old.price_cents === price && old.shipping_cents === shipping;
+      const effectiveApproved = approved && !emergencyStockStop;
       const changedApproval = !old.manual_approved || commercialChanged;
-      if (!actor.owner && old.manual_approved && commercialChanged) return fail('OWNER_REAPPROVAL_REQUIRED', 403);
-      if (old.manual_approved && commercialChanged && (approved || published)) return fail('OWNER_REAPPROVAL_REQUIRED', 409);
-      if (!actor.owner && (approved !== old.manual_approved || published !== old.is_published || evidenceChanged)) return fail('OWNER_REQUIRED', 403);
+      if (!actor.owner && old.manual_approved && commercialChanged && !emergencyStockStop) return fail('OWNER_REAPPROVAL_REQUIRED', 403);
+      if (old.manual_approved && commercialChanged && (approved || published) && !emergencyStockStop) return fail('OWNER_REAPPROVAL_REQUIRED', 409);
+      if (!actor.owner && (approved !== old.manual_approved || published !== old.is_published || evidenceChanged) && !emergencyStockStop) return fail('OWNER_REQUIRED', 403);
       if (approved && !validEvidence(evidence, countries)) return fail('LEGAL_EVIDENCE_MISSING_EXPIRED_OR_UNVERIFIED', 409);
       const { error } = await db.from('ageless_offers').update({
         name, description, image_url: image || null, allowed_countries: countries, price_cents: price, shipping_cents: shipping, stock_quantity: stock,
         catalog_visible: catalogVisible,
         on_hold: onHold, hold_reason: holdReason || null,
-        legal_evidence: evidence, approved_by: approved ? (changedApproval ? actor.user.email : old.approved_by) : null,
-        approval_reference: ref || null, manual_approved: approved,
-        compliance_status: approved ? 'approved' : 'manual_review',
-        reviewed_at: approved ? (changedApproval ? new Date().toISOString() : old.reviewed_at) : null,
-        is_published: published && approved,
+        legal_evidence: evidence, approved_by: effectiveApproved ? (changedApproval ? actor.user.email : old.approved_by) : null,
+        approval_reference: ref || null, manual_approved: effectiveApproved,
+        compliance_status: effectiveApproved ? 'approved' : 'manual_review',
+        reviewed_at: effectiveApproved ? (changedApproval ? new Date().toISOString() : old.reviewed_at) : null,
+        is_published: published && effectiveApproved,
         updated_at: new Date().toISOString(),
       }).eq('id', id).eq('updated_at', old.updated_at).select('id').single();
       if (error) return fail('PRODUCT_CHANGED_RELOAD', 409);
