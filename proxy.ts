@@ -5,7 +5,7 @@ import { createClient } from '@supabase/supabase-js';
 // Closed by default. Only an explicit release opens the storefront again.
 export async function proxy(request: NextRequest) {
   const path = request.nextUrl.pathname;
-  const open = path === '/zugang' || path === '/admin' || path === '/api/admin'
+  const open = path === '/zugang' || path === '/admin' || path === '/api/admin' || path.startsWith('/api/customer-access')
     || path.startsWith('/rechtliches/') || path.startsWith('/_next/static/')
     || ['/ageless-logo.svg', '/icon.svg', '/favicon.ico', '/robots.txt', '/sitemap.xml'].includes(path);
   if (open || process.env.AGELESS_SITE_ACCESS === 'public') return NextResponse.next();
@@ -44,7 +44,7 @@ export async function proxy(request: NextRequest) {
       .split(',').map(value => value.trim().toLowerCase()).filter(Boolean);
     const db = createClient(url, secret, { auth: { persistSession: false, autoRefreshToken: false } });
     if (!owners.includes(email)) {
-      const { data: access, error: lookupError } = await db.from('ageless_admin_access_requests')
+      const { data: access, error: lookupError } = await db.from('ageless_tester_access')
         .select('status,email').eq('user_id', user.id).maybeSingle();
       if (lookupError || access?.status !== 'approved' || access.email?.toLowerCase() !== email) return deny();
     }
