@@ -49,7 +49,7 @@ export default function MobileMenu() {
         <a href="#wissen" onClick={close}>Produktwelten</a>
         <a href="#qualitaet" onClick={close}>Qualität</a>
         <a href="#ueber" onClick={close}>Über AgeLess</a>
-        <Link href="/admin" onClick={close}>Login · Verwaltung</Link>
+        <Link href="/login" onClick={close}>Kunden-Login</Link>
       </nav>
     </details>
   );
