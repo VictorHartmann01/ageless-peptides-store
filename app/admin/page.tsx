@@ -1,6 +1,7 @@
 'use client';
 import { useCallback, useEffect, useState } from 'react';
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { SupabaseClient } from '@supabase/supabase-js';
+import { createBrowserClient } from '@supabase/ssr';
 import Link from 'next/link';
 import { validEvidence } from '../../lib/commerce/approval';
 
@@ -14,7 +15,7 @@ const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 let authClient: SupabaseClient | null = null;
 function auth() {
   if (!url || !key) return null;
-  if (!authClient) authClient = createClient(url, key);
+  if (!authClient) authClient = createBrowserClient(url, key, { auth: { flowType: 'implicit' } });
   return authClient;
 }
 const euro = (c: number) => (c / 100).toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });

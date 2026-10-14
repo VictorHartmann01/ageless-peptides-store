@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { createPublicClient } from '../../lib/supabase/public';
+import { getAdminClient } from '../../lib/commerce/server';
+
+export const dynamic = 'force-dynamic';
 
 type Product = {
   id: string;
@@ -20,7 +22,7 @@ export const metadata = {
 };
 
 export default async function ShopPage() {
-  const supabase = createPublicClient();
+  const supabase = getAdminClient();
   const { data, error } = await supabase
     .from('products')
     .select('id,name,slug,short_description,description,image_url,compliance_status,sales_mode,jurisdiction_note,evidence_note')

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { createPublicClient } from '../lib/supabase/public';
+import { getAdminClient } from '../lib/commerce/server';
 import MobileMenu from './components/MobileMenu';
 // Freely licensed Unsplash editorial imagery; no fictional AgeLess packaging or product claims.
 const hero = '/images/ageless/hero-couple.webp';
@@ -15,7 +15,7 @@ type Offer = { id: string; name: string; description: string | null; image_url: 
 export const dynamic = 'force-dynamic';
 async function getApprovedOffers(): Promise<Offer[]> {
   try {
-    const { data, error } = await createPublicClient().from('ageless_offers')
+    const { data, error } = await getAdminClient().from('ageless_offers')
       .select('id,name,description,image_url,price_cents')
       .eq('is_published', true).eq('manual_approved', true)
       .eq('compliance_status', 'approved').gt('stock_quantity', 0).order('name').limit(4);

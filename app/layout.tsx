@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     description: 'Longevity, Peptide und Research mit transparenter Einordnung zu Evidenz, Qualität und Compliance.',
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 };
 
