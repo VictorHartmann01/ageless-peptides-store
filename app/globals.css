@@ -912,3 +912,17 @@ a{color:inherit}
 .ag-editor-new .age-admin-panel{border:0;box-shadow:none;margin:16px 0 0}
 @media(max-width:1000px){.ag-editor-columns{grid-template-columns:1fr}.ag-editor-photo{aspect-ratio:16/10;min-height:250px}}
 @media(max-width:600px){.ag-editor-card{padding:17px;border-radius:15px}.ag-editor-nav{gap:5px}.ag-editor-nav button{padding:10px 8px;font-size:11px}.ag-editor-nav select{font-size:12px}.ag-editor-card .age-admin-fields{grid-template-columns:1fr}.ag-editor-toolbar h2{font-size:26px}}
+
+/* Readable Research status and one-click owner sale decision */
+.ag-research-summary{display:grid;gap:9px;padding:18px;background:#f3f7f5;border:1px solid #e2ece8;border-radius:14px;margin:16px 0;font-size:13px;color:#435a62}
+.ag-research-summary strong{color:#133e4c;font-size:15px}
+.ag-research-proof{border:1px solid #e6ebeb;border-radius:13px;padding:15px;margin:12px 0;background:#fff}
+.ag-research-proof p{margin:9px 0;font-size:13px;line-height:1.6}
+.ag-research-proof a{font-size:13px;color:#986d2b;font-weight:700}
+.ag-research-decision{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ag-research-decision-button{border:1px solid #dae4e4;border-radius:13px;padding:16px;background:#fff;text-align:left;cursor:pointer;display:grid;gap:8px;color:#153849}
+.ag-research-decision-button span{font-size:14px;font-weight:750}
+.ag-research-decision-button small{font-size:11px;line-height:1.4;color:#647b84}
+.ag-research-decision-button.is-selected{border:2px solid #c49a47;background:#fffaf0}
+.ag-research-decision-button:disabled{opacity:.56;cursor:not-allowed}
+@media(max-width:600px){.ag-research-decision{grid-template-columns:1fr}}
