@@ -1,3 +1,4 @@
+import './front02-closed-beta.css';
 import Link from 'next/link';
 
 // Closed beta: the public entry intentionally contains no product offers,
