@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     const db = getAdminClient();
     const { data: order, error } = await db.from('ageless_orders').select('id,status,paypal_order_id,total_cents,country_code,payment_mode,items').eq('id', body.orderId).maybeSingle();
     if (error || !order || order.paypal_order_id !== body.paypalOrderId) return NextResponse.json({ error: 'ORDER_NOT_FOUND' }, { status: 404 });
-    if (process.env.AGELESS_SITE_ACCESS !== 'public' && order.payment_mode !== 'sandbox') return NextResponse.json({ error: 'TEST_SITE_SANDBOX_ONLY' }, { status: 403, headers: { 'Cache-Control': 'no-store' } });
+    if (order.payment_mode !== 'sandbox') return NextResponse.json({ error: 'TEST_SITE_SANDBOX_ONLY' }, { status: 403, headers: { 'Cache-Control': 'no-store' } });
     if (order.status === 'paid' || order.status === 'sandbox_paid' || order.status === 'paid_manual_review') return NextResponse.json({ status: order.status }, { headers: { 'Cache-Control': 'no-store' } });
     if (order.status !== 'payment_created') return NextResponse.json({ error: 'ORDER_NOT_PAYABLE' }, { status: 409 });
     // Re-check current product/country approval before requesting a charge.

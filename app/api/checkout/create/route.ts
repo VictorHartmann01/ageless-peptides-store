@@ -12,6 +12,7 @@ export async function POST(request: NextRequest) {
     const gateDb = getAdminClient();
     const { data: gate, error: gateError } = await gateDb.from('ageless_store_settings').select('mode').eq('id', 1).single();
     if (gateError || !gate || gate.mode === 'draft') return NextResponse.json({ error: 'CHECKOUT_NOT_RELEASED' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
+    if (gate.mode !== 'sandbox') return NextResponse.json({ error: 'TEST_SITE_SANDBOX_ONLY' }, { status: 403 });
     if (!['sandbox','live'].includes(gate.mode)) return NextResponse.json({ error: 'PAYMENT_MODE_MISMATCH' }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
     if (gate.mode === 'live') {
       const { data: pages, error: pagesError } = await gateDb.from('ageless_legal_pages').select('slug,body,published');
