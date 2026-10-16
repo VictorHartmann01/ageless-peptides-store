@@ -5,6 +5,12 @@ on:
       - 'app/admin/**'
       - 'app/globals.css'
       - 'app/api/admin/image-upload/**'
+      - 'app/api/admin/route.ts'
+      - 'lib/commerce/**'
+      - 'proxy.ts'
+      - 'scripts/*test*'
+      - 'package.json'
+      - 'package-lock.json'
       - '.github/workflows/admin-editor-ci.yml'
 jobs:
   build:
@@ -15,9 +21,14 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npx tsc --noEmit
+      - run: node scripts/backoffice-test.cjs
+      - run: node scripts/access-test.cjs
+      - run: node scripts/image-upload-test.cjs
+      - run: node scripts/admin-editor-test.cjs
       - run: npm run build
         env:
           NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
           NEXT_PUBLIC_SUPABASE_ANON_KEY: build-placeholder
+
