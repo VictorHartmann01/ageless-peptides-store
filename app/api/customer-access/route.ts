@@ -12,7 +12,9 @@ async function actor(req: NextRequest) {
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return null;
   const auth = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false } });
-  const { data, error } = await auth.auth.getUser(token.slice(7));
+  const result = await auth.auth.getUser(token.slice(7)).catch(() => null);
+  if (!result) return null;
+  const { data, error } = result;
   if (error || !data.user?.email_confirmed_at || !data.user.email) return null;
   const owners = (process.env.AGELESS_OWNER_EMAILS || process.env.AGELESS_ADMIN_APPROVER_EMAIL || '')
     .split(',').map(x => x.trim().toLowerCase()).filter(Boolean);
@@ -31,8 +33,8 @@ export async function GET(req: NextRequest) {
       return error ? fail('ACCESS_READ_FAILED', 500) : NextResponse.json({ owner: true, requests: data }, { headers });
     }
     const { data, error } = await db.from('ageless_tester_access')
-      .select('status').eq('user_id', user.id).maybeSingle();
-    return error ? fail('ACCESS_READ_FAILED', 500) : NextResponse.json({ owner: false, status: data?.status || 'not_requested' }, { headers });
+      .select('status,email').eq('user_id', user.id).maybeSingle();
+    return error ? fail('ACCESS_READ_FAILED', 500) : NextResponse.json({ owner: false, status: data?.email?.toLowerCase() === user.email ? data.status : 'not_requested' }, { headers });
   } catch { return fail('SERVER_NOT_READY', 503); }
 }
 
@@ -48,6 +50,7 @@ export async function POST(req: NextRequest) {
       const { data: old, error: readError } = await db.from('ageless_tester_access')
         .select('status,email').eq('user_id', user.id).maybeSingle();
       if (readError) return fail('ACCESS_READ_FAILED', 500);
+      if (old && old.email?.toLowerCase() !== user.email) return fail('ACCESS_EMAIL_CHANGED');
       if (old) return NextResponse.json({ status: old.status }, { headers });
       const { error } = await db.from('ageless_tester_access')
         .insert({ user_id: user.id, email: user.email, status: 'pending' });
