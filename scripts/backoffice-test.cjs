@@ -5,7 +5,7 @@ const ts = require('typescript');
 function moduleAt(path, mocks = {}) {
   const exports = {};
   const js = ts.transpileModule(fs.readFileSync(path,'utf8'), {compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
-  vm.runInNewContext(js, {exports,require: name => mocks[name] || require(name),process,Date,console,Buffer,fetch});
+  vm.runInNewContext(js, {exports,require: name => mocks[name] || require(name),process,Date,URL,console,Buffer,fetch});
   return exports;
 }
 const approval = moduleAt('lib/commerce/approval.ts');
@@ -16,6 +16,9 @@ let checks = 0;
 function check(name, actual, expected) {assert.equal(actual, expected, name); checks++;}
 check('current country proof', approval.validEvidence([row],['DE'],now),true);
 for (const [name, patch] of [['pending',{status:'pending'}],['blocked',{status:'blocked'}],['expired',{valid_until:'2026-10-10'}],['future',{valid_from:'2026-11-01'}],['invalid calendar',{valid_from:'2026-02-30'}],['no document',{evidence_url:''}],['no use',{intended_use:''}],['insecure source',{evidence_url:'http://example.com'}]]) check(name,approval.validEvidence([{...row,...patch}],['DE'],now),false);
+for (const url of ['javascript:alert(1)', 'https://', 'https://user:pass@example.com/a', 'https://exa\\mple.com']) check('unsafe source '+url,approval.validEvidence([{...row,evidence_url:url}],['DE'],now),false);
+check('invalid country',approval.validEvidence([{...row,country:'INVALID'}],['INVALID'],now),false);
+check('duplicate delivery country',approval.validEvidence([row],['DE','DE'],now),false);
 check('uncovered country',approval.validEvidence([row],['DE','AT'],now),false);
 check('contradictory duplicate country',approval.validEvidence([row,{...row,status:'blocked'}],['DE'],now),false);
 check('empty proof',approval.validEvidence([],['DE'],now),false);
@@ -55,6 +58,9 @@ async function run() {
   user={...user,email:'owner@example.com'};
   check('owner rejects missing country evidence',(await route.POST(req({...payload,allowed_countries:'DE,AT'}))).status,409);
   check('owner rejects pending evidence',(await route.POST(req({...payload,legal_evidence:[{...row,status:'pending'}]}))).status,409);
+  check('unsafe URL blocked server-side',(await route.POST(req({...payload,legal_evidence:[{...row,evidence_url:'https://'}]}))).status,409);
+  check('expired evidence blocked server-side',(await route.POST(req({...payload,legal_evidence:[{...row,valid_until:'2026-01-02'}]}))).status,409);
+  check('owner approval succeeds',(await route.POST(req(payload))).status,200);
   check('hold needs a reason',(await route.POST(req({...payload,on_hold:true}))).status,400);
   check('owner can hold product',(await route.POST(req({...payload,on_hold:true,hold_reason:'Herstellerprüfung pausiert'}))).status,200);
   check('hold revokes approval',writes.at(-1).value.manual_approved,false);

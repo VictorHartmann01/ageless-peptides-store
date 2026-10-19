@@ -1,0 +1,47 @@
+name: AgeLess Hybrid Coordination
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: ageless-hybrid-coordination
+  cancel-in-progress: false
+jobs:
+  coordination:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Inspect project safely
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p coordination-output
+          {
+            echo "# AgeLess coordination report"
+            echo
+            echo "Run (UTC): $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+            echo "Repository commit: ${GITHUB_SHA}"
+            echo
+            echo "## Project files"
+            for file in docs/checkpoints/CURRENT.md docs/checkpoints/product-images-2026-10-11.md docs/coordination/AGENTS.md; do
+              if test -f "$file"; then
+                echo "- Present: $file"
+              else
+                echo "- Missing: $file"
+              fi
+            done
+            echo
+            echo "## Important"
+            echo "This is a read-only synchronization check; no autonomous AI execution, release, email, or legal approval is implied."
+          } > coordination-output/status.md
+          cat coordination-output/status.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ageless-coordination-report
+          path: coordination-output/status.md
+          retention-days: 7
