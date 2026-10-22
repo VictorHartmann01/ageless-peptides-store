@@ -47,6 +47,11 @@ export async function POST(req: NextRequest) {
     const {error:uploadError} = await db.storage.from(bucket).upload(path,bytes,{contentType:file.type,upsert:false,cacheControl:'3600'});
     if (uploadError) return fail('UPLOAD_FAILED',500);
     const {data:publicData} = db.storage.from(bucket).getPublicUrl(path);
+    // Persist the association in the same request: a successful upload must not
+    // depend on the admin editor's separate product-save action.
+    const {error:saveError} = await db.from('ageless_offers')
+      .update({image_url:publicData.publicUrl}).eq('id',id);
+    if (saveError) return fail('IMAGE_SAVED_BUT_LINK_FAILED',500);
     return NextResponse.json({url:publicData.publicUrl},{headers:noStore});
   } catch { return fail('UPLOAD_FAILED',503); }
 }
