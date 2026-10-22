@@ -5,10 +5,11 @@ import { createClient } from '@supabase/supabase-js';
 // Closed by default. Only an explicit release opens the storefront again.
 export async function proxy(request: NextRequest) {
   const path = request.nextUrl.pathname;
-  const open = path === '/zugang' || path === '/login' || path === '/admin' || path === '/api/admin' || path.startsWith('/api/customer-access')
+  const open = path === '/' || path === '/zugang' || path === '/login' || path === '/admin' || path === '/api/admin' || path === '/api/customer-access'
     || path.startsWith('/rechtliches/') || path.startsWith('/_next/static/')
+    || path === '/images/ageless/hero-couple.webp'
     || ['/ageless-logo.svg', '/icon.svg', '/favicon.ico', '/robots.txt', '/sitemap.xml'].includes(path);
-  if (open || process.env.AGELESS_SITE_ACCESS === 'public') return NextResponse.next();
+  if (open) return NextResponse.next();
 
   let response = NextResponse.next({ request });
   const finish = (result: NextResponse) => {

@@ -1,0 +1,22 @@
+/* Front02: public closed-beta landing only. No shop offer presentation. */
+.al-front02-entry{min-height:100vh;display:flex;flex-direction:column;background:#faf9f5}
+.al-front02-nav{margin-left:auto;display:flex;align-items:center;gap:clamp(12px,2.6vw,32px)}
+.al-front02-nav a{font-size:14px;color:#173c50;text-decoration:none}
+.al-front02-nav a:hover{text-decoration:underline;text-underline-offset:5px}
+.al-front02-nav-login{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:10px 18px;border:1px solid #c49a47;border-radius:4px;font-weight:700}
+.al-front02-nav-login span{color:#b28530}
+.al-front02-hero{flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;min-height:600px}
+.al-front02-copy{padding:clamp(42px,7vw,110px) clamp(25px,6vw,100px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.al-front02-copy h1{font-size:clamp(47px,5.8vw,88px);font-weight:400;letter-spacing:-.055em;line-height:1.08;margin:22px 0 28px;color:#0b3448}
+.al-front02-copy h1 em{font-style:normal;color:#b08a48}
+.al-front02-lead{font-size:clamp(18px,1.65vw,23px);line-height:1.55;color:#234a5b;max-width:580px;margin:0 0 18px}
+.al-front02-support{font-size:15px;line-height:1.7;color:#607681;max-width:540px;margin:0 0 26px}
+.al-front02-cta{display:inline-flex;align-items:center;gap:20px;text-decoration:none;min-height:52px}
+.al-front02-footnote{font-size:13px;color:#607681;line-height:1.6;max-width:450px;margin:19px 0 0}
+.al-front02-art{min-height:450px;background:linear-gradient(90deg,rgba(245,246,240,.2),rgba(11,44,62,.05)),url('/images/ageless/hero-couple.webp') center / cover no-repeat}
+.al-front02-footer{border-top:1px solid #e4e8e4;padding:22px clamp(24px,5vw,80px);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#617782;font-size:13px}
+.al-front02-footer nav{display:flex;gap:24px}.al-front02-footer a{color:#254a5d}
+.al-front02-entry :focus-visible{outline:3px solid #b28530;outline-offset:4px}
+@media(max-width:880px){.al-front02-hero{grid-template-columns:1fr}.al-front02-art{order:-1;min-height:0;height:clamp(210px,45vw,360px)}.al-front02-copy{padding:40px 6vw 55px}.al-front02-copy h1{font-size:clamp(42px,8vw,67px)}}
+@media(max-width:520px){.al-front02-nav{gap:12px}.al-front02-nav a{font-size:12px}.al-front02-nav-login{padding:8px 12px}.al-front02-entry .alv2-logo img{max-width:140px}.al-front02-footer{align-items:flex-start;flex-direction:column}.al-front02-art{height:220px}}
+@media(prefers-reduced-motion:reduce){.al-front02-entry *{scroll-behavior:auto!important;transition:none!important}}
