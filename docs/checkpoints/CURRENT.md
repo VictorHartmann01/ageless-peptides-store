@@ -37,6 +37,18 @@ Postgres-Volume: postgres-volume, an PostgreSQL angebunden.
 Produktiv belegter Web-App-Commit: fc001bc84930f8a2a7561ba9e1c26203b8952735 (19.10.2026), keine aktuellere Web-App-Veröffentlichung nachgewiesen.
 WICHTIG: Laufender Web-App-Code und alte Railway-Variablennamen weisen weiter auf den bisherigen Supabase-basierten Backendpfad hin. Railway-Postgres und Bucket zu provisionieren ist NICHT gleichbedeutend mit migrierten Daten oder umgestelltem Backend. Es fand in dieser Sitzung keine Abfrage oder Mutation der ausgeschlossenen Supabase-Daten statt.
 
+## Live03 tatsächliche Umsetzung am 06.11.2026
+
+**Teamkoordination:** Die vier bestehenden Teamrollen haben eindeutige echte GitHub-Arbeitspakete: [Front #21](https://github.com/VictorHartmann01/ageless-peptides-store/issues/21), [Back03 #22](https://github.com/VictorHartmann01/ageless-peptides-store/issues/22), [Research #23](https://github.com/VictorHartmann01/ageless-peptides-store/issues/23), [Beta Status #24](https://github.com/VictorHartmann01/ageless-peptides-store/issues/24). Verbindliche Weitergabe im [Team-Checkpoint](https://github.com/VictorHartmann01/ageless-peptides-store/issues/3#issuecomment-6691633609). Noch **keine bestätigte individuelle Lesequittung** der anderen Rollen.
+
+**Bildprüfung:** Betreiber-ZIP `AgeLess_Bilder_Substanznamen.zip` im Dateisystem geöffnet, **26 PNG / 21 einmalige SHA-256-Inhalte / 5 identische Dublettenpaare**. Nachweis: [IMAGE_INVENTORY_2026-11-06.md](IMAGE_INVENTORY_2026-11-06.md), Commit `f07d80a8`. Vollständiger neuer 43er-Asset-Bestand weiterhin NICHT als tatsächliche Datei übergeben.
+
+**Backupprüfung:** `AgeLess_Project_Backup_2026-10-06.zip` enthält 62 ZIP-Einträge mit Dokumentation/Projektbildern, aber **keinen erkennbaren exportierten aktuellen PostgreSQL-/SQL-Datenbestand**; darf nicht als vollständiges aktuelles Produkt- und Nutzerbackup angesehen werden. Aktueller Datenbestand bleibt BLOCKIERT, solange kein vollständiger sicherer Quell-Export vorhanden ist.
+
+**Code-Fix:** Bestehende Vorschläge #18 (Speicherstatus) und #19 (Admin-Navigation) in getrenntem PR #25 zusammengeführt. Auf dem PR-Head `564f6678`: GitHub Actions `AgeLess Admin Editor Build` und `AgeLess Backend CI` **SUCCESS**. PR #25 gemergt als `ae94b3b70d19205a67d6d68674a92ea7e1f126e6` auf `beta/highgloss-logo`; tatsächliches Railway-Deployment und funktionaler Browser-Admin-Test separat prüfen.
+
+**Nicht automatisch erfolgt:** Neue GitHub-Issues oder Kommentare starten die unabhängigen anderen Chat-Sitzungen nicht. Teamarbeit erst nach tatsächlich nachgewiesenen Übergaben als in Arbeit bzw. erledigt markieren.
+
 ## Ausstehende und blockierte Aufgaben
 
 1. BLOCKIERT / NICHT GEPRÜFT: Vollständigen aktuellen Quelldatenexport (inklusive 46 zuletzt bekannten Produktdatensätzen, Auth-/Rechtesystem, evtl. weitere Tabellen) und Bilddateien sicher bereitstellen. Altbestand aus 23.10. ist nur historische Zählung, kein verifizierter 06.11.-Iststand. Vorhandenes Projekt-Backup aus 06.10. ist nicht als aktueller vollständiger Export nachgewiesen. Nicht ohne Backup migrieren/abschalten.
