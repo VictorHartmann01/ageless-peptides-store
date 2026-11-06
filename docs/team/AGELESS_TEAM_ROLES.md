@@ -6,11 +6,11 @@
 
 ## AgeLess Website Live03
 
-**Rolle:** Teamleader, Integrator, Releaseverantwortung. **Zuständig:** aktuelle Regeln und Checkpoints prüfen; Aufgaben koordinieren; Front-/Back03-/Research-/Beta-Status-Übergaben prüfen; Konflikte lösen; Railway/Backend-Migration und Image-Upload in technisch sicherer Reihenfolge durchführen; CI, Rechte, Sicherheit, Desktop/Mobil und Live-Abnahme kontrollieren; zentralen Checkpoint konsolidieren.
+**Rolle:** Teamleader, Integrator, Releaseverantwortung. **Zuständig:** aktuelle Regeln und Checkpoints prüfen; Aufgaben koordinieren; Front-/Back03-/Research-/Beta-Status-Übergaben prüfen; Konflikte lösen; Railway-freie Hosting-/Backend-Integration und Image-Upload in technisch sicherer Reihenfolge durchführen; CI, Rechte, Sicherheit, Desktop/Mobil und Live-Abnahme kontrollieren; zentralen Checkpoint konsolidieren.
 
 **Nicht eigenmächtig:** Front-Bilder gestalten, fehlende Stoffinformationen erfinden, Verkaufs-/Zahlungsfreigaben vergeben, bestehende Daten ohne vollständige Sicherung löschen, fremde Teams umbenennen.
 
-**Abnahme:** Sicherung nachvollziehbar; Daten/Medien vollständig in Railway importiert und je SKU geprüft; Admin- und Shop-Funktionen getestet; keine Freigaben verändert; tatsächliches Deployment und Rollback dokumentiert. Wenn nicht erfüllt: Offen/Blockiert, nicht Fertig.
+**Abnahme:** Sicherung nachvollziehbar; Daten/Medien vollständig in die geprüfte neue Hosting-/Datenlösung importiert und je SKU geprüft; Admin- und Shop-Funktionen getestet; keine Freigaben verändert; tatsächliches Deployment und Rollback dokumentiert. Wenn nicht erfüllt: Offen/Blockiert, nicht Fertig.
 
 ## Front
 
@@ -26,7 +26,7 @@
 
 **Rolle:** Backend, Admin, Authentifizierung, Berechtigungen, Daten- und Speicherintegrität.
 
-**Aktueller Auftrag:** Kontrollierten Umstieg auf Railway PostgreSQL und Railway-S3-Bucket vorbereiten, ohne den bisherigen Datenbestand anzufassen, bis der vollständige Export und ein Rückweg gesichert sind. Bestehende Betreiber- und Teamrechte unverändert erhalten; APIs und Admin-Login nach Migration prüfen. Offene PRs #18 (ehrlicher Speicherstatus) und #19 (Admin-Navigation) nach aktuellem Branch/Code prüfen und an Live03 übergeben. Fehlende Produktbilder nicht mit erfundenen URLs kaschieren.
+**Aktueller Auftrag:** Sicheren Umstieg auf eine geeignete Lösung ohne Railway vorbereiten, mit e-Xpense/Sites als zunächst privat zu prüfender Hosting-Referenz, ohne den bisherigen Datenbestand anzufassen, bis der vollständige Export und ein Rückweg gesichert sind. Bestehende Betreiber- und Teamrechte unverändert erhalten; APIs und Admin-Login nach Migration prüfen. Bereits integrierte PRs #18/#19 nicht doppelt bearbeiten. **P0:** [Issue #32](https://github.com/VictorHartmann01/ageless-peptides-store/issues/32) – Checkout-Capture-Sperre reparieren und testen; dazu sicheren Daten-/Auth-/Bild-Transfer ohne Supabase-Neuarbeit vorbereiten. Fehlende Produktbilder nicht mit erfundenen URLs kaschieren.
 
 **Nicht zuständig:** Front-Bildgestaltung, ungenehmigte Datenlöschung, automatische Produkt-/Checkout-Freigabe.
 
@@ -46,7 +46,7 @@
 
 **Rolle:** Unabhängiger Qualitäts-, Veröffentlichungs- und Teststatus.
 
-**Aktueller Auftrag:** Tests zu Railway-Health, Admin-Login, Produkten/Bildern, Desktop/Mobil, Auth-/Rechte-/Checkout-Gates, PayPal-Sandbox und Regressionen unabhängig dokumentieren. Nicht aus einem erfolgreichen Deploy auf funktionierende Endnutzerabläufe schließen.
+**Aktueller Auftrag:** Tests zur aktuellen Hosting-/Runtime-Erreichbarkeit, Admin-Login, Produkten/Bildern, Desktop/Mobil, Auth-/Rechte-/Checkout-Gates, PayPal-Sandbox und Regressionen unabhängig dokumentieren. Nicht aus einem erfolgreichen Deploy auf funktionierende Endnutzerabläufe schließen.
 
 **Nicht zuständig:** ungeprüfte Tests als erfolgreich melden oder eigenständig Checkout/Live-Zahlungen aktivieren.
 
