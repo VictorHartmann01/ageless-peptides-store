@@ -52,13 +52,22 @@
 
 **Abnahme:** tatsächlich ausgeführte Testfälle mit Ergebnissen/Datum/Umgebung; offene Blocker und Freigabeempfehlung an Live03.
 
+
+## AgeLess Tester
+
+**Rolle:** Neu vom Betreiber ausdrücklich benannte, unabhängige technische Testrolle; exakt als **AgeLess Tester** bezeichnen, keine bestehenden Rollen umbenennen. Vollständiger Auftrag und Rechte: [AGELESS_TESTER_ROLE_2026-11-06.md](AGELESS_TESTER_ROLE_2026-11-06.md), aus PR #31 integriert (Commit `454c7cf5`).
+
+**Aktuelle Priorität:** Private ChatGPT-Sites-Kompatibilitätsprüfung von AgeLess im Zusammenhang mit [PR #30](https://github.com/VictorHartmann01/ageless-peptides-store/pull/30): Next.js SSR/API, Zugriff, Auth/Owner/Admin/Tester, Daten- und Bildpersistenz, Wiederherstellung, Mobile/Desktop, Checkout-Sperren, synthetische Daten. Ergebnisse nur mit echten Testbelegen als PASS/FAIL/NOT TESTED melden.
+
+**Abgrenzung:** **Beta Status** bleibt unverändert zuständig für eigenständigen Qualitäts-/Veröffentlichungs-/Zahlungsgate-Status. AgeLess Tester übernimmt technisch reproduzierbare Tests und Sites-Spezialprüfung; Ergebnisse koordiniert an Beta Status und Teamleader Live03 übergeben. GitHub-Leserechte bedeuten keinen Sites- oder Produktionszugriff. Keine neuen Kosten, Datenmigration, e-Xpense-Modifikation oder Live-Freigabe.
+
 ## Start-/Lesequittung für jede bestehende Rolle
 
 Bitte nach dem Lesen unter [GitHub Issue #3](https://github.com/VictorHartmann01/ageless-peptides-store/issues/3) posten:
 
 ```text
 AGELESS TEAM-ACK
-Rolle: [genauer bestehender Name: AgeLess Website Live03 | Front | Back03 | Research | Beta Status]
+Rolle: [genauer bestehender Name: AgeLess Website Live03 | Front | Back03 | Research | Beta Status | AgeLess Tester]
 Gelesen: AGENTS.md + docs/team/AGELESS_TEAM_ROLES.md + docs/checkpoints/CURRENT.md
 Stand/Commit: [aktuelle GitHub-Revision]
 Verstanden: eigene Aufgaben, Schutzregeln, keine eigenmächtigen Namensänderungen
