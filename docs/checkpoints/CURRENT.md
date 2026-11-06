@@ -1,3 +1,11 @@
+## Betreiberentscheidung 06.11.2026: Railway als künftiges Hosting ausgeschlossen
+
+**Verbindlich:** Betreiber: „Wir wollen sowieso ohne Railway arbeiten.“ Damit ist Railway keine Zielplattform für den fortgesetzten AgeLess-Betrieb. Keine neuen Railway-Deployments, Plankäufe, Ressourcen, produktiven Migrationen oder Erweiterungen. Keine Aufforderung zum Abschluss eines Railway-Tarifs. Bereits vorhandene Daten, Dienste und Konfigurationen **nicht ohne gesicherte Datenexporte und Wiederherstellungsmöglichkeit löschen oder kündigen**.
+
+**Neues Ziel:** Bestehenden AgeLess-Shop auf einer geeigneten Nicht-Railway-Plattform funktionsgleich wiederherstellen. Zuerst private, datensparsame Machbarkeitsprüfung der bei e-Xpense verwendeten Hosting-Struktur (ChatGPT Sites), dann bei fehlender Kompatibilität andere kostengünstige geeignete Lösungen anhand Next.js-/Server-APIs, Auth/Admin, Datenbank, Bildspeicher, Datenschutz, Checkout-Schutz, Backups/Restore und Kosten prüfen. Kein DNS-Wechsel, keine reale Kundenmigration und keine Freigabe der Vial-Verkäufe vor bestandenen Tests. Kostenpflichtige Alternativen nur mit ausdrücklicher Kostenfreigabe.
+
+**Offene Blocker:** Vollständiger aktueller Daten-/Auth-/Medienexport fehlt. Sites-kompatible Testinstanz und E2E-Tests nicht nachgewiesen. Weitere teamweite Arbeit über Issue #3; Back03 #22, Front #21, Research #23, Beta Status #24. Bestehende Rollennamen beibehalten.
+
 # AgeLess Website Live03 - CURRENT CHECKPOINT
 
 Stand: 2026-11-06 (Europe/Berlin)
