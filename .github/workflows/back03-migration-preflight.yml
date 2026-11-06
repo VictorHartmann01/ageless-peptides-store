@@ -1,0 +1,18 @@
+name: Back03 Railway migration preflight
+on:
+  pull_request:
+    paths:
+      - 'scripts/railway-migration/**'
+      - 'docs/migration/RAILWAY_CUTOVER_PLAN.md'
+      - '.github/workflows/back03-migration-preflight.yml'
+  workflow_dispatch:
+jobs:
+  offline-preflight-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test scripts/railway-migration/verify-export.test.mjs
+      # Never use production credentials, private exports or Railway DB in CI.
