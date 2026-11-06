@@ -8,7 +8,7 @@ Dies ist eine dauerhafte und für alle beteiligten **GitHub-lesenden** Agenten g
 
 ## 1. Unveränderliche Namen und Zuständigkeiten
 
-Die Betreiberbezeichnungen **AgeLess Website Live03**, **Front**, **Back03**, **Research** und **Beta Status** niemals eigenmächtig ändern. **AgeLess Website Live03** ist Teamleader/Integrationsverantwortlicher; die übrigen Rollen sind in [AGELESS_TEAM_ROLES.md](docs/team/AGELESS_TEAM_ROLES.md) festgelegt. Keine neuen parallelen Projekt-/Teamchats ohne ausdrücklichen Bedarf und Zustimmung. Andere Apps und Projekte bleiben unberührt.
+Die Betreiberbezeichnungen **AgeLess Website Live03**, **Front**, **Back03**, **Research**, **Beta Status** und **AgeLess Tester** niemals eigenmächtig ändern. **AgeLess Website Live03** ist Teamleader/Integrationsverantwortlicher; die übrigen Rollen sind in [AGELESS_TEAM_ROLES.md](docs/team/AGELESS_TEAM_ROLES.md) festgelegt. Keine neuen parallelen Projekt-/Teamchats ohne ausdrücklichen Bedarf und Zustimmung. Andere Apps und Projekte bleiben unberührt.
 
 ## 2. Start jeder Arbeit
 
@@ -31,7 +31,7 @@ Die Betreiberbezeichnungen **AgeLess Website Live03**, **Front**, **Back03**, **
 ## 4. Betreiberentscheidungen für AgeLess
 
 - Bestehendes Projekt weiterführen; kein Neubau.
-- GitHub `VictorHartmann01/ageless-peptides-store` und Railway sind Arbeitsbasis. Gewünschte vollständige Railway-Migration **erst nach vollständiger Datensicherung und verifiziertem Import**; bestehende Datenhaltung vor dem Cutover nicht abschalten.
+- GitHub `VictorHartmann01/ageless-peptides-store` ist die maßgebliche Code-/Checkpoint-Basis. **Railway ist durch die ausdrückliche Betreiberentscheidung vom 06.11.2026 als künftiges Hosting ausgeschlossen**. e-Xpense dient als Architekturvorbild für eine erst privat zu prüfende ChatGPT-Sites-Lösung; keine Änderungen an e-Xpense. Noch vorhandene Alt-Daten/Ressourcen erst nach vollständiger Sicherung und getestetem Restore abschalten oder löschen. Keine neuen Railway-Pläne oder Deployments.
 - Supabase auf ausdrückliche Betreiberanweisung **nicht für neue Datenarbeiten verwenden**.
 - Vier wegen unzureichender Informationen entfernte Produkte niemals eigenmächtig wiederherstellen. Historisch 46 verbleibende Produktdatensätze, Zahl ist nicht automatisch der Live-Iststand.
 - Produktbilder nur von **Front** produzieren/qualitätsprüfen lassen; **Live03** integriert technisch. Das gemeldete 43er-PNG-Paket erfordert tatsächlich abrufbare Dateien und ein Manifest mit Produkt-/Varianten-Zuordnung.
@@ -46,4 +46,4 @@ Die Betreiberbezeichnungen **AgeLess Website Live03**, **Front**, **Back03**, **
 - Für erfolgreich getestete wiederverwendbare Lösungen einen kurzen reproduzierbaren Wissenseintrag schreiben (Ursache, Lösung, Testdatum, Verweis). E-Mail-Belege nur bei autorisiertem, getesteten Versand; Versand nicht fingieren.
 - Ein geplanter GitHub-Workflow oder Prompt startet keinen autonomen KI-Agenten. Keine stündliche selbstständige Codearbeit versprechen, ohne einen echt eingerichteten, kostenautorisierten und End-to-End-geprüften Runner.
 
-**Bezug:** Nutzerdatei `Zusatz_Prompt_v6_-_Checkpoint.docx` vom 25.10.2026, ergänzend zu den bisherigen verbindlichen Projektentscheidungen. Diese repositoryweite Umsetzung ersetzt nicht die vollständige Nutzerdatei.
+**Bezug:** Erneut übergebene Nutzerdatei `Zusatz_Prompt_v6_-_Checkpoint(1).docx`, Version 6.0, Stand 25.10.2026, ergänzend zu bisherigen verbindlichen Projektentscheidungen. Die erneute Übergabe autorisiert keine zusätzlichen Projekte, Kosten, Migrationen, Secrets oder Datenlöschungen; diese GitHub-Regeln sind eine arbeitsbezogene Kurzfassung, nicht die vollständige Datei.\n\n**Zusätzliche operative Punkte aus v6:** Nach tatsächlichem, erfolgreich getesteten Fix kurze reproduzierbare Lösung mit Ursache (ggf. ungeklärt), Schritten, Versionsstand, Regressionstest und Link dokumentieren. E-Mail an die vom Betreiber benannte Adresse nur bei überprüftem, autorisiertem Versand; sonst ausdrücklich NICHT GESENDET. Stündliche Agentenarbeit und vierstündliche Fortsetzung nur mit wirklich eingerichteten, autorisierten und End-to-End-getesteten Run-Zugängen – derzeit nicht als aktiv bestätigt. Bei GitHub-Checkpoints und PRs keine scheingenauen Status- oder Garantiebehauptungen. Pflicht zur erneuten Prüfung kritischer Checkout-Gates bei jeder Hostingmigration.
