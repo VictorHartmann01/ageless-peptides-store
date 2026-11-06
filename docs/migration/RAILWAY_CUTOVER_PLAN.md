@@ -4,34 +4,34 @@
 
 ## Verified infrastructure (read-only, 2026-11-06)
 
-- Railway project: \`3bff23e0-de13-4fb1-8228-9b1b796180da\`.
-- Production: \`28c8b5dc-158a-450c-9757-d070dd7a4010\`.
-- PostgreSQL service: \`4d69fa0d-8cb1-40c9-81a7-de8cada330ea\`, existing volume.
-- S3-compatible bucket: \`ageless-product-images\` (\`f80f2dcc-93a3-4818-9b76-4875ec0caf2c\`).
-- Web service still configured with \`NEXT_PUBLIC_SUPABASE_URL\`, \`NEXT_PUBLIC_SUPABASE_ANON_KEY\`, \`SUPABASE_SERVICE_ROLE_KEY\`. Do not clear them before auth replacement works.
+- Railway project: `3bff23e0-de13-4fb1-8228-9b1b796180da`.
+- Production: `28c8b5dc-158a-450c-9757-d070dd7a4010`.
+- PostgreSQL service: `4d69fa0d-8cb1-40c9-81a7-de8cada330ea`, existing volume.
+- S3-compatible bucket: `ageless-product-images` (`f80f2dcc-93a3-4818-9b76-4875ec0caf2c`).
+- Web service still configured with `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`. Do not clear them before auth replacement works.
 - No proven complete current source export. The old project ZIP is not a live database backup. This is a **hard cutover blocker**.
 
 ## Required source export (obtained by authorized owner/Live03; NOT by Back03 against excluded Supabase)
 
 Use a private encrypted offline folder outside GitHub and public cloud assets. Include:
-- Exact \`schema.sql\`, migrations/schema versions and \`roles-and-policies.json\` describing grants, RLS, triggers, functions, ownership.
-- \`tables/*.jsonl\` for EVERY actual business table, including at least \`ageless_offers\`, \`ageless_legal_pages\`, \`ageless_orders\`, \`ageless_store_settings\`, \`ageless_admin_access_requests\`, \`ageless_tester_access\`; unlisted tables must be identified before migration.
-- \`auth/users.jsonl\` for authenticated identities plus confirmation state, and an **approved separate auth migration plan**. Password hashes, OAuth identities, MFA credentials and sessions must not be assumed portable. Existing user sessions cannot be presumed valid with new authentication.
+- Exact `schema.sql`, migrations/schema versions and `roles-and-policies.json` describing grants, RLS, triggers, functions, ownership.
+- `tables/*.jsonl` for EVERY actual business table, including at least `ageless_offers`, `ageless_legal_pages`, `ageless_orders`, `ageless_store_settings`, `ageless_admin_access_requests`, `ageless_tester_access`; unlisted tables must be identified before migration.
+- `auth/users.jsonl` for authenticated identities plus confirmation state, and an **approved separate auth migration plan**. Password hashes, OAuth identities, MFA credentials and sessions must not be assumed portable. Existing user sessions cannot be presumed valid with new authentication.
 - Actual image binary objects and their paths/ETags, not URL strings alone, including files held in any prior storage provider.
-- A \`manifest.json\` with \`{"format":"ageless-export-v1","files":[{"path":"...","sha256":"<64 lowercase hex>","records":0}]}\`. For each JSONL, \`records\` is number of nonempty JSON objects; all entries need sha256. The manifest is generated from an **immutable**, validated source snapshot. No secrets or customer information in GitHub.
+- A `manifest.json` with `{"format":"ageless-export-v1","files":[{"path":"...","sha256":"<64 lowercase hex>","records":0}]}`. For each JSONL, `records` is number of nonempty JSON objects; all entries need sha256. The manifest is generated from an **immutable**, validated source snapshot. No secrets or customer information in GitHub.
 - Backup encryption/key custody, controlled access, retention/deletion and restore test recorded privately.
 
 ## Read-only verification command (no credentials)
 
-\`\`\`sh
+```sh
 node --test scripts/railway-migration/verify-export.test.mjs
 node scripts/railway-migration/verify-export.mjs /secure/source-export
-\`\`\`
+```
 
 If a target snapshot has been independently exported using the same canonical serialization, run:
-\`\`\`sh
+```sh
 node scripts/railway-migration/verify-export.mjs /secure/source-export /secure/railway-export
-\`\`\`
+```
 Both locations must be private and complete. A passing script verifies **export evidence**; it does **not** prove DB constraints, Auth user sign-in, RLS enforcement, or S3 HTTP access. Never copy raw user records or secrets into GitHub Actions.
 
 ## Controlled migration order (blocked until source verified)
@@ -53,9 +53,9 @@ Both locations must be private and complete. A passing script verifies **export 
 - No portability plan for authentication/customer accounts → STOP.
 - Missing image binary assets or ambiguous SKU mapping → do not claim complete media migration.
 - New recurring cost (incl. additional environments) without owner authorization → STOP.
-- Any newly enabled sale/payment or changed \`manual_approved\`/\`is_published\` flags → STOP.
+- Any newly enabled sale/payment or changed `manual_approved`/`is_published` flags → STOP.
 - Existing web app + current code use Supabase Auth/data; provisioning Railway Postgres/S3 by itself does not switch traffic.
 
 ## Handoff
 
-Back03 is responsible for data/auth preparation and tests. Front supplies media/verified SKU mapping (#21). Research supplies SKU compliance (#23). Beta Status independently tests (#24). Live03 alone integrates and releases. Only update \`docs/checkpoints/CURRENT.md\` by Live03, from evidence in Issue #3.
+Back03 is responsible for data/auth preparation and tests. Front supplies media/verified SKU mapping (#21). Research supplies SKU compliance (#23). Beta Status independently tests (#24). Live03 alone integrates and releases. Only update `docs/checkpoints/CURRENT.md` by Live03, from evidence in Issue #3.
