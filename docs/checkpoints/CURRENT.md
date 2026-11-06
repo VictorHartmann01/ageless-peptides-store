@@ -1,3 +1,9 @@
+## Teamaufnahme AgeLess Tester – 06.11.2026
+
+**Vom Betreiber benannt:** Eigenständige zusätzliche Rolle **AgeLess Tester**; bestehende Rollen Front, Back03, Research, Beta Status und AgeLess Website Live03 behalten ihre Namen und Verantwortlichkeiten. [PR #31](https://github.com/VictorHartmann01/ageless-peptides-store/pull/31) wurde von Live03 anhand ausschließlich einer neuen Rollendokumentationsdatei geprüft und als `454c7cf525c96b49f07456637c9a4a012868ee22` gemergt. [Vollständige Rollendefinition](../team/AGELESS_TESTER_ROLE_2026-11-06.md) liegt im bestehenden Repository; Teamübersicht entsprechend ergänzt.
+
+**Prüfauftrag:** Technische unabhängige Sites- und Regressionstests zur privaten Vorlage [PR #30](https://github.com/VictorHartmann01/ageless-peptides-store/pull/30). **Beta Status bleibt eigenständiger QA-/Release-/Zahlungsgate-Prüfer.** Kein verifizierter Sites-Zugriff oder Sites-Deployment allein durch Teamaufnahme; reale Runtime-, Backup/Restore- und Rechteprüfungen bleiben ausstehend. Keine automatische Aktivierung des anderen Chats durch GitHub.
+
 ## Betreiberentscheidung: e-Xpense als technische Referenz für AgeLess (06.11.2026)
 
 **Verbindlich:** AgeLess ohne Railway aufbauen. **e-Xpense Report** als Vorbild der Hosting- und Update-/Deployment-Struktur nutzen, **nicht** die e-Xpense-App oder ihre Produktivdaten kopieren/verändern. Eigene AgeLess-Website, eigene Daten, eigene Berechtigungen und eigene Domain. Kein neues unnötiges Team und keine Umbenennung der Rollen.
