@@ -1,3 +1,13 @@
+## Betreiberentscheidung: e-Xpense als technische Referenz für AgeLess (06.11.2026)
+
+**Verbindlich:** AgeLess ohne Railway aufbauen. **e-Xpense Report** als Vorbild der Hosting- und Update-/Deployment-Struktur nutzen, **nicht** die e-Xpense-App oder ihre Produktivdaten kopieren/verändern. Eigene AgeLess-Website, eigene Daten, eigene Berechtigungen und eigene Domain. Kein neues unnötiges Team und keine Umbenennung der Rollen.
+
+**Referenz geprüft:** `VictorHartmann01/e-xpense-report-team/status/apps.json` weist für e-Nable die ChatGPT-Sites-Projekt-ID `appgprj_6ad889ff00d481919553122f9baf1c28`, publizierte Version 40 und eine Sites-URL aus (letzte dort eingetragene Verifikation 04.11.2026). Das ist **nur ein dokumentierter Betriebsnachweis für e-Xpense**, kein Beleg, dass der bestehende AgeLess-Next.js-Shop auf Sites unverändert lauffähig ist.
+
+**P0 Umsetzungspfad:** Back03 prüft und bereitet die private Sites-Kompatibilitätsprobe anhand `docs/hosting/AGELESS_SITES_FEASIBILITY_2026-11-06.md` vor, mit synthetischen Testdaten ohne Kundendaten; Front erhält AgeLess-CI und 43er-Motivzuordnung; Beta Status überprüft SSR, Route-Handler, Login/Admin- und Testerrechte, Bilder-Uploads, Offline-/Updateverhalten, Backup+Restore, Domain und deaktivierte Checkout-Gates. Live03 integriert und entscheidet erst nach echten Tests über eine Site-Veröffentlichung. Kein DNS-Wechsel vorher. Keine zusätzliche Kostenpflicht ohne separate Freigabe.
+
+**Offene Blocker:** Tatsächliche Sites-Bereitstellung bzw. Work-Computerzugang für Alterativhosting noch nicht nachgewiesen; aktueller vollständiger Produkt-/Auth-/Medienexport fehlt. Bestehenden GitHub-Code, Checkpoint, Ressourcen und Daten bis nach gesicherter Übernahme schützen. Keine Railway-Neuaktivierung.
+
 ## Betreiberentscheidung 06.11.2026: Railway als künftiges Hosting ausgeschlossen
 
 **Verbindlich:** Betreiber: „Wir wollen sowieso ohne Railway arbeiten.“ Damit ist Railway keine Zielplattform für den fortgesetzten AgeLess-Betrieb. Keine neuen Railway-Deployments, Plankäufe, Ressourcen, produktiven Migrationen oder Erweiterungen. Keine Aufforderung zum Abschluss eines Railway-Tarifs. Bereits vorhandene Daten, Dienste und Konfigurationen **nicht ohne gesicherte Datenexporte und Wiederherstellungsmöglichkeit löschen oder kündigen**.
