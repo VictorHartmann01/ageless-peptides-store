@@ -1,0 +1,20 @@
+// Offline read-only preflight. No secrets, network, DB, migrations or payment calls.
+import { readFileSync, existsSync } from 'node:fs';
+import assert from 'node:assert/strict';
+const read=(p)=>{assert.ok(existsSync(p),'Missing: '+p);return readFileSync(p,'utf8')};
+const pkg=JSON.parse(read('package.json'));
+assert.ok(pkg.dependencies?.next?.startsWith('16.'),'Next.js version assumptions changed');
+const proxy=read('proxy.ts');
+const checkout=read('app/api/checkout/create/route.ts');
+const capture=read('app/api/checkout/capture/route.ts');
+const home=read('app/page.tsx');
+assert.match(proxy,/AGELESS_SITE_ACCESS/);
+assert.match(proxy,/ageless_tester_access/);
+assert.match(checkout,/AGELESS_CHECKOUT_ENABLED\s*!==\s*'true'/);
+assert.match(capture,/AGELESS_CHECKOUT_ENABLED\s*!==\s*'true'/);
+assert.match(home,/manual_approved/);
+assert.match(home,/compliance_status/);
+assert.match(home,/stock_quantity/);
+for(const p of ['app/login/page.tsx','app/admin/page.tsx','app/api/admin/route.ts','app/api/admin/image-upload/route.ts','lib/commerce/server.ts']) read(p);
+console.log('PASS: expected source files and fail-closed guards present');
+console.log('NOT TESTED: Sites deployment, auth, private access, persistence, media, backup/restore, pricing');
