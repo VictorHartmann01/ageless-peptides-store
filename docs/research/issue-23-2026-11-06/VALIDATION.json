@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-06",
+  "scope": "Offline document/data integrity only; not legal approval, source identity verification, deployment or live QA",
+  "passed": true,
+  "checks": [
+    {
+      "check": "47 unique historical records",
+      "passed": true
+    },
+    {
+      "check": "Exact legacy ID set preserved",
+      "passed": true
+    },
+    {
+      "check": "Original names and variants preserved",
+      "passed": true
+    },
+    {
+      "check": "No current SKU IDs invented",
+      "passed": true
+    },
+    {
+      "check": "Historical scope and unresolved exclusion retained",
+      "passed": true
+    },
+    {
+      "check": "No release or listing readiness invented",
+      "passed": true
+    },
+    {
+      "check": "Every source ID resolves",
+      "passed": true
+    },
+    {
+      "check": "Every record has review date purpose gap text owner",
+      "passed": true
+    },
+    {
+      "check": "11 confirmed vial forms kept distinct",
+      "passed": true
+    },
+    {
+      "check": "GHK and NAD strength variants not merged",
+      "passed": true
+    },
+    {
+      "check": "Source dates URLs approval boundaries present",
+      "passed": true
+    },
+    {
+      "check": "Human-readable matrix contains all IDs exactly once",
+      "passed": true
+    }
+  ],
+  "rows": 47,
+  "source_count": 11
+}
