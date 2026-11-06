@@ -14,6 +14,18 @@ Betreiberwunsch: Produktdaten und Bilder vollständig zu Railway migrieren, vorh
 
 Zusatz_Prompt_v6_-_Checkpoint.docx (25.10.2026) als ergänzende Qualitätsregel: minimaler Eingriff, überprüfbare Ergebnisse, keine Regression, kein Neustart, Sicherheits- und Kostenfreigaben. Kein automatischer Hintergrundagent allein durch einen Prompt.
 
+## Verbindliche teamweite Arbeitsregeln (06.11.2026)
+
+Die Zusatzregeln aus `Zusatz_Prompt_v6_-_Checkpoint.docx` sind für **alle bisherigen Rollen** als [AGENTS.md](../../AGENTS.md) und [AGELESS_TEAM_ROLES.md](../team/AGELESS_TEAM_ROLES.md) im aktiven Branch verankert.
+
+- **Live03**: Teamleader/Integration/Abnahme; **Front**: Bilder/UX; **Back03**: Backend/Daten/Auth; **Research**: Evidenz/Legalität; **Beta Status**: unabhängige Prüfung. Keine eigenmächtigen Namensänderungen.
+- Alle müssen beim nächsten aktiven Arbeitsbeginn die drei Dateien lesen und eine **eigene GitHub-ACK im Issue #3** hinterlegen; fremde Chats werden durch einen GitHub-Kommentar nicht automatisch gestartet.
+- Status der **Lesequittungen der anderen Rollen**: **NICHT BESTÄTIGT** bis zu tatsächlichen Kommentaren der jeweiligen Rollen.
+- Zentraler Checkpoint bleibt `docs/checkpoints/CURRENT.md`; keine parallele Hauptversion.
+- Kostenfreigaben, Datensicherung, nicht-verkäufliche Vials, Produkt-Ausschlüsse, Railway-Cutover und Tests werden weiterhin durch die Bestandsregeln gesteuert.
+- Geprüfte Publikation der Regeln: AGENTS.md Commit `43fe6fe1`, Teamrollen Commit `c7c0eca7`; zugehörige Arbeitsanweisungen sind keine Behauptung einer automatischen Ausführung.
+- Nächste Priorität bleibt aktueller vollständiger Quelldaten-/Bildexport und sichere Railway-Migration. Die neuen Regeln ersetzen keine fehlenden Produktdaten oder ZIP-Dateien.
+
 ## Verifizierter technischer Stand 2026-11-06
 
 Railway Projekt: 3bff23e0-de13-4fb1-8228-9b1b796180da
