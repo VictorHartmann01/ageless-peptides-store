@@ -1,10 +1,26 @@
+## Verbindliche Teamaufstellung – Betreiberentscheidung 07.11.2026
+
+| Rolle | Verbindliche Aufgabe |
+|---|---|
+| AgeLess Work | Einziger Teamleader; Integration, finale Prüfung und Veröffentlichung. Bisherige Bezeichnung: AgeLess Website Live04. |
+| AgeLess Line Up | Vorarbeiten, Codeänderungen, Tests und vollständige geprüfte Übergabepakete; Work-Aufwand minimieren. Vormals Live03, keine parallele Teamleitung. |
+| Front | Design, Corporate Identity, Produktbilder und Bedienung auf Handy und Desktop. |
+| Back03 | Backend, Datenbank, Login, Rechte, sichere Speicherung und Checkout-Sperren; P0 #32. |
+| Research | Produktinformationen, Quellen, Nachweise und rechtliche Prüfung. |
+| Beta Status | Unabhängige Qualitätskontrolle, Abnahmestatus und Veröffentlichungsempfehlung. |
+| AgeLess Tester | Unabhängige technische Tests: Sicherheit, Funktionen, mobile Darstellung, Datenverlust und Wiederherstellung. |
+
+**Sieben bestehende Rollen.** Kein zusätzlicher Chat oder neuer Agent. „AgeLess Work“ ersetzt den bisherigen Namen Live04 für dieselbe Teamleiterrolle. Ältere abweichende Rollenlisten sind historische Stände. Jede Aufgabe behält genau einen primären Verantwortlichen; Line Up stimmt Vorarbeiten mit den Spezialrollen ab und vermeidet Doppelarbeit.
+
+**Teamkommunikation:** Alle sechs Kollegen bitte diese Aufstellung und die aktuellen Regeln lesen und im bestehenden Issue #3 selbst bestätigen: `AGELESS TEAM-ACK | Rolle | neue Aufstellung gelesen | Commit | eigene Aufgabe | Blocker`. Eine GitHub-Mitteilung startet keine andere Chat-Sitzung; Empfang ist erst mit eigener Rückmeldung bestätigt. Zur Fehlervermeidung künftige Teamaufstellungen stets gegen diese sieben Rollen prüfen.
+
 # AgeLess - Teamrollen, Aufgaben, Bestätigung
 
-**Projekt:** AgeLess Peptides Store. **Teamleader:** AgeLess Website Live04. **Zentrale Anleitung:** [AGENTS.md](../../AGENTS.md). **Ist-Stand:** [CURRENT.md](../checkpoints/CURRENT.md). **Koordination:** [Issue #3](https://github.com/VictorHartmann01/ageless-peptides-store/issues/3).
+**Projekt:** AgeLess Peptides Store. **Teamleader:** AgeLess Work. **Zentrale Anleitung:** [AGENTS.md](../../AGENTS.md). **Ist-Stand:** [CURRENT.md](../checkpoints/CURRENT.md). **Koordination:** [Issue #3](https://github.com/VictorHartmann01/ageless-peptides-store/issues/3).
 
-**Rollenänderung vom Betreiber am 07.11.2026:** Der bisherige Chat **AgeLess Website Live03** führt künftig die Rolle **AgeLess Line Up**. **AgeLess Website Live04** bleibt der einzige Teamleiter und Verantwortliche für Integration, Work und Veröffentlichung. Sonstige Teamrollen bleiben unverändert. Keine eigenmächtigen zusätzlichen Rollen oder Chats. Unabhängige Chats können nicht direkt aus diesem Repository heraus gestartet, benachrichtigt oder zur Einhaltung gezwungen werden. Wer aktiv arbeitet, muss diese Anweisungen selbst abrufen und den Empfang nachweisbar bestätigen.
+**Rollenänderung vom Betreiber am 07.11.2026:** Der bisherige Chat **AgeLess Website Live03** führt künftig die Rolle **AgeLess Line Up**. **AgeLess Work** bleibt der einzige Teamleiter und Verantwortliche für Integration, Work und Veröffentlichung. Sonstige Teamrollen bleiben unverändert. Keine eigenmächtigen zusätzlichen Rollen oder Chats. Unabhängige Chats können nicht direkt aus diesem Repository heraus gestartet, benachrichtigt oder zur Einhaltung gezwungen werden. Wer aktiv arbeitet, muss diese Anweisungen selbst abrufen und den Empfang nachweisbar bestätigen.
 
-## AgeLess Website Live04
+## AgeLess Work
 
 **Rolle:** Teamleader, Integrator, Releaseverantwortung. **Zuständig:** aktuelle Regeln und Checkpoints prüfen; Aufgaben koordinieren; Front-/Back03-/Research-/Beta-Status-Übergaben prüfen; Konflikte lösen; Railway-freie Hosting-/Backend-Integration und Image-Upload in technisch sicherer Reihenfolge durchführen; CI, Rechte, Sicherheit, Desktop/Mobil und Live-Abnahme kontrollieren; zentralen Checkpoint konsolidieren.
 
@@ -16,7 +32,7 @@
 
 **Rolle:** Vorbereitungs-, Koordinations- und Übergabestelle für AgeLess zur **Minimierung des begrenzten ChatGPT-Work-Veröffentlichungskontingents**. Bezeichnung gilt auf ausdrücklichen Betreiberauftrag vom 07.11.2026. **Nicht** Teamleiter, nicht Release-/Live-Verantwortlicher.
 
-**Aufgabe:** Bereits vorhandene PRs, Issues, Dokumentation, Code, Assets, Tests und Checkpoints nutzen und konsolidieren; selbstständig alle sicheren Zusatzarbeiten außerhalb Work vorbereiten und soweit technisch möglich ausführen. Anforderungen und Abnahmekriterien präzisieren, notwendige Code-/Test-/Konfigurationspakete liefern, Offline-Prüfungen durchführen, Import-/Rollback- und Geheimnis-/Daten-Schutz prüfen, Mergekonflikte und Abhängigkeiten früh beseitigen. Ergebnisse ausschließlich mit echten Commit-/PR-/Testnachweisen und eindeutiger Integrationsanleitung über Issue #3 an Live04/Work übergeben. So muss Work möglichst nur noch zwingende Sites-/Hosting-/Runtime-Arbeiten, finale Integration und Veröffentlichung durchführen.
+**Aufgabe:** Bereits vorhandene PRs, Issues, Dokumentation, Code, Assets, Tests und Checkpoints nutzen und konsolidieren; selbstständig alle sicheren Zusatzarbeiten außerhalb Work vorbereiten und soweit technisch möglich ausführen. Anforderungen und Abnahmekriterien präzisieren, notwendige Code-/Test-/Konfigurationspakete liefern, Offline-Prüfungen durchführen, Import-/Rollback- und Geheimnis-/Daten-Schutz prüfen, Mergekonflikte und Abhängigkeiten früh beseitigen. Ergebnisse ausschließlich mit echten Commit-/PR-/Testnachweisen und eindeutiger Integrationsanleitung über Issue #3 an AgeLess Work übergeben. So muss Work möglichst nur noch zwingende Sites-/Hosting-/Runtime-Arbeiten, finale Integration und Veröffentlichung durchführen.
 
 **Abgrenzung:** Back03 bleibt für Backend/Auth/#32, Front für Bilder/UX, Research für Produkt-/Rechtsprüfung, Beta Status und AgeLess Tester für unabhängige Qualität zuständig. Bei Bedarf Vorarbeiten abstimmen statt fremde Branches zu überschreiben. Keine Produktivfreigabe, Zahlung, Domain- oder Datenmigration ohne nachgewiesene Voraussetzungen und Betreiberentscheidung.
 
@@ -26,7 +42,7 @@
 
 **Rolle:** Produktbilder, Gestaltung, UX/Mobil-Darstellung und Frontend-Inhalte im AgeLess-CI.
 
-**Aktueller Auftrag:** Das gemeldete Paket aus 43 PNG-Dateien (38 Hauptmotive, 5 Varianten) einschließlich tatsächlicher Binärdateien, Manifest/Dateinamen und eindeutigem Produktschlüssel/Stärke über einen *abrufbaren* Repo-Asset-Pfad bzw. anderen geeigneten freigegebenen Übergabekanal an Live04 übergeben. Vorhandene Motive zuerst wiederverwenden, nur Fehlendes neu erstellen. Visuals müssen zu tatsächlichen Vials/Formen passen oder klar als Illustration gekennzeichnet sein. Mobil/Desktop gegen Referenz-CI prüfen.
+**Aktueller Auftrag:** Das gemeldete Paket aus 43 PNG-Dateien (38 Hauptmotive, 5 Varianten) einschließlich tatsächlicher Binärdateien, Manifest/Dateinamen und eindeutigem Produktschlüssel/Stärke über einen *abrufbaren* Repo-Asset-Pfad bzw. anderen geeigneten freigegebenen Übergabekanal an AgeLess Work übergeben. Vorhandene Motive zuerst wiederverwenden, nur Fehlendes neu erstellen. Visuals müssen zu tatsächlichen Vials/Formen passen oder klar als Illustration gekennzeichnet sein. Mobil/Desktop gegen Referenz-CI prüfen.
 
 **Nicht zuständig:** Produktverkaufsfreigaben, Backend-Datenlöschen, alleinige Veröffentlichung.
 
@@ -46,7 +62,7 @@
 
 **Rolle:** Stoff- und Produktinformationen, Nachweise und regulatorische Einordnung insbesondere für DE/EU.
 
-**Aktueller Auftrag:** Bestehende Produktausschlüsse (vier entfernte Stoffpositionen) respektieren; Stoffnamen und Stärken/Produktformen aus aktuellen Datensätzen rechtlich und fachlich prüfen, fehlende Nachweise kennzeichnen. GHK-Cu/NAD+ als Vials nicht als zulässige Fertigkosmetik/NEM ausgeben. Für potenziell öffentliche Inhalte quellenbasierte, laienverständliche Sachtexte an Live04 und Front übergeben.
+**Aktueller Auftrag:** Bestehende Produktausschlüsse (vier entfernte Stoffpositionen) respektieren; Stoffnamen und Stärken/Produktformen aus aktuellen Datensätzen rechtlich und fachlich prüfen, fehlende Nachweise kennzeichnen. GHK-Cu/NAD+ als Vials nicht als zulässige Fertigkosmetik/NEM ausgeben. Für potenziell öffentliche Inhalte quellenbasierte, laienverständliche Sachtexte an AgeLess Work und Front übergeben.
 
 **Nicht zuständig:** eigene Verkehrsfreigabe ohne belastbare SKU-spezifische Prüfung, Datenbestände verändern oder neue Produkte ohne Nutzerauftrag anlegen.
 
@@ -60,7 +76,7 @@
 
 **Nicht zuständig:** ungeprüfte Tests als erfolgreich melden oder eigenständig Checkout/Live-Zahlungen aktivieren.
 
-**Abnahme:** tatsächlich ausgeführte Testfälle mit Ergebnissen/Datum/Umgebung; offene Blocker und Freigabeempfehlung an Live04.
+**Abnahme:** tatsächlich ausgeführte Testfälle mit Ergebnissen/Datum/Umgebung; offene Blocker und Freigabeempfehlung an AgeLess Work.
 
 
 ## AgeLess Tester
@@ -69,7 +85,7 @@
 
 **Aktuelle Priorität:** Private ChatGPT-Sites-Kompatibilitätsprüfung von AgeLess im Zusammenhang mit [PR #30](https://github.com/VictorHartmann01/ageless-peptides-store/pull/30): Next.js SSR/API, Zugriff, Auth/Owner/Admin/Tester, Daten- und Bildpersistenz, Wiederherstellung, Mobile/Desktop, Checkout-Sperren, synthetische Daten. Ergebnisse nur mit echten Testbelegen als PASS/FAIL/NOT TESTED melden.
 
-**Abgrenzung:** **Beta Status** bleibt unverändert zuständig für eigenständigen Qualitäts-/Veröffentlichungs-/Zahlungsgate-Status. AgeLess Tester übernimmt technisch reproduzierbare Tests und Sites-Spezialprüfung; Ergebnisse koordiniert an Beta Status und Teamleader Live04 übergeben. GitHub-Leserechte bedeuten keinen Sites- oder Produktionszugriff. Keine neuen Kosten, Datenmigration, e-Xpense-Modifikation oder Live-Freigabe.
+**Abgrenzung:** **Beta Status** bleibt unverändert zuständig für eigenständigen Qualitäts-/Veröffentlichungs-/Zahlungsgate-Status. AgeLess Tester übernimmt technisch reproduzierbare Tests und Sites-Spezialprüfung; Ergebnisse koordiniert an Beta Status und Teamleader AgeLess Work übergeben. GitHub-Leserechte bedeuten keinen Sites- oder Produktionszugriff. Keine neuen Kosten, Datenmigration, e-Xpense-Modifikation oder Live-Freigabe.
 
 ## Start-/Lesequittung für jede bestehende Rolle
 
@@ -77,7 +93,7 @@ Bitte nach dem Lesen unter [GitHub Issue #3](https://github.com/VictorHartmann01
 
 ```text
 AGELESS TEAM-ACK
-Rolle: [genauer bestehender Name: AgeLess Website Live04 | AgeLess Line Up | Front | Back03 | Research | Beta Status | AgeLess Tester]
+Rolle: [genauer bestehender Name: AgeLess Work | AgeLess Line Up | Front | Back03 | Research | Beta Status | AgeLess Tester]
 Gelesen: AGENTS.md + docs/team/AGELESS_TEAM_ROLES.md + docs/checkpoints/CURRENT.md
 Stand/Commit: [aktuelle GitHub-Revision]
 Verstanden: eigene Aufgaben, Schutzregeln, keine eigenmächtigen Namensänderungen
