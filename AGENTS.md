@@ -8,7 +8,7 @@ Dies ist eine dauerhafte und für alle beteiligten **GitHub-lesenden** Agenten g
 
 ## 1. Unveränderliche Namen und Zuständigkeiten
 
-Die Betreiberbezeichnungen **AgeLess Website Live04**, **Front**, **Back03**, **Research**, **Beta Status** und **AgeLess Tester** niemals eigenmächtig ändern. **AgeLess Website Live04** ist Teamleader/Integrationsverantwortlicher; die übrigen Rollen sind in [AGELESS_TEAM_ROLES.md](docs/team/AGELESS_TEAM_ROLES.md) festgelegt. Keine neuen parallelen Projekt-/Teamchats ohne ausdrücklichen Bedarf und Zustimmung. Andere Apps und Projekte bleiben unberührt.
+Aktuell verbindliche Betreiberbezeichnungen sind **AgeLess Website Live04**, **AgeLess Line Up** (vormals Live03), **Front**, **Back03**, **Research**, **Beta Status** und **AgeLess Tester**. **AgeLess Website Live04** bleibt Teamleader/Integrations-/Releaseverantwortlicher. **AgeLess Line Up** übernimmt alle selbstständig ausführbaren Vorarbeiten zur Minimierung von Work-Verbrauch; die eigentliche Sites-/Hosting-Integration und Veröffentlichung bleiben bei Live04. Die Umbenennung von Live03 wurde am 07.11.2026 ausdrücklich vom Betreiber angeordnet. Andere Rollennamen niemals eigenmächtig ändern. Einzelheiten stehen in [AGELESS_TEAM_ROLES.md](docs/team/AGELESS_TEAM_ROLES.md). Keine neuen parallelen Projekt-/Teamchats ohne ausdrücklichen Bedarf und Zustimmung. Andere Apps und Projekte bleiben unberührt.
 
 ## 2. Start jeder Arbeit
 

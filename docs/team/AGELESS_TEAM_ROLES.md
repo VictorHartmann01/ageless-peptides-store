@@ -2,7 +2,7 @@
 
 **Projekt:** AgeLess Peptides Store. **Teamleader:** AgeLess Website Live04. **Zentrale Anleitung:** [AGENTS.md](../../AGENTS.md). **Ist-Stand:** [CURRENT.md](../checkpoints/CURRENT.md). **Koordination:** [Issue #3](https://github.com/VictorHartmann01/ageless-peptides-store/issues/3).
 
-**Keine Umbenennung:** Dies sind bestehende Rollennamen, keine neuen Bots oder Chatnamen. Unabhängige Chats können nicht direkt aus diesem Repository heraus gestartet, benachrichtigt oder zur Einhaltung gezwungen werden. Wer aktiv arbeitet, muss diese Anweisungen selbst abrufen und den Empfang nachweisbar bestätigen.
+**Rollenänderung vom Betreiber am 07.11.2026:** Der bisherige Chat **AgeLess Website Live03** führt künftig die Rolle **AgeLess Line Up**. **AgeLess Website Live04** bleibt der einzige Teamleiter und Verantwortliche für Integration, Work und Veröffentlichung. Sonstige Teamrollen bleiben unverändert. Keine eigenmächtigen zusätzlichen Rollen oder Chats. Unabhängige Chats können nicht direkt aus diesem Repository heraus gestartet, benachrichtigt oder zur Einhaltung gezwungen werden. Wer aktiv arbeitet, muss diese Anweisungen selbst abrufen und den Empfang nachweisbar bestätigen.
 
 ## AgeLess Website Live04
 
@@ -11,6 +11,16 @@
 **Nicht eigenmächtig:** Front-Bilder gestalten, fehlende Stoffinformationen erfinden, Verkaufs-/Zahlungsfreigaben vergeben, bestehende Daten ohne vollständige Sicherung löschen, fremde Teams umbenennen.
 
 **Abnahme:** Sicherung nachvollziehbar; Daten/Medien vollständig in die geprüfte neue Hosting-/Datenlösung importiert und je SKU geprüft; Admin- und Shop-Funktionen getestet; keine Freigaben verändert; tatsächliches Deployment und Rollback dokumentiert. Wenn nicht erfüllt: Offen/Blockiert, nicht Fertig.
+
+## AgeLess Line Up (vormals AgeLess Website Live03)
+
+**Rolle:** Vorbereitungs-, Koordinations- und Übergabestelle für AgeLess zur **Minimierung des begrenzten ChatGPT-Work-Veröffentlichungskontingents**. Bezeichnung gilt auf ausdrücklichen Betreiberauftrag vom 07.11.2026. **Nicht** Teamleiter, nicht Release-/Live-Verantwortlicher.
+
+**Aufgabe:** Bereits vorhandene PRs, Issues, Dokumentation, Code, Assets, Tests und Checkpoints nutzen und konsolidieren; selbstständig alle sicheren Zusatzarbeiten außerhalb Work vorbereiten und soweit technisch möglich ausführen. Anforderungen und Abnahmekriterien präzisieren, notwendige Code-/Test-/Konfigurationspakete liefern, Offline-Prüfungen durchführen, Import-/Rollback- und Geheimnis-/Daten-Schutz prüfen, Mergekonflikte und Abhängigkeiten früh beseitigen. Ergebnisse ausschließlich mit echten Commit-/PR-/Testnachweisen und eindeutiger Integrationsanleitung über Issue #3 an Live04/Work übergeben. So muss Work möglichst nur noch zwingende Sites-/Hosting-/Runtime-Arbeiten, finale Integration und Veröffentlichung durchführen.
+
+**Abgrenzung:** Back03 bleibt für Backend/Auth/#32, Front für Bilder/UX, Research für Produkt-/Rechtsprüfung, Beta Status und AgeLess Tester für unabhängige Qualität zuständig. Bei Bedarf Vorarbeiten abstimmen statt fremde Branches zu überschreiben. Keine Produktivfreigabe, Zahlung, Domain- oder Datenmigration ohne nachgewiesene Voraussetzungen und Betreiberentscheidung.
+
+**Abnahme:** Fertige, nachvollziehbar geprüfte Übergabepakete mit Quellcommit/PR, Artefaktpfad, Tests, offenen Blockern, Rückweg und minimalen verbleibenden **Work-only**-Schritten. Kein automatisches Starten anderer Chats durch GitHub-Kommentar.
 
 ## Front
 
@@ -67,7 +77,7 @@ Bitte nach dem Lesen unter [GitHub Issue #3](https://github.com/VictorHartmann01
 
 ```text
 AGELESS TEAM-ACK
-Rolle: [genauer bestehender Name: AgeLess Website Live04 | Front | Back03 | Research | Beta Status | AgeLess Tester]
+Rolle: [genauer bestehender Name: AgeLess Website Live04 | AgeLess Line Up | Front | Back03 | Research | Beta Status | AgeLess Tester]
 Gelesen: AGENTS.md + docs/team/AGELESS_TEAM_ROLES.md + docs/checkpoints/CURRENT.md
 Stand/Commit: [aktuelle GitHub-Revision]
 Verstanden: eigene Aufgaben, Schutzregeln, keine eigenmächtigen Namensänderungen
@@ -75,7 +85,7 @@ Aktuelle Arbeit: [konkrete Aufgabe]
 Blocker / benötigte Übergabe: [konkret oder KEINE]
 ```
 
-Ein reiner Upload, ein GitHub-Issue-Kommentar von Live03 oder ein Chat-Hinweis ist **keine** Lesequittung einer anderen Rolle. Keine Agentenstarts/automatischen Benachrichtigungen behaupten, bevor deren Ausführung nachgewiesen ist.
+Ein reiner Upload, ein GitHub-Issue-Kommentar einer anderen Rolle oder ein Chat-Hinweis ist **keine** Lesequittung einer anderen Rolle. Keine Agentenstarts/automatischen Benachrichtigungen behaupten, bevor deren Ausführung nachgewiesen ist.
 
 
 ## Geprüfte Nachfolge am 07.11.2026
