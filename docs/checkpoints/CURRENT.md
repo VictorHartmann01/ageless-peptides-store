@@ -1,3 +1,17 @@
+## AgeLess Work – echte Sites-Speicherprobe bestanden – 07.11.2026
+
+**Private Site:** `appgprj_6aeee73b27b481919180a3e3009abb3b`, Version 2, owner-only/custom, https://ageless-peptides-store.e-valuate-5668.chatgpt.site . Vorhandener AgeLess-Code mit Vinext/Worker-Adapter, gespeicherter Source-Commit `3d85bbcff53cab55b211aaa278086c25a56dfb36`; noch kein Merge des Sites-Adapters in den GitHub-Integrationsbranch behauptet.
+
+**Tatsächlich geprüft:** Native Datenbankübersicht bestätigt Binding `DB` und isolierte Tabelle `ageless_runtime_probe`. Gehosteter Testablauf mit ausschließlich künstlichen Daten: write 200; read 200/consistent=true; mutate 200; read 200/consistent=false; restore aus zuvor gelesenem Snapshot 200; abschließendes read 200/consistent=true. Snapshot umfasst D1-Testdatensatz und R2-Testbildbytes/MIME. Kein echter Produkt-/Kunden-/Login-/Bestelldatensatz importiert.
+
+**Nach Abschluss:** Prüfendpunkt per Environment deaktiviert, temporären Prüf-Schlüssel entfernt und dieselbe gespeicherte Version erneut privat bereitgestellt (Deployment `appgdep_6aeef876cc648191af231f1314d8bdfd`, env revision 3, SUCCESS). Native Datenbankabfrage danach bestätigt erhaltenen Datensatz `synthetic-runtime-v1` mit korrektem Fixture-Inhalt. Das ist ein begrenzter synthetischer Speicher-/Restore- und D1-Redeploy-Erhalt-Nachweis, **keine vollständige Produktionssicherung oder Shopabnahme**. R2-Erhalt nach diesem abschließenden Redeploy noch nicht separat erneut abgefragt.
+
+**Offen / Verantwortliche:** Back03 #32 Capture-Gate und #22 eigener Shop-Auth-/Daten-/Medienadapter sowie gesicherter aktueller Export; Line Up unterstützt geprüfte Integrationspakete; Front #21 SKU/Varianten und gesperrtes ARA-290; Research #23 aktuelle SKU-Nachweise; Tester/Beta Status unabhängige technische und Release-Abnahme. Checkout bleibt gesperrt, kein DNS-Wechsel, kein Railway und keine neue Supabase-Datenarbeit. Kein erfolgreicher Kunden-/Admin-Login ohne Backend behauptet. Bisherige Nachrichten weiter unten sind historische Zwischenstände.
+
+**Zusatzauftrag erledigt:** Einseitige Word-Kopiervorlage „Aufräumer“ erstellt, gerendert/geprüft und gespeichert. Keine weiteren Projektchats erstellt oder umbenannt.
+
+---
+
 ## Verbindliche Teamaufstellung – Betreiberentscheidung 07.11.2026
 
 | Rolle | Verbindliche Aufgabe |
