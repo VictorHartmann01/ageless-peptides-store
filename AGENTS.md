@@ -1,3 +1,19 @@
+## Verbindliche Teamaufstellung – Betreiberentscheidung 07.11.2026
+
+| Rolle | Verbindliche Aufgabe |
+|---|---|
+| AgeLess Work | Einziger Teamleader; Integration, finale Prüfung und Veröffentlichung. Bisherige Bezeichnung: AgeLess Website Live04. |
+| AgeLess Line Up | Vorarbeiten, Codeänderungen, Tests und vollständige geprüfte Übergabepakete; Work-Aufwand minimieren. Vormals Live03, keine parallele Teamleitung. |
+| Front | Design, Corporate Identity, Produktbilder und Bedienung auf Handy und Desktop. |
+| Back03 | Backend, Datenbank, Login, Rechte, sichere Speicherung und Checkout-Sperren; P0 #32. |
+| Research | Produktinformationen, Quellen, Nachweise und rechtliche Prüfung. |
+| Beta Status | Unabhängige Qualitätskontrolle, Abnahmestatus und Veröffentlichungsempfehlung. |
+| AgeLess Tester | Unabhängige technische Tests: Sicherheit, Funktionen, mobile Darstellung, Datenverlust und Wiederherstellung. |
+
+**Sieben bestehende Rollen.** Kein zusätzlicher Chat oder neuer Agent. „AgeLess Work“ ersetzt den bisherigen Namen Live04 für dieselbe Teamleiterrolle. Ältere abweichende Rollenlisten sind historische Stände. Jede Aufgabe behält genau einen primären Verantwortlichen; Line Up stimmt Vorarbeiten mit den Spezialrollen ab und vermeidet Doppelarbeit.
+
+**Teamkommunikation:** Alle sechs Kollegen bitte diese Aufstellung und die aktuellen Regeln lesen und im bestehenden Issue #3 selbst bestätigen: `AGELESS TEAM-ACK | Rolle | neue Aufstellung gelesen | Commit | eigene Aufgabe | Blocker`. Eine GitHub-Mitteilung startet keine andere Chat-Sitzung; Empfang ist erst mit eigener Rückmeldung bestätigt. Zur Fehlervermeidung künftige Teamaufstellungen stets gegen diese sieben Rollen prüfen.
+
 # AgeLess - Verbindliche Team-Arbeitsregeln (AGENTS.md)
 
 **Gültig ab 06.11.2026 für die weitere Arbeit am bestehenden AgeLess Peptides Store.**
@@ -8,7 +24,7 @@ Dies ist eine dauerhafte und für alle beteiligten **GitHub-lesenden** Agenten g
 
 ## 1. Unveränderliche Namen und Zuständigkeiten
 
-Aktuell verbindliche Betreiberbezeichnungen sind **AgeLess Website Live04**, **AgeLess Line Up** (vormals Live03), **Front**, **Back03**, **Research**, **Beta Status** und **AgeLess Tester**. **AgeLess Website Live04** bleibt Teamleader/Integrations-/Releaseverantwortlicher. **AgeLess Line Up** übernimmt alle selbstständig ausführbaren Vorarbeiten zur Minimierung von Work-Verbrauch; die eigentliche Sites-/Hosting-Integration und Veröffentlichung bleiben bei Live04. Die Umbenennung von Live03 wurde am 07.11.2026 ausdrücklich vom Betreiber angeordnet. Andere Rollennamen niemals eigenmächtig ändern. Einzelheiten stehen in [AGELESS_TEAM_ROLES.md](docs/team/AGELESS_TEAM_ROLES.md). Keine neuen parallelen Projekt-/Teamchats ohne ausdrücklichen Bedarf und Zustimmung. Andere Apps und Projekte bleiben unberührt.
+Aktuell verbindliche Betreiberbezeichnungen sind **AgeLess Work**, **AgeLess Line Up** (vormals Live03), **Front**, **Back03**, **Research**, **Beta Status** und **AgeLess Tester**. **AgeLess Work** bleibt Teamleader/Integrations-/Releaseverantwortlicher. **AgeLess Line Up** übernimmt alle selbstständig ausführbaren Vorarbeiten zur Minimierung von Work-Verbrauch; die eigentliche Sites-/Hosting-Integration und Veröffentlichung bleiben bei AgeLess Work. Die Umbenennung von Live03 wurde am 07.11.2026 ausdrücklich vom Betreiber angeordnet. Andere Rollennamen niemals eigenmächtig ändern. Einzelheiten stehen in [AGELESS_TEAM_ROLES.md](docs/team/AGELESS_TEAM_ROLES.md). Keine neuen parallelen Projekt-/Teamchats ohne ausdrücklichen Bedarf und Zustimmung. Andere Apps und Projekte bleiben unberührt.
 
 ## 2. Start jeder Arbeit
 
@@ -34,14 +50,14 @@ Aktuell verbindliche Betreiberbezeichnungen sind **AgeLess Website Live04**, **A
 - GitHub `VictorHartmann01/ageless-peptides-store` ist die maßgebliche Code-/Checkpoint-Basis. **Railway ist durch die ausdrückliche Betreiberentscheidung vom 06.11.2026 als künftiges Hosting ausgeschlossen**. e-Xpense dient als Architekturvorbild für eine erst privat zu prüfende ChatGPT-Sites-Lösung; keine Änderungen an e-Xpense. Noch vorhandene Alt-Daten/Ressourcen erst nach vollständiger Sicherung und getestetem Restore abschalten oder löschen. Keine neuen Railway-Pläne oder Deployments.
 - Supabase auf ausdrückliche Betreiberanweisung **nicht für neue Datenarbeiten verwenden**.
 - Vier wegen unzureichender Informationen entfernte Produkte niemals eigenmächtig wiederherstellen. Historisch 46 verbleibende Produktdatensätze, Zahl ist nicht automatisch der Live-Iststand.
-- Produktbilder nur von **Front** produzieren/qualitätsprüfen lassen; **Live04** integriert technisch. Das gemeldete 43er-PNG-Paket erfordert tatsächlich abrufbare Dateien und ein Manifest mit Produkt-/Varianten-Zuordnung.
+- Produktbilder nur von **Front** produzieren/qualitätsprüfen lassen; **AgeLess Work** integriert technisch. Das gemeldete 43er-PNG-Paket erfordert tatsächlich abrufbare Dateien und ein Manifest mit Produkt-/Varianten-Zuordnung.
 - Nur passende und ausreichend dokumentierte Produkte öffentlich zeigen; fehlende Bilder im aktiven Katalog unterdrücken. Geplante Löschung aus Backoffice erst nach gesicherter Bestands- und Bildzuordnung. Bilder sind kein Nachweis legalen B2C-Verkaufs.
 - Vial-/Forschungsware ohne belegte Verkehrsfähigkeit nicht verkäuflich machen; Checkout/Verkaufsfreigaben nicht eigenmächtig aktivieren.
 
 ## 5. Checkpoint, Übergaben und Bestätigung
 
 - Für jede wesentliche Änderung oder Übergabe **Issue #3** kommentieren: Rolle, Aufgabe, Ausgangsstand, Änderungen, Commit/PR/Dateilink, tatsächliche Tests, Ergebnis, Risiken, nächste Aktion.
-- Nach jeder wesentlichen Änderung zentralen `docs/checkpoints/CURRENT.md` durch **Live04** aktualisieren oder eine konkrete Ergänzung über Issue #3 liefern; keine konkurrierenden Checkpoint-Hauptdateien.
+- Nach jeder wesentlichen Änderung zentralen `docs/checkpoints/CURRENT.md` durch **AgeLess Work** aktualisieren oder eine konkrete Ergänzung über Issue #3 liefern; keine konkurrierenden Checkpoint-Hauptdateien.
 - Jede Rolle bestätigt im Issue #3 eigenständig das **tatsächliche Lesen**: `ROLLE | REGELN GELESEN | CURRENT.md Revision/Commit | eigene aktive Aufgabe | Blocker`. Ohne sichtbare Bestätigung ist die Kenntnis **NICHT BESTÄTIGT**.
 - Für erfolgreich getestete wiederverwendbare Lösungen einen kurzen reproduzierbaren Wissenseintrag schreiben (Ursache, Lösung, Testdatum, Verweis). E-Mail-Belege nur bei autorisiertem, getesteten Versand; Versand nicht fingieren.
 - Ein geplanter GitHub-Workflow oder Prompt startet keinen autonomen KI-Agenten. Keine stündliche selbstständige Codearbeit versprechen, ohne einen echt eingerichteten, kostenautorisierten und End-to-End-geprüften Runner.
