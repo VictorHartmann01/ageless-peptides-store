@@ -1,3 +1,31 @@
+# AgeLess Website Live04 – geprüfte Übernahme 07.11.2026
+
+**Aktueller Teamleader:** AgeLess Website Live04 auf ausdrücklichen Betreiberauftrag; ersetzt Live03 nach Integration dieser Dokumentation. Live03 bleibt historische Quelle. Keine technische Kopie eines Chats behauptet. Aktive Rollen: **Live04, Front, Back03, Research, Beta Status, AgeLess Tester**. Frühere Abschnitte darunter sind unveränderte Historie; aktuelle Betreiberentscheidung und dieser Abschnitt haben Vorrang.
+
+**Übernahmebasis:** `beta/highgloss-logo` / `0d6df29bc8f5c0b4a2f6ac38649123acc0121eb2`. GitHub-Quellen: AGENTS.md, Teamrollen, CURRENT.md, Issue #3 (151 Kommentare abgerufen), offene PR-Übersicht, PR #30, Aufgaben #21–24 und #32. Zusatz-Prompt v6 vollständig aus Betreiberdatei vom 06.11. gelesen (Version 6.0, 25.10.2026, 13 Seiten). Lokale Git-Kopie und Bundle als Quellcode-Rückweg erstellt; **kein Produkt-/Kunden-/Medienbackup** daraus abgeleitet.
+
+**Tatsächliche lokale Prüfung des Ausgangsstands:** npm ci erfolgreich; TypeScript erfolgreich; 43 Backoffice-Checks und 43 Zugriffschecks mit Mocks bestanden; 5 Exportvalidator-Tests mit synthetischen Dateien bestanden. Kein Live-Login, keine reale Datenmigration/Restore oder Zahlung getestet. Bestehende Checkout-Capture-Lücke bleibt P0 #32, primär Back03. Keine Verkaufs-/Zahlungsfreigabe.
+
+**Sites/Work:** lokales Ausführen und GitHub-Lesen verfügbar; Sites-Konto erfolgreich abgefragt. Vollständige sichtbare Sites-Liste enthält noch kein AgeLess-Projekt. e-Xpense-Hosting nur als Referenz: vorhandene Site Version 41, öffentliche Custom Domain; keinerlei Quell-/Kundendaten übernommen oder verändert. Native Sites unterstützt Worker-ESM und D1/R2; bisheriger Next.js-Build allein ist kein deploybares Worker-Artefakt. Private Kompatibilitätsprobe auf bestehendem Code ist nächste Live04-Aufgabe; noch keine Site registriert/deployt und keine Runtime-Abnahme.
+
+**Übernommene Aufgaben, je ein Hauptverantwortlicher:**
+- **Live04:** private Sites-Integration, Quellcode-/Releaseprüfung und zentrale Dokumentation; PR #30 zunächst prüfen/ausführen, nicht blind mergen.
+- **Back03:** #32 globale fail-closed Create/Capture-Sperre + Regressionstests; #22 vollständiger Export/Restore und eigener Auth-/Daten-/Medienadapter für Railway-freies Ziel. Kein neuer Supabase-Zugriff.
+- **Front:** #21 vorhandenes 43er-Paket und präzises Variantenmapping; ARA-290 gesperrt halten bis Beschriftung geklärt. Live04 hat das tatsächliche Übergabe-ZIP als Datei gefunden, Byteprüfung noch offen. Kein Neugenerieren vorhandener Bilder.
+- **Research:** #23 / PR #27 historische 47-Positionen-Matrix erhalten; aktueller SKU-Abgleich und konkrete Lieferunterlagen fehlen. Vier entfernte Produkte nicht wiederherstellen.
+- **Beta Status:** #24 unabhängige Release-/Checkout-Abnahme; letzte Empfehlung NICHT FREIGEBEN bleibt.
+- **AgeLess Tester:** technische unabhängige Sites-/Rechte-/Persistenz-/Restore-/Mobiltests zu PR #30/#32. Keine automatische Sitzung gestartet.
+
+**Offen:** vollständiger aktueller Daten-/Auth-/Medienexport, eindeutige vier Ausschluss-IDs, 43er-Datei-/SKU-Abgleich, private echte Runtime, eigener Shop-Login und Backoffice, Backup/Restore echter Übernahme, mobile/desktop Abnahme, rechtliche Produktfreigaben. PR #18/#19 sind durch #25 bereits integriert; keine Doppelarbeit. PR #28 Monitor ist nicht aktiv. PR #27 ist Dokumentationsübergabe, kein aktueller Katalog.
+
+**Kommunikation:** Rollenwechsel und Aufgaben werden in #3 veröffentlicht; Lesebestätigungen für Live04 sind bis zu tatsächlichen Antworten **NICHT BESTÄTIGT**. Keine Hintergrundagenten eingerichtet. E-Mail-Abschlussmeldung NICHT GESENDET (Versandverbindung/-funktion nicht geprüft).
+
+**Schutz:** kein Railway-Zielhosting, keine Ressourcenlöschung, keine neue laufende Kosten, keine e-Xpense-Änderungen, keine DNS-Umstellung und keine realen Kundendaten in Tests. Aktuell keine manuelle Betreiberhandlung für die private Vorarbeit nötig. Datenübernahme bleibt vom sicheren Export abhängig.
+
+---
+
+## Historischer Stand von Live03 (erhalten)
+
 ## Zusatz-Prompt v6 erneut an vollständiges Team übergeben – 06.11.2026
 
 **Quelle:** Betreiber-Upload `Zusatz_Prompt_v6_-_Checkpoint(1).docx`, Version 6.0 / Stand 25.10.2026 (13 Seiten). Ergänzende Vorgaben: Ausgangsstand/Backup und Rückweg, minimale getestete Änderungen, keine erfundenen Erfolge oder Hintergrundagenten, Status-/Prüfstatus getrennt, eine GitHub-Checkpoint-Wahrheit, sichere getrennte Branches/Übergaben, nur echt getestete Wissenseinträge und autorisierter E-Mail-Versand, kostenlose vorhandene Ressourcen zuerst, zwingende manuelle Betreiberaktionen sofort melden. **Kein Auftrag für neuen Anbieter, Railway-Reaktivierung, zusätzliche Klone, Löschungen, Kosten, Zahlungen oder Neustart.** Aktueller Betreiberentscheid (AgeLess ohne Railway, e-Xpense als Referenz) hat Vorrang vor allgemeinen Railway-Beispielen der v6-Datei.
