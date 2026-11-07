@@ -1,0 +1,44 @@
+name: AgeLess production availability
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ageless-uptime-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Test production domain and report outage
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          url="https://www.ageless-peptides.store/"
+          # A Railway edge 404 must fail even if TLS/DNS succeed.
+          http_code="$(curl --silent --show-error --location --max-time 20 --output /dev/null --write-out '%{http_code}' "$url" || true)"
+          open_issue="$(gh issue list --repo "$GH_REPO" --state open --search 'in:title "[AgeLess uptime]"' --json number --jq '.[0].number // ""')"
+          if [[ "$http_code" != "200" ]]; then
+            echo "::error::AgeLess production unavailable; HTTP $http_code at $url"
+            if [[ -z "$open_issue" ]]; then
+              gh issue create --repo "$GH_REPO" \
+                --title "[AgeLess uptime] Production website unavailable" \
+                --body "Automated availability check failed on $(date -u +%Y-%m-%dT%H:%M:%SZ). HTTP status: $http_code. Verify Railway workspace plan/billing first, then deployment state and domain. No automatic redeployment, billing change, or database modification is performed by this monitor." 
+            fi
+            exit 1
+          fi
+          echo "AgeLess production responded HTTP 200."
+          if [[ -n "$open_issue" ]]; then
+            gh issue comment "$open_issue" --repo "$GH_REPO" --body "Recovery observed: production returned HTTP 200 on $(date -u +%Y-%m-%dT%H:%M:%SZ). This verifies HTTP availability only, not user login or checkout."
+            gh issue close "$open_issue" --repo "$GH_REPO" --reason completed
+          fi
