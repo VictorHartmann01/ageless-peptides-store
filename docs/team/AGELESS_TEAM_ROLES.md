@@ -1,10 +1,10 @@
 # AgeLess - Teamrollen, Aufgaben, Bestätigung
 
-**Projekt:** AgeLess Peptides Store. **Teamleader:** AgeLess Website Live03. **Zentrale Anleitung:** [AGENTS.md](../../AGENTS.md). **Ist-Stand:** [CURRENT.md](../checkpoints/CURRENT.md). **Koordination:** [Issue #3](https://github.com/VictorHartmann01/ageless-peptides-store/issues/3).
+**Projekt:** AgeLess Peptides Store. **Teamleader:** AgeLess Website Live04. **Zentrale Anleitung:** [AGENTS.md](../../AGENTS.md). **Ist-Stand:** [CURRENT.md](../checkpoints/CURRENT.md). **Koordination:** [Issue #3](https://github.com/VictorHartmann01/ageless-peptides-store/issues/3).
 
 **Keine Umbenennung:** Dies sind bestehende Rollennamen, keine neuen Bots oder Chatnamen. Unabhängige Chats können nicht direkt aus diesem Repository heraus gestartet, benachrichtigt oder zur Einhaltung gezwungen werden. Wer aktiv arbeitet, muss diese Anweisungen selbst abrufen und den Empfang nachweisbar bestätigen.
 
-## AgeLess Website Live03
+## AgeLess Website Live04
 
 **Rolle:** Teamleader, Integrator, Releaseverantwortung. **Zuständig:** aktuelle Regeln und Checkpoints prüfen; Aufgaben koordinieren; Front-/Back03-/Research-/Beta-Status-Übergaben prüfen; Konflikte lösen; Railway-freie Hosting-/Backend-Integration und Image-Upload in technisch sicherer Reihenfolge durchführen; CI, Rechte, Sicherheit, Desktop/Mobil und Live-Abnahme kontrollieren; zentralen Checkpoint konsolidieren.
 
@@ -16,7 +16,7 @@
 
 **Rolle:** Produktbilder, Gestaltung, UX/Mobil-Darstellung und Frontend-Inhalte im AgeLess-CI.
 
-**Aktueller Auftrag:** Das gemeldete Paket aus 43 PNG-Dateien (38 Hauptmotive, 5 Varianten) einschließlich tatsächlicher Binärdateien, Manifest/Dateinamen und eindeutigem Produktschlüssel/Stärke über einen *abrufbaren* Repo-Asset-Pfad bzw. anderen geeigneten freigegebenen Übergabekanal an Live03 übergeben. Vorhandene Motive zuerst wiederverwenden, nur Fehlendes neu erstellen. Visuals müssen zu tatsächlichen Vials/Formen passen oder klar als Illustration gekennzeichnet sein. Mobil/Desktop gegen Referenz-CI prüfen.
+**Aktueller Auftrag:** Das gemeldete Paket aus 43 PNG-Dateien (38 Hauptmotive, 5 Varianten) einschließlich tatsächlicher Binärdateien, Manifest/Dateinamen und eindeutigem Produktschlüssel/Stärke über einen *abrufbaren* Repo-Asset-Pfad bzw. anderen geeigneten freigegebenen Übergabekanal an Live04 übergeben. Vorhandene Motive zuerst wiederverwenden, nur Fehlendes neu erstellen. Visuals müssen zu tatsächlichen Vials/Formen passen oder klar als Illustration gekennzeichnet sein. Mobil/Desktop gegen Referenz-CI prüfen.
 
 **Nicht zuständig:** Produktverkaufsfreigaben, Backend-Datenlöschen, alleinige Veröffentlichung.
 
@@ -36,7 +36,7 @@
 
 **Rolle:** Stoff- und Produktinformationen, Nachweise und regulatorische Einordnung insbesondere für DE/EU.
 
-**Aktueller Auftrag:** Bestehende Produktausschlüsse (vier entfernte Stoffpositionen) respektieren; Stoffnamen und Stärken/Produktformen aus aktuellen Datensätzen rechtlich und fachlich prüfen, fehlende Nachweise kennzeichnen. GHK-Cu/NAD+ als Vials nicht als zulässige Fertigkosmetik/NEM ausgeben. Für potenziell öffentliche Inhalte quellenbasierte, laienverständliche Sachtexte an Live03 und Front übergeben.
+**Aktueller Auftrag:** Bestehende Produktausschlüsse (vier entfernte Stoffpositionen) respektieren; Stoffnamen und Stärken/Produktformen aus aktuellen Datensätzen rechtlich und fachlich prüfen, fehlende Nachweise kennzeichnen. GHK-Cu/NAD+ als Vials nicht als zulässige Fertigkosmetik/NEM ausgeben. Für potenziell öffentliche Inhalte quellenbasierte, laienverständliche Sachtexte an Live04 und Front übergeben.
 
 **Nicht zuständig:** eigene Verkehrsfreigabe ohne belastbare SKU-spezifische Prüfung, Datenbestände verändern oder neue Produkte ohne Nutzerauftrag anlegen.
 
@@ -50,7 +50,7 @@
 
 **Nicht zuständig:** ungeprüfte Tests als erfolgreich melden oder eigenständig Checkout/Live-Zahlungen aktivieren.
 
-**Abnahme:** tatsächlich ausgeführte Testfälle mit Ergebnissen/Datum/Umgebung; offene Blocker und Freigabeempfehlung an Live03.
+**Abnahme:** tatsächlich ausgeführte Testfälle mit Ergebnissen/Datum/Umgebung; offene Blocker und Freigabeempfehlung an Live04.
 
 
 ## AgeLess Tester
@@ -59,7 +59,7 @@
 
 **Aktuelle Priorität:** Private ChatGPT-Sites-Kompatibilitätsprüfung von AgeLess im Zusammenhang mit [PR #30](https://github.com/VictorHartmann01/ageless-peptides-store/pull/30): Next.js SSR/API, Zugriff, Auth/Owner/Admin/Tester, Daten- und Bildpersistenz, Wiederherstellung, Mobile/Desktop, Checkout-Sperren, synthetische Daten. Ergebnisse nur mit echten Testbelegen als PASS/FAIL/NOT TESTED melden.
 
-**Abgrenzung:** **Beta Status** bleibt unverändert zuständig für eigenständigen Qualitäts-/Veröffentlichungs-/Zahlungsgate-Status. AgeLess Tester übernimmt technisch reproduzierbare Tests und Sites-Spezialprüfung; Ergebnisse koordiniert an Beta Status und Teamleader Live03 übergeben. GitHub-Leserechte bedeuten keinen Sites- oder Produktionszugriff. Keine neuen Kosten, Datenmigration, e-Xpense-Modifikation oder Live-Freigabe.
+**Abgrenzung:** **Beta Status** bleibt unverändert zuständig für eigenständigen Qualitäts-/Veröffentlichungs-/Zahlungsgate-Status. AgeLess Tester übernimmt technisch reproduzierbare Tests und Sites-Spezialprüfung; Ergebnisse koordiniert an Beta Status und Teamleader Live04 übergeben. GitHub-Leserechte bedeuten keinen Sites- oder Produktionszugriff. Keine neuen Kosten, Datenmigration, e-Xpense-Modifikation oder Live-Freigabe.
 
 ## Start-/Lesequittung für jede bestehende Rolle
 
@@ -67,7 +67,7 @@ Bitte nach dem Lesen unter [GitHub Issue #3](https://github.com/VictorHartmann01
 
 ```text
 AGELESS TEAM-ACK
-Rolle: [genauer bestehender Name: AgeLess Website Live03 | Front | Back03 | Research | Beta Status | AgeLess Tester]
+Rolle: [genauer bestehender Name: AgeLess Website Live04 | Front | Back03 | Research | Beta Status | AgeLess Tester]
 Gelesen: AGENTS.md + docs/team/AGELESS_TEAM_ROLES.md + docs/checkpoints/CURRENT.md
 Stand/Commit: [aktuelle GitHub-Revision]
 Verstanden: eigene Aufgaben, Schutzregeln, keine eigenmächtigen Namensänderungen
@@ -76,3 +76,8 @@ Blocker / benötigte Übergabe: [konkret oder KEINE]
 ```
 
 Ein reiner Upload, ein GitHub-Issue-Kommentar von Live03 oder ein Chat-Hinweis ist **keine** Lesequittung einer anderen Rolle. Keine Agentenstarts/automatischen Benachrichtigungen behaupten, bevor deren Ausführung nachgewiesen ist.
+
+
+## Geprüfte Nachfolge am 07.11.2026
+
+Auf ausdrücklichen Betreiberauftrag übernimmt **AgeLess Website Live04** die bisherige Teamleiterfunktion von **AgeLess Website Live03**. Live03 bleibt historische Quelle, ist nach Integration dieser Übergabe kein aktiver Teamleader. Ausgangsstand: `0d6df29bc8f5c0b4a2f6ac38649123acc0121eb2` auf `beta/highgloss-logo`. Bestehendes Team unverändert: Live04, Front, Back03, Research, Beta Status, AgeLess Tester. Alle früheren Ergebnisse und offenen Aufgaben bleiben erhalten; keine zusätzlichen Chats oder Rollen. Die organisatorische Nachfolge ist keine Shop-/Sicherheits-/Hostingabnahme. Jede andere Rolle bestätigt das Lesen selbst in Issue #3.
