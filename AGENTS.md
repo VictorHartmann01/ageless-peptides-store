@@ -70,3 +70,12 @@ Aktuell verbindliche Betreiberbezeichnungen sind **AgeLess Work**, **AgeLess Lin
 ## Geprüfte Nachfolge am 07.11.2026
 
 Auf ausdrücklichen Betreiberauftrag übernimmt **AgeLess Website Live04** die bisherige Teamleiterfunktion von **AgeLess Website Live03**. Live03 bleibt historische Quelle, ist nach Integration dieser Übergabe kein aktiver Teamleader. Ausgangsstand: `0d6df29bc8f5c0b4a2f6ac38649123acc0121eb2` auf `beta/highgloss-logo`. Bestehendes Team unverändert: Live04, Front, Back03, Research, Beta Status, AgeLess Tester. Alle früheren Ergebnisse und offenen Aufgaben bleiben erhalten; keine zusätzlichen Chats oder Rollen. Die organisatorische Nachfolge ist keine Shop-/Sicherheits-/Hostingabnahme. Jede andere Rolle bestätigt das Lesen selbst in Issue #3.
+
+
+## Verbindliche Namens- und Archivierungsregel – 07.11.2026
+
+Namen von Chats, Rollen und Teammitgliedern niemals eigenständig ändern, abkürzen oder ersetzen. Änderungen nur auf ausdrückliche Namensanweisung des Betreibers. Tatsächlichen sichtbaren Chatnamen zusätzlich zur Rolle dokumentieren, statt eine Umbenennung vorzunehmen. Vor Archivierung gegen die aktive Teamliste und den tatsächlichen Chatverlauf prüfen; aktuelle Teamchats erhalten. Archivierung ist keine Löschung und keine technische Verschmelzung von Chatverläufen.
+
+**Tatsächlich sichtbare aktuelle Chatnamen, am 07.11.2026 in der ChatGPT-Projektoberfläche geprüft:** AgeLess Work; AgeLess Beta Live (Rolle AgeLess Line Up, durch gelesenen Verlauf bestätigt); AgeLess Beta Front 02 (Front); AgeLess Tester; AgeLess Research (Research); AgeLess Beta Status (Beta Status); AgeLess Beta Back 03 (Back03). Diese sichtbaren Namen unverändert lassen. Die kürzeren Rollenbezeichnungen im Checkpoint sind keine Anweisung, die Chatnamen zu ändern.
+
+**Ausführung:** 12 andere Chats im Projekt AgeLess Peptides Store über die jeweilige Archive-Aktion archiviert; Abschlussliste zeigt nur diese sieben Teamchats. Keine Löschung, kein Rename. Eine vorgeschlagene Sammelaktion 'Archive all' wurde abgebrochen, weil sie auch aktive Teamchats betroffen hätte. Künftig keine unkontrollierte Sammelarchivierung.
