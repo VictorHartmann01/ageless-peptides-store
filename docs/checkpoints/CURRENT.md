@@ -1,3 +1,19 @@
+## Verbindliche Teamaufstellung – Betreiberentscheidung 07.11.2026
+
+| Rolle | Verbindliche Aufgabe |
+|---|---|
+| AgeLess Work | Einziger Teamleader; Integration, finale Prüfung und Veröffentlichung. Bisherige Bezeichnung: AgeLess Website Live04. |
+| AgeLess Line Up | Vorarbeiten, Codeänderungen, Tests und vollständige geprüfte Übergabepakete; Work-Aufwand minimieren. Vormals Live03, keine parallele Teamleitung. |
+| Front | Design, Corporate Identity, Produktbilder und Bedienung auf Handy und Desktop. |
+| Back03 | Backend, Datenbank, Login, Rechte, sichere Speicherung und Checkout-Sperren; P0 #32. |
+| Research | Produktinformationen, Quellen, Nachweise und rechtliche Prüfung. |
+| Beta Status | Unabhängige Qualitätskontrolle, Abnahmestatus und Veröffentlichungsempfehlung. |
+| AgeLess Tester | Unabhängige technische Tests: Sicherheit, Funktionen, mobile Darstellung, Datenverlust und Wiederherstellung. |
+
+**Sieben bestehende Rollen.** Kein zusätzlicher Chat oder neuer Agent. „AgeLess Work“ ersetzt den bisherigen Namen Live04 für dieselbe Teamleiterrolle. Ältere abweichende Rollenlisten sind historische Stände. Jede Aufgabe behält genau einen primären Verantwortlichen; Line Up stimmt Vorarbeiten mit den Spezialrollen ab und vermeidet Doppelarbeit.
+
+**Teamkommunikation:** Alle sechs Kollegen bitte diese Aufstellung und die aktuellen Regeln lesen und im bestehenden Issue #3 selbst bestätigen: `AGELESS TEAM-ACK | Rolle | neue Aufstellung gelesen | Commit | eigene Aufgabe | Blocker`. Eine GitHub-Mitteilung startet keine andere Chat-Sitzung; Empfang ist erst mit eigener Rückmeldung bestätigt. Zur Fehlervermeidung künftige Teamaufstellungen stets gegen diese sieben Rollen prüfen.
+
 # AgeLess Website Live04 – geprüfte Übernahme 07.11.2026
 
 **Aktueller Teamleader:** AgeLess Website Live04 auf ausdrücklichen Betreiberauftrag; ersetzt Live03 nach Integration dieser Dokumentation. Live03 bleibt historische Quelle. Keine technische Kopie eines Chats behauptet. Aktive Rollen: **Live04, Front, Back03, Research, Beta Status, AgeLess Tester**. Frühere Abschnitte darunter sind unveränderte Historie; aktuelle Betreiberentscheidung und dieser Abschnitt haben Vorrang.
