@@ -1,0 +1,101 @@
+[
+  {
+    "id": "AMG2",
+    "title": "Arzneimittelbegriff",
+    "url": "https://www.gesetze-im-internet.de/amg_1976/__2.html",
+    "retrieved_at": "2026-11-06",
+    "access": "Volltext gelesen",
+    "supports": "Einzelfallbezogene Arzneimitteleinstufung; keine Einstufung unserer Lieferware.",
+    "sku_approval": false
+  },
+  {
+    "id": "AMG21",
+    "title": "Zulassungspflicht",
+    "url": "https://www.gesetze-im-internet.de/amg_1976/__21.html",
+    "retrieved_at": "2026-11-06",
+    "access": "Volltext gelesen",
+    "supports": "Zulassungspflicht für Fertigarzneimittel mit gesetzlichen Ausnahmen; kein Zulassungsnachweis einer SKU.",
+    "sku_approval": false
+  },
+  {
+    "id": "DOP",
+    "title": "AntiDopG § 2",
+    "url": "https://www.gesetze-im-internet.de/antidopg/__2.html",
+    "retrieved_at": "2026-11-06",
+    "access": "Amtlicher Suchvolltext gelesen; Direktabruf Timeout",
+    "supports": "Stoff und Dopingzweck beim Menschen im Sport sind zu prüfen; keine pauschale WADA-zu-Verkaufsverbotsableitung.",
+    "sku_approval": false
+  },
+  {
+    "id": "CHEM",
+    "title": "EU REACH Erläuterungen",
+    "url": "https://europa.eu/youreurope/business/product-rules-compliance/chemicals-and-hazardous-substances/registering-chemicals-reach/faq/indexamp_en.htm",
+    "retrieved_at": "2026-11-06",
+    "access": "Volltext und maßgebliche Passage gelesen",
+    "supports": "Registrierung grundsätzlich ab einer Tonne je Stoff/Jahr/Hersteller oder Importeur; weitere Pflichten auch darunter. Kein Laborverkaufsfreibrief.",
+    "sku_approval": false
+  },
+  {
+    "id": "COS",
+    "title": "EU CosIng rechtlicher Hinweis",
+    "url": "https://single-market-economy.ec.europa.eu/sectors/cosmetics/cosmetic-ingredient-database_en",
+    "retrieved_at": "2026-11-06",
+    "access": "Volltext und maßgebliche Passage gelesen",
+    "supports": "Informationsdatenbank, keine Produktzulassung. Sicherheitsbewertung betrifft das konkrete kosmetische Produkt.",
+    "sku_approval": false
+  },
+  {
+    "id": "NEM",
+    "title": "Bundesportal NEM Anzeige",
+    "url": "https://verwaltung.bund.de/leistungsverzeichnis/DE/leistung/99118031261000/herausgeber/LeiKa-102889139/region/000000000000",
+    "retrieved_at": "2026-11-06",
+    "access": "Volltext und maßgebliche Passage gelesen",
+    "supports": "Anzeige prüft Verkehrsfähigkeit nicht und ist keine Zulassung.",
+    "sku_approval": false
+  },
+  {
+    "id": "NEM5",
+    "title": "§ 5 NemV",
+    "url": "https://www.gesetze-im-internet.de/nemv/__5.html",
+    "retrieved_at": "2026-11-06",
+    "access": "Volltext gelesen",
+    "supports": "Anzeige durch Hersteller oder Einführer; keinen zusätzlichen Anzeigezwang jedes unveränderten Wiederverkäufers ableiten.",
+    "sku_approval": false
+  },
+  {
+    "id": "CU",
+    "title": "The Ordinary deutsches Fertigserum",
+    "url": "https://theordinary.com/de-de/multi-peptide-copper-peptides-1-serum-100625.html",
+    "retrieved_at": "2026-11-06",
+    "access": "INCI, Produktform und Mengenangabe im Volltext gelesen",
+    "supports": "30-ml-Fertigserum nennt Copper Tripeptide-1 und weitere einzelne Peptide. Kein Nachweis für AgeLess-Vials oder Handelsberechtigung.",
+    "sku_approval": false
+  },
+  {
+    "id": "SNAP",
+    "title": "Lubrizol SNAP-8",
+    "url": "https://www.lubrizol.com/solutions/products/beauty/detail-pages/snap-8-peptide-solution-c",
+    "retrieved_at": "2026-11-06",
+    "access": "Hersteller-Suchauszug; Direktseite lieferte nur Titel",
+    "supports": "Rohstofflösung mit Acetyl Octapeptide-3. Keine Originalunterlage unserer 10-ml-Ware.",
+    "sku_approval": false
+  },
+  {
+    "id": "HCG",
+    "title": "EMA Ovitrelle",
+    "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/ovitrelle",
+    "retrieved_at": "2026-11-06",
+    "access": "Volltext gelesen",
+    "supports": "Verschreibungspflichtiges Arzneimittel mit Choriogonadotropin alfa. Nicht identisch mit unbekannter 5000-IU-Ware.",
+    "sku_approval": false
+  },
+  {
+    "id": "MT1",
+    "title": "EMA Scenesse",
+    "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/scenesse",
+    "retrieved_at": "2026-11-06",
+    "access": "Amtlicher Suchauszug; Direktabruf HTTP 429",
+    "supports": "Afamelanotid-Arzneimittel als Kontext; keine aktuelle vollständige Registerprüfung und keine Gleichsetzung mit MT-1 5 mg.",
+    "sku_approval": false
+  }
+]

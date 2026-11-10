@@ -1,0 +1,1437 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-06",
+  "base_commit": "d7fdb6a16a21fc10265274dc4c40f9f41a14dfc1",
+  "input_blob_sha": "1491daf59732b5a2911e906e9862080b40f828ef",
+  "input_sha256": "ccb67c1ccb1489ddde8874cad32a5ae7c21a787aa28046123a90a0eefead1d97",
+  "scope": "47 historische Erfassungspositionen; NICHT aktueller Katalog und NICHT Importdatei",
+  "current_catalog_verified": false,
+  "excluded_product_ids": null,
+  "release_recommendations": 0,
+  "rows": [
+    {
+      "legacy_id": "AGL-001",
+      "current_sku_id": null,
+      "name_as_recorded": "GHK-Cu",
+      "variant_as_recorded": "100 mg",
+      "form": "Vial laut Betreiberbestätigung vom 19.10.2026",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Kosmetischer Weg für ein geeignetes bewertetes Endprodukt möglich; vorhandene Ware dadurch nicht als Fertigkosmetik belegt.",
+      "identity_note": "100-mg-Vial: genaue Kupfer-/Peptidform, Zusammensetzung und Zweck fehlen; 50-mg-Variante strikt getrennt halten. Kosmetik-Marktbeleg ist kein Vial-Nachweis.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM",
+        "COS",
+        "CU"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "GHK-Cu · 100 mg. Als Vial erfasst. 100-mg-Vial: genaue Kupfer-/Peptidform, Zusammensetzung und Zweck fehlen; 50-mg-Variante strikt getrennt halten. Kosmetik-Marktbeleg ist kein Vial-Nachweis.",
+      "missing_evidence": [
+        "100-mg-Vial: genaue Kupfer-/Peptidform, Zusammensetzung und Zweck fehlen; 50-mg-Variante strikt getrennt halten. Kosmetik-Marktbeleg ist kein Vial-Nachweis.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-002",
+      "current_sku_id": null,
+      "name_as_recorded": "NAD+",
+      "variant_as_recorded": "500 mg",
+      "form": "Vial laut Betreiberbestätigung vom 19.10.2026",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Vial-Verwendung ungeklärt. Ein etwaiger oraler NEM-Weg erfordert ein separates passendes Produkt und wird hier nicht bestätigt.",
+      "identity_note": "500-mg-Vial: genaue chemische Form, Zusammensetzung und Zweck fehlen. Kein orales NEM und keine Injektionszulässigkeit aus dem Namen ableiten; 10 mg getrennt halten.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "NAD+ · 500 mg. Als Vial erfasst. 500-mg-Vial: genaue chemische Form, Zusammensetzung und Zweck fehlen. Kein orales NEM und keine Injektionszulässigkeit aus dem Namen ableiten; 10 mg getrennt halten.",
+      "missing_evidence": [
+        "500-mg-Vial: genaue chemische Form, Zusammensetzung und Zweck fehlen. Kein orales NEM und keine Injektionszulässigkeit aus dem Namen ableiten; 10 mg getrennt halten.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-003",
+      "current_sku_id": null,
+      "name_as_recorded": "PT-141",
+      "variant_as_recorded": "10 mg",
+      "form": "Vial laut Betreiberbestätigung vom 19.10.2026",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "PT-141: Originalbezeichnung, Salzform, Zusammensetzung und vorgesehene Verwendung des 10-mg-Vials fehlen; fremde Arzneimittel nicht gleichsetzen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "PT-141 · 10 mg. Als Vial erfasst. PT-141: Originalbezeichnung, Salzform, Zusammensetzung und vorgesehene Verwendung des 10-mg-Vials fehlen; fremde Arzneimittel nicht gleichsetzen.",
+      "missing_evidence": [
+        "PT-141: Originalbezeichnung, Salzform, Zusammensetzung und vorgesehene Verwendung des 10-mg-Vials fehlen; fremde Arzneimittel nicht gleichsetzen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-004",
+      "current_sku_id": null,
+      "name_as_recorded": "Tesamorelin",
+      "variant_as_recorded": "10 mg",
+      "form": "Vial laut Betreiberbestätigung vom 19.10.2026",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Tesamorelin 10 mg: konkrete Lieferidentität und Zweck fehlen. Keine heutige DE/EU-Zulassungsbehauptung aus einem ausländischen Markenpräparat ableiten.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Tesamorelin · 10 mg. Als Vial erfasst. Tesamorelin 10 mg: konkrete Lieferidentität und Zweck fehlen. Keine heutige DE/EU-Zulassungsbehauptung aus einem ausländischen Markenpräparat ableiten.",
+      "missing_evidence": [
+        "Tesamorelin 10 mg: konkrete Lieferidentität und Zweck fehlen. Keine heutige DE/EU-Zulassungsbehauptung aus einem ausländischen Markenpräparat ableiten.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-005",
+      "current_sku_id": null,
+      "name_as_recorded": "SS-31",
+      "variant_as_recorded": "10 mg",
+      "form": "Vial laut Betreiberbestätigung vom 19.10.2026",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "SS-31 10 mg: Lieferidentität und Zweck fehlen. Ein alias- oder ausländischer Arzneimittelnachweis würde unser Vial nicht freigeben.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "SS-31 · 10 mg. Als Vial erfasst. SS-31 10 mg: Lieferidentität und Zweck fehlen. Ein alias- oder ausländischer Arzneimittelnachweis würde unser Vial nicht freigeben.",
+      "missing_evidence": [
+        "SS-31 10 mg: Lieferidentität und Zweck fehlen. Ein alias- oder ausländischer Arzneimittelnachweis würde unser Vial nicht freigeben.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-006",
+      "current_sku_id": null,
+      "name_as_recorded": "Retatrutide",
+      "variant_as_recorded": "10 mg",
+      "form": "Vial laut Betreiberbestätigung vom 19.10.2026",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Retatrutide 10 mg: Hersteller, exakte Zusammensetzung und Zweck fehlen. Keine pauschale Aussage zum aktuellen weltweiten Entwicklungs-/Zulassungsstatus getroffen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Retatrutide · 10 mg. Als Vial erfasst. Retatrutide 10 mg: Hersteller, exakte Zusammensetzung und Zweck fehlen. Keine pauschale Aussage zum aktuellen weltweiten Entwicklungs-/Zulassungsstatus getroffen.",
+      "missing_evidence": [
+        "Retatrutide 10 mg: Hersteller, exakte Zusammensetzung und Zweck fehlen. Keine pauschale Aussage zum aktuellen weltweiten Entwicklungs-/Zulassungsstatus getroffen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-007",
+      "current_sku_id": null,
+      "name_as_recorded": "TB-500",
+      "variant_as_recorded": "10 mg",
+      "form": "Vial laut Betreiberbestätigung vom 19.10.2026",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "TB-500 10 mg: Sequenz/Fragment und Zusammensetzung belegen; nicht ungeprüft mit Thymosin beta-4 gleichsetzen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "TB-500 · 10 mg. Als Vial erfasst. TB-500 10 mg: Sequenz/Fragment und Zusammensetzung belegen; nicht ungeprüft mit Thymosin beta-4 gleichsetzen.",
+      "missing_evidence": [
+        "TB-500 10 mg: Sequenz/Fragment und Zusammensetzung belegen; nicht ungeprüft mit Thymosin beta-4 gleichsetzen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-008",
+      "current_sku_id": null,
+      "name_as_recorded": "BPC-157",
+      "variant_as_recorded": "10 mg",
+      "form": "Vial laut Betreiberbestätigung vom 19.10.2026",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "BPC-157 10 mg: Sequenz/chemische Form, Zusammensetzung und Zweck des Vials belegen; Reinheitsangabe ersetzt die rechtliche Einordnung nicht.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "BPC-157 · 10 mg. Als Vial erfasst. BPC-157 10 mg: Sequenz/chemische Form, Zusammensetzung und Zweck des Vials belegen; Reinheitsangabe ersetzt die rechtliche Einordnung nicht.",
+      "missing_evidence": [
+        "BPC-157 10 mg: Sequenz/chemische Form, Zusammensetzung und Zweck des Vials belegen; Reinheitsangabe ersetzt die rechtliche Einordnung nicht.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-009",
+      "current_sku_id": null,
+      "name_as_recorded": "MOTs-c",
+      "variant_as_recorded": "10 mg",
+      "form": "Vial laut Betreiberbestätigung vom 19.10.2026",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "MOTs-c 10 mg: Schreibweise und genaue Stoffidentität auf dem Originaletikett prüfen; 40-mg-Variante getrennt halten.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "MOTs-c · 10 mg. Als Vial erfasst. MOTs-c 10 mg: Schreibweise und genaue Stoffidentität auf dem Originaletikett prüfen; 40-mg-Variante getrennt halten.",
+      "missing_evidence": [
+        "MOTs-c 10 mg: Schreibweise und genaue Stoffidentität auf dem Originaletikett prüfen; 40-mg-Variante getrennt halten.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-010",
+      "current_sku_id": null,
+      "name_as_recorded": "Semax",
+      "variant_as_recorded": "10 mg",
+      "form": "Vial laut Betreiberbestätigung vom 19.10.2026",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Semax 10 mg: chemische Form und Zweck des Vials belegen; nicht aus dem Namen eine Nasenspray-Darreichungsform ableiten.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Semax · 10 mg. Als Vial erfasst. Semax 10 mg: chemische Form und Zweck des Vials belegen; nicht aus dem Namen eine Nasenspray-Darreichungsform ableiten.",
+      "missing_evidence": [
+        "Semax 10 mg: chemische Form und Zweck des Vials belegen; nicht aus dem Namen eine Nasenspray-Darreichungsform ableiten.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-011",
+      "current_sku_id": null,
+      "name_as_recorded": "Epitalon",
+      "variant_as_recorded": "10 mg",
+      "form": "Vial laut Betreiberbestätigung vom 19.10.2026",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Epitalon 10 mg: Originalbezeichnung, genaue Zusammensetzung und Zweck belegen; 50-mg-Variante getrennt halten.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Epitalon · 10 mg. Als Vial erfasst. Epitalon 10 mg: Originalbezeichnung, genaue Zusammensetzung und Zweck belegen; 50-mg-Variante getrennt halten.",
+      "missing_evidence": [
+        "Epitalon 10 mg: Originalbezeichnung, genaue Zusammensetzung und Zweck belegen; 50-mg-Variante getrennt halten.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-012",
+      "current_sku_id": null,
+      "name_as_recorded": "L-Lysine",
+      "variant_as_recorded": "food supplement / amino acid",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Ein geeignetes orales Lebensmittel/NEM ist als Prüfweg denkbar; konkrete Form, Zusammensetzung, Sicherheit und Kennzeichnung noch nicht belegt.",
+      "identity_note": "Konkretes orales L-Lysin-Fertigprodukt, Salzform, Tagesportion, Zutaten und deutsches Etikett fehlen. Der alte Kategoriename ist kein SKU-Nachweis.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM",
+        "NEM",
+        "NEM5"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "L-Lysine · food supplement / amino acid. Konkretes orales L-Lysin-Fertigprodukt, Salzform, Tagesportion, Zutaten und deutsches Etikett fehlen. Der alte Kategoriename ist kein SKU-Nachweis.",
+      "missing_evidence": [
+        "Konkretes orales L-Lysin-Fertigprodukt, Salzform, Tagesportion, Zutaten und deutsches Etikett fehlen. Der alte Kategoriename ist kein SKU-Nachweis.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-013",
+      "current_sku_id": null,
+      "name_as_recorded": "L-Proline",
+      "variant_as_recorded": "food supplement / amino acid",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Ein geeignetes orales Lebensmittel/NEM ist als Prüfweg denkbar; konkrete Form, Zusammensetzung, Sicherheit und Kennzeichnung noch nicht belegt.",
+      "identity_note": "Konkretes orales L-Prolin-Fertigprodukt, Tagesportion, Zutaten und deutsches Etikett fehlen. Keine Kapsel-/Pulverform aus einem Bild ableiten.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM",
+        "NEM",
+        "NEM5"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "L-Proline · food supplement / amino acid. Konkretes orales L-Prolin-Fertigprodukt, Tagesportion, Zutaten und deutsches Etikett fehlen. Keine Kapsel-/Pulverform aus einem Bild ableiten.",
+      "missing_evidence": [
+        "Konkretes orales L-Prolin-Fertigprodukt, Tagesportion, Zutaten und deutsches Etikett fehlen. Keine Kapsel-/Pulverform aus einem Bild ableiten.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-014",
+      "current_sku_id": null,
+      "name_as_recorded": "Vitamin B12",
+      "variant_as_recorded": "10 ml — Produktform unklar",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Ein geeignetes orales Lebensmittel/NEM ist als Prüfweg denkbar; konkrete Form, Zusammensetzung, Sicherheit und Kennzeichnung noch nicht belegt.",
+      "identity_note": "10 ml ist nur ein Volumen. B12-Verbindung, Konzentration, Gesamtmenge, Produktform und Anwendung fehlen; Tropfen und Injektionslösung unterscheiden.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM",
+        "NEM",
+        "NEM5"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Vitamin B12 · 10 ml — Produktform unklar. 10 ml ist nur ein Volumen. B12-Verbindung, Konzentration, Gesamtmenge, Produktform und Anwendung fehlen; Tropfen und Injektionslösung unterscheiden.",
+      "missing_evidence": [
+        "10 ml ist nur ein Volumen. B12-Verbindung, Konzentration, Gesamtmenge, Produktform und Anwendung fehlen; Tropfen und Injektionslösung unterscheiden.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-015",
+      "current_sku_id": null,
+      "name_as_recorded": "SNAP-8 / Acetyl Octapeptide-3",
+      "variant_as_recorded": "10 ml",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Kosmetischer Weg für ein geeignetes bewertetes Endprodukt möglich; vorhandene Ware dadurch nicht als Fertigkosmetik belegt.",
+      "identity_note": "10 ml ist keine Peptidkonzentration. Vollständige Rezeptur, Wirkstoffgehalt, Rohstoff versus Fertigkosmetik und vorgesehene Anwendung fehlen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM",
+        "COS",
+        "SNAP"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "SNAP-8 / Acetyl Octapeptide-3 · 10 ml. 10 ml ist keine Peptidkonzentration. Vollständige Rezeptur, Wirkstoffgehalt, Rohstoff versus Fertigkosmetik und vorgesehene Anwendung fehlen.",
+      "missing_evidence": [
+        "10 ml ist keine Peptidkonzentration. Vollständige Rezeptur, Wirkstoffgehalt, Rohstoff versus Fertigkosmetik und vorgesehene Anwendung fehlen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-016",
+      "current_sku_id": null,
+      "name_as_recorded": "BPC-157 + GHK-Cu + TB-500",
+      "variant_as_recorded": "Kombinationsprodukt / 50+10+10 mg bzw. gelistete Varianten",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Bei 50+10+10 mg ist die Zuordnung zu BPC-157/GHK-Cu/TB-500 nicht eindeutig bestätigt. Einzelbehälter oder Mischung, jede Komponente und jede Variante belegen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "BPC-157 + GHK-Cu + TB-500 · Kombinationsprodukt / 50+10+10 mg bzw. gelistete Varianten. Bei 50+10+10 mg ist die Zuordnung zu BPC-157/GHK-Cu/TB-500 nicht eindeutig bestätigt. Einzelbehälter oder Mischung, jede Komponente und jede Variante belegen.",
+      "missing_evidence": [
+        "Bei 50+10+10 mg ist die Zuordnung zu BPC-157/GHK-Cu/TB-500 nicht eindeutig bestätigt. Einzelbehälter oder Mischung, jede Komponente und jede Variante belegen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-017",
+      "current_sku_id": null,
+      "name_as_recorded": "BC",
+      "variant_as_recorded": "10 mg + 20 mg — Identität unklar",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "BC ist keine eindeutige Stoffidentität. Vollständige Stoffnamen, Zuordnung von 10 mg und 20 mg sowie Produktform fehlen; nichts erraten.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "BC · 10 mg + 20 mg — Identität unklar. BC ist keine eindeutige Stoffidentität. Vollständige Stoffnamen, Zuordnung von 10 mg und 20 mg sowie Produktform fehlen; nichts erraten.",
+      "missing_evidence": [
+        "BC ist keine eindeutige Stoffidentität. Vollständige Stoffnamen, Zuordnung von 10 mg und 20 mg sowie Produktform fehlen; nichts erraten.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-018",
+      "current_sku_id": null,
+      "name_as_recorded": "ARA-290",
+      "variant_as_recorded": "10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "ARA-290 10 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "ARA-290 · 10 mg. ARA-290 10 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+      "missing_evidence": [
+        "ARA-290 10 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-019",
+      "current_sku_id": null,
+      "name_as_recorded": "VIP",
+      "variant_as_recorded": "5 / 10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "5 mg und 10 mg sind getrennte Varianten, keine gesicherte gemeinsame SKU; genaue Bezeichnung und Produktform fehlen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "VIP · 5 / 10 mg. 5 mg und 10 mg sind getrennte Varianten, keine gesicherte gemeinsame SKU; genaue Bezeichnung und Produktform fehlen.",
+      "missing_evidence": [
+        "5 mg und 10 mg sind getrennte Varianten, keine gesicherte gemeinsame SKU; genaue Bezeichnung und Produktform fehlen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-020",
+      "current_sku_id": null,
+      "name_as_recorded": "GHRP-6",
+      "variant_as_recorded": "5 / 10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "5 mg und 10 mg getrennt zuordnen; Originaletikett, Zusammensetzung und Zweck fehlen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "GHRP-6 · 5 / 10 mg. 5 mg und 10 mg getrennt zuordnen; Originaletikett, Zusammensetzung und Zweck fehlen.",
+      "missing_evidence": [
+        "5 mg und 10 mg getrennt zuordnen; Originaletikett, Zusammensetzung und Zweck fehlen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-021",
+      "current_sku_id": null,
+      "name_as_recorded": "Selank",
+      "variant_as_recorded": "5 / 10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "5 mg und 10 mg getrennt zuordnen; aus Selank nicht automatisch Nasenspray ableiten.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Selank · 5 / 10 mg. 5 mg und 10 mg getrennt zuordnen; aus Selank nicht automatisch Nasenspray ableiten.",
+      "missing_evidence": [
+        "5 mg und 10 mg getrennt zuordnen; aus Selank nicht automatisch Nasenspray ableiten.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-022",
+      "current_sku_id": null,
+      "name_as_recorded": "CJC-1295 ohne DAC",
+      "variant_as_recorded": "10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "„Ohne DAC“ vom Originaletikett bestätigen; genaue Sequenz/Form und 10-mg-Variante nicht mit AGL-035 gleichsetzen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "CJC-1295 ohne DAC · 10 mg. „Ohne DAC“ vom Originaletikett bestätigen; genaue Sequenz/Form und 10-mg-Variante nicht mit AGL-035 gleichsetzen.",
+      "missing_evidence": [
+        "„Ohne DAC“ vom Originaletikett bestätigen; genaue Sequenz/Form und 10-mg-Variante nicht mit AGL-035 gleichsetzen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-023",
+      "current_sku_id": null,
+      "name_as_recorded": "LL-37",
+      "variant_as_recorded": "10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "LL-37 10 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "LL-37 · 10 mg. LL-37 10 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+      "missing_evidence": [
+        "LL-37 10 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-024",
+      "current_sku_id": null,
+      "name_as_recorded": "Ipamorelin",
+      "variant_as_recorded": "5 / 10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "5 mg und 10 mg getrennt zuordnen; genaue Zusammensetzung und Zweck fehlen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Ipamorelin · 5 / 10 mg. 5 mg und 10 mg getrennt zuordnen; genaue Zusammensetzung und Zweck fehlen.",
+      "missing_evidence": [
+        "5 mg und 10 mg getrennt zuordnen; genaue Zusammensetzung und Zweck fehlen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-025",
+      "current_sku_id": null,
+      "name_as_recorded": "IGF-1 LR3",
+      "variant_as_recorded": "0.1 / 1 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "0,1 mg und 1 mg getrennt zuordnen; genaue LR3-Identität, Zusammensetzung und Zweck fehlen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "IGF-1 LR3 · 0.1 / 1 mg. 0,1 mg und 1 mg getrennt zuordnen; genaue LR3-Identität, Zusammensetzung und Zweck fehlen.",
+      "missing_evidence": [
+        "0,1 mg und 1 mg getrennt zuordnen; genaue LR3-Identität, Zusammensetzung und Zweck fehlen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-026",
+      "current_sku_id": null,
+      "name_as_recorded": "LC120",
+      "variant_as_recorded": "10 ml — Identität unklar",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "LC120 ist ein Lieferantencode. Keine Rezeptur anderer Anbieter übertragen. Originaletikett mit allen Bestandteilen und Konzentrationen erforderlich.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "LC120 · 10 ml — Identität unklar. LC120 ist ein Lieferantencode. Keine Rezeptur anderer Anbieter übertragen. Originaletikett mit allen Bestandteilen und Konzentrationen erforderlich.",
+      "missing_evidence": [
+        "LC120 ist ein Lieferantencode. Keine Rezeptur anderer Anbieter übertragen. Originaletikett mit allen Bestandteilen und Konzentrationen erforderlich.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-027",
+      "current_sku_id": null,
+      "name_as_recorded": "LC216",
+      "variant_as_recorded": "10 ml — Identität unklar",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "LC216 ist ein Lieferantencode. Kein B12-Gehalt oder Lipotropika-Gemisch ohne Originalbeleg behaupten; alle Komponenten/Konzentrationen belegen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "LC216 · 10 ml — Identität unklar. LC216 ist ein Lieferantencode. Kein B12-Gehalt oder Lipotropika-Gemisch ohne Originalbeleg behaupten; alle Komponenten/Konzentrationen belegen.",
+      "missing_evidence": [
+        "LC216 ist ein Lieferantencode. Kein B12-Gehalt oder Lipotropika-Gemisch ohne Originalbeleg behaupten; alle Komponenten/Konzentrationen belegen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-028",
+      "current_sku_id": null,
+      "name_as_recorded": "Oxytocin",
+      "variant_as_recorded": "2 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Oxytocin 2 mg: konkrete Produkt-/Wirkstoffform, Zusammensetzung und Zweck fehlen. Arzneimittelrechtlichen Weg prüfen; keine gewöhnliche NEM-/Kosmetikfreigabe.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Oxytocin · 2 mg. Oxytocin 2 mg: konkrete Produkt-/Wirkstoffform, Zusammensetzung und Zweck fehlen. Arzneimittelrechtlichen Weg prüfen; keine gewöhnliche NEM-/Kosmetikfreigabe.",
+      "missing_evidence": [
+        "Oxytocin 2 mg: konkrete Produkt-/Wirkstoffform, Zusammensetzung und Zweck fehlen. Arzneimittelrechtlichen Weg prüfen; keine gewöhnliche NEM-/Kosmetikfreigabe.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-029",
+      "current_sku_id": null,
+      "name_as_recorded": "Kisspeptin",
+      "variant_as_recorded": "5 / 10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Kisspeptin-Variante/Sequenz und 5-mg-/10-mg-Produkte getrennt identifizieren; der Sammelname reicht nicht.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Kisspeptin · 5 / 10 mg. Kisspeptin-Variante/Sequenz und 5-mg-/10-mg-Produkte getrennt identifizieren; der Sammelname reicht nicht.",
+      "missing_evidence": [
+        "Kisspeptin-Variante/Sequenz und 5-mg-/10-mg-Produkte getrennt identifizieren; der Sammelname reicht nicht.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-030",
+      "current_sku_id": null,
+      "name_as_recorded": "hCG",
+      "variant_as_recorded": "5,000 IU",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "5000 IU sind Aktivitätseinheiten, keine mg. Herkunft und exaktes hCG-Produkt belegen; Ovitrelle/Choriogonadotropin alfa ist kein identisches Lieferprodukt.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM",
+        "HCG"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "hCG · 5,000 IU. 5000 IU sind Aktivitätseinheiten, keine mg. Herkunft und exaktes hCG-Produkt belegen; Ovitrelle/Choriogonadotropin alfa ist kein identisches Lieferprodukt.",
+      "missing_evidence": [
+        "5000 IU sind Aktivitätseinheiten, keine mg. Herkunft und exaktes hCG-Produkt belegen; Ovitrelle/Choriogonadotropin alfa ist kein identisches Lieferprodukt.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-031",
+      "current_sku_id": null,
+      "name_as_recorded": "Melanotan I / MT-1",
+      "variant_as_recorded": "5 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "MT-1 5 mg: tatsächliche Identität belegen, nicht automatisch mit einem zugelassenen Afamelanotid-Implantat gleichsetzen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM",
+        "MT1"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Melanotan I / MT-1 · 5 mg. MT-1 5 mg: tatsächliche Identität belegen, nicht automatisch mit einem zugelassenen Afamelanotid-Implantat gleichsetzen.",
+      "missing_evidence": [
+        "MT-1 5 mg: tatsächliche Identität belegen, nicht automatisch mit einem zugelassenen Afamelanotid-Implantat gleichsetzen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-032",
+      "current_sku_id": null,
+      "name_as_recorded": "Melanotan II / MT-2",
+      "variant_as_recorded": "10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "MT-2 10 mg nicht mit MT-1 oder Scenesse gleichsetzen; genaue chemische Form und Zweck fehlen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Melanotan II / MT-2 · 10 mg. MT-2 10 mg nicht mit MT-1 oder Scenesse gleichsetzen; genaue chemische Form und Zweck fehlen.",
+      "missing_evidence": [
+        "MT-2 10 mg nicht mit MT-1 oder Scenesse gleichsetzen; genaue chemische Form und Zweck fehlen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-033",
+      "current_sku_id": null,
+      "name_as_recorded": "Thymosin",
+      "variant_as_recorded": "5 mg — Identität unklar",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Thymosin ist ein Sammelname; Alpha/Beta/Fragment/Sequenz fehlen. Keine Gleichsetzung mit TB-500 oder Alpha-1.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Thymosin · 5 mg — Identität unklar. Thymosin ist ein Sammelname; Alpha/Beta/Fragment/Sequenz fehlen. Keine Gleichsetzung mit TB-500 oder Alpha-1.",
+      "missing_evidence": [
+        "Thymosin ist ein Sammelname; Alpha/Beta/Fragment/Sequenz fehlen. Keine Gleichsetzung mit TB-500 oder Alpha-1.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-034",
+      "current_sku_id": null,
+      "name_as_recorded": "Thymosin Alpha-1",
+      "variant_as_recorded": "10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Thymosin Alpha-1 10 mg getrennt von unspezifischem Thymosin führen; genaue Form und Produktzweck fehlen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Thymosin Alpha-1 · 10 mg. Thymosin Alpha-1 10 mg getrennt von unspezifischem Thymosin führen; genaue Form und Produktzweck fehlen.",
+      "missing_evidence": [
+        "Thymosin Alpha-1 10 mg getrennt von unspezifischem Thymosin führen; genaue Form und Produktzweck fehlen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-035",
+      "current_sku_id": null,
+      "name_as_recorded": "CJC-1295",
+      "variant_as_recorded": "5 mg — „CIC/CSC“-Labels nicht eindeutig",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "CJC/CIC/CSC und DAC-Status sind nicht eindeutig. Originaletikett und Sequenz klären; kein Alias automatisch korrigieren.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "CJC-1295 · 5 mg — „CIC/CSC“-Labels nicht eindeutig. CJC/CIC/CSC und DAC-Status sind nicht eindeutig. Originaletikett und Sequenz klären; kein Alias automatisch korrigieren.",
+      "missing_evidence": [
+        "CJC/CIC/CSC und DAC-Status sind nicht eindeutig. Originaletikett und Sequenz klären; kein Alias automatisch korrigieren.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-036",
+      "current_sku_id": null,
+      "name_as_recorded": "Sermorelin",
+      "variant_as_recorded": "5 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Sermorelin 5 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Sermorelin · 5 mg. Sermorelin 5 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+      "missing_evidence": [
+        "Sermorelin 5 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-037",
+      "current_sku_id": null,
+      "name_as_recorded": "„Acetate“",
+      "variant_as_recorded": "10 mg — Produktname unvollständig",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "„Acetate“ ist allein kein vollständiger Wirkstoffname. Stoff und Salzform vollständig identifizieren; keine Produktbewertung aus diesem Label.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "„Acetate“ · 10 mg — Produktname unvollständig. „Acetate“ ist allein kein vollständiger Wirkstoffname. Stoff und Salzform vollständig identifizieren; keine Produktbewertung aus diesem Label.",
+      "missing_evidence": [
+        "„Acetate“ ist allein kein vollständiger Wirkstoffname. Stoff und Salzform vollständig identifizieren; keine Produktbewertung aus diesem Label.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-038",
+      "current_sku_id": null,
+      "name_as_recorded": "DSIP",
+      "variant_as_recorded": "15 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "DSIP 15 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "DSIP · 15 mg. DSIP 15 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+      "missing_evidence": [
+        "DSIP 15 mg: genaue Stoffform/Sequenz, Zusammensetzung, Originalkennzeichnung und Verwendungszweck belegen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-039",
+      "current_sku_id": null,
+      "name_as_recorded": "Thymalin",
+      "variant_as_recorded": "10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Thymalin 10 mg: vollständige Zusammensetzung und gegebenenfalls Herkunft einer Mischung belegen; kein Einzelpeptid aus Namen ableiten.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Thymalin · 10 mg. Thymalin 10 mg: vollständige Zusammensetzung und gegebenenfalls Herkunft einer Mischung belegen; kein Einzelpeptid aus Namen ableiten.",
+      "missing_evidence": [
+        "Thymalin 10 mg: vollständige Zusammensetzung und gegebenenfalls Herkunft einer Mischung belegen; kein Einzelpeptid aus Namen ableiten.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-040",
+      "current_sku_id": null,
+      "name_as_recorded": "BAC Water",
+      "variant_as_recorded": "10 ml",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "BAC Water 10 ml: Wasserqualität, Konservierungsmittel/Konzentration, Sterilitätsanspruch und Zweck belegen. Keine Eignung zum Auflösen oder Injizieren zusagen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "BAC Water · 10 ml. BAC Water 10 ml: Wasserqualität, Konservierungsmittel/Konzentration, Sterilitätsanspruch und Zweck belegen. Keine Eignung zum Auflösen oder Injizieren zusagen.",
+      "missing_evidence": [
+        "BAC Water 10 ml: Wasserqualität, Konservierungsmittel/Konzentration, Sterilitätsanspruch und Zweck belegen. Keine Eignung zum Auflösen oder Injizieren zusagen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-041",
+      "current_sku_id": null,
+      "name_as_recorded": "GHK-Cu",
+      "variant_as_recorded": "50 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Kosmetischer Weg für ein geeignetes bewertetes Endprodukt möglich; vorhandene Ware dadurch nicht als Fertigkosmetik belegt.",
+      "identity_note": "50 mg getrennt vom bestätigten 100-mg-Vial. Aktuelle Lieferform/Packung und Menge fehlen; Kosmetikbeispiel ist kein Beleg für diese Ware.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM",
+        "COS",
+        "CU"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "GHK-Cu · 50 mg. 50 mg getrennt vom bestätigten 100-mg-Vial. Aktuelle Lieferform/Packung und Menge fehlen; Kosmetikbeispiel ist kein Beleg für diese Ware.",
+      "missing_evidence": [
+        "50 mg getrennt vom bestätigten 100-mg-Vial. Aktuelle Lieferform/Packung und Menge fehlen; Kosmetikbeispiel ist kein Beleg für diese Ware.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-042",
+      "current_sku_id": null,
+      "name_as_recorded": "NAD+",
+      "variant_as_recorded": "10 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Vial-Verwendung ungeklärt. Ein etwaiger oraler NEM-Weg erfordert ein separates passendes Produkt und wird hier nicht bestätigt.",
+      "identity_note": "10 mg getrennt vom 500-mg-Vial. Aktuelle Form/Packung, chemische Form und Zweck fehlen; kein NEM-/Injektionsnachweis.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "NAD+ · 10 mg. 10 mg getrennt vom 500-mg-Vial. Aktuelle Form/Packung, chemische Form und Zweck fehlen; kein NEM-/Injektionsnachweis.",
+      "missing_evidence": [
+        "10 mg getrennt vom 500-mg-Vial. Aktuelle Form/Packung, chemische Form und Zweck fehlen; kein NEM-/Injektionsnachweis.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-043",
+      "current_sku_id": null,
+      "name_as_recorded": "BPC-157",
+      "variant_as_recorded": "5 mg; 5+10 mg; weitere Kombinationen klären",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "5 mg, „5+10 mg“ und weitere Kombinationen sind keine eindeutige SKU. Partnerstoff, Mengenzuordnung und getrennte Lieferprodukte feststellen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "BPC-157 · 5 mg; 5+10 mg; weitere Kombinationen klären. 5 mg, „5+10 mg“ und weitere Kombinationen sind keine eindeutige SKU. Partnerstoff, Mengenzuordnung und getrennte Lieferprodukte feststellen.",
+      "missing_evidence": [
+        "5 mg, „5+10 mg“ und weitere Kombinationen sind keine eindeutige SKU. Partnerstoff, Mengenzuordnung und getrennte Lieferprodukte feststellen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-044",
+      "current_sku_id": null,
+      "name_as_recorded": "TB-500",
+      "variant_as_recorded": "Kombinationen mit BPC/Cu; Mengen klären",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Komponenten, Mengen je Komponente und separate Kombinationsprodukte fehlen. Nicht mit TB-500 10 mg oder AGL-016 zusammenführen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "TB-500 · Kombinationen mit BPC/Cu; Mengen klären. Komponenten, Mengen je Komponente und separate Kombinationsprodukte fehlen. Nicht mit TB-500 10 mg oder AGL-016 zusammenführen.",
+      "missing_evidence": [
+        "Komponenten, Mengen je Komponente und separate Kombinationsprodukte fehlen. Nicht mit TB-500 10 mg oder AGL-016 zusammenführen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-045",
+      "current_sku_id": null,
+      "name_as_recorded": "Semax",
+      "variant_as_recorded": "5 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Semax 5 mg getrennt von 10 mg identifizieren; Produktform und Zweck nicht aus dem Namen ableiten.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Semax · 5 mg. Semax 5 mg getrennt von 10 mg identifizieren; Produktform und Zweck nicht aus dem Namen ableiten.",
+      "missing_evidence": [
+        "Semax 5 mg getrennt von 10 mg identifizieren; Produktform und Zweck nicht aus dem Namen ableiten.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-046",
+      "current_sku_id": null,
+      "name_as_recorded": "MOTs-c",
+      "variant_as_recorded": "40 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "MOTs-c 40 mg getrennt von 10 mg identifizieren; keine Stückzahl oder Anwendungsdosis aus der Stärke ableiten.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "MOTs-c · 40 mg. MOTs-c 40 mg getrennt von 10 mg identifizieren; keine Stückzahl oder Anwendungsdosis aus der Stärke ableiten.",
+      "missing_evidence": [
+        "MOTs-c 40 mg getrennt von 10 mg identifizieren; keine Stückzahl oder Anwendungsdosis aus der Stärke ableiten.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    },
+    {
+      "legacy_id": "AGL-047",
+      "current_sku_id": null,
+      "name_as_recorded": "Epitalon",
+      "variant_as_recorded": "50 mg",
+      "form": "Nicht ausreichend belegt; historische Erfassung ist kein Originaletikett",
+      "scope": "HISTORICAL_AUDIT_ONLY",
+      "intended_use": "OFFEN; keine Anwendung am Menschen empfohlen",
+      "possible_route": "Echten Laborvertrieb oder Arzneimittelweg erst nach belegter Identität und tatsächlichem Zweck gesondert prüfen; kein bestätigter B2C-Weg.",
+      "identity_note": "Epitalon 50 mg getrennt von 10 mg identifizieren; Originalzusammensetzung und Zweck fehlen.",
+      "assessment": "Gezielte Ergänzung erforderlich",
+      "sku_evidence_status": "Keine Originalnachweise im geprüften Repo-Datensatz",
+      "source_ids": [
+        "AMG2",
+        "AMG21",
+        "CHEM"
+      ],
+      "reviewed_at": "2026-11-06",
+      "exclusion_match": "UNGEKLÄRT; nicht in aktive Auswahl übernehmen",
+      "sales_status": "Keine Freigabeempfehlung; tatsächliche Live-Felder nicht abgefragt oder geändert",
+      "publication_recommendation": "Nicht als Shopangebot oder Bald verfügbar veröffentlichen, solange B2C-Nachweis offen",
+      "internal_product_text": "Epitalon · 50 mg. Epitalon 50 mg getrennt von 10 mg identifizieren; Originalzusammensetzung und Zweck fehlen.",
+      "missing_evidence": [
+        "Epitalon 50 mg getrennt von 10 mg identifizieren; Originalzusammensetzung und Zweck fehlen.",
+        "Hersteller/Lieferprodukt, Originaletikett und belegte Zusammensetzung passend zu dieser Variante",
+        "Begründete Kategorie, tatsächlicher Zweck und zugehörige notwendige rollenbezogene Nachweise"
+      ],
+      "next_action_owner": "Live03/Back03: aktuellen Datensatz und Ausschlussstatus zuordnen; Lieferant/Betreiber: Originalunterlagen; Research: anschließende konkrete Bewertung",
+      "public_listing_ready": false
+    }
+  ]
+}
