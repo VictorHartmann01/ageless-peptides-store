@@ -1,3 +1,21 @@
+## Aktueller Einstieg – AgeLess Work – 16.11.2026 (Europe/Berlin)
+
+**Regeln:** [Projekt-AutoPilot Universal v1.0](../team/AGELESS_AUTOPILOT.md) ergänzt bestehende AgeLess-Regeln. Paketprüfung bestanden (CRC, SHA256-Liste, JSON, alle Texte/MPA-Referenz gelesen). Kein neues Projekt, kein Rollenwechsel, keine neuen Kosten. Allgemeine Railway-Referenz gilt hier nicht. Historische Abschnitte darunter bleiben erhalten, sind teils überholt.
+
+**Tatsächlich aktueller belegter Stand:** Domain `www.ageless-peptides.store`, Provider und SSL am 16.11. über Sites jeweils `active`, kein Fehler. DNS bei Spaceship am 12.11. geändert und zurückgelesen; #3 Kommentare 6837698877/6837931138. Private ChatGPT-Zugangssperre erhalten. Design-Vorschau unter https://www.ageless-peptides.store/vorschau ; keine Shopabnahme daraus ableiten. Letzter dokumentierter Sites-Quellstand `f5b681a401f1ce79e52912be5bcec8541bf3d317`, Deployment `appgdep_6aef5fbc43cc8191b7aa439f6554e950`; aktueller Quellabgleich vor nächster Appänderung erforderlich. Sites-Adapter/Navigation/Vorschau noch nicht als GitHub-integriert bestätigt. Die alten Aussagen „kein DNS-Wechsel“ und „Domain nicht verbunden“ sind durch die Betreiberfreigabe/Umsetzung vom 12.11. überholt.
+
+**Offen:** Shop-Login, Registrierung, Backoffice mit eigener dauerhafter Speicherung, vollständiger aktueller Quelldatenexport/Restore, 43-Bilder-SKU-Mapping, echte mobile/desktop Sicherheits-/Funktionsabnahme. Bildintegrität war am 07.11. tatsächlich geprüft; nicht erneut als fehlender Empfang behandeln. #32 erneut abgerufen: weiterhin offen; Back03 bleibt primärer Owner. Verkaufs-/Zahlungsfreigaben deaktiviert. Ältere Mock-/Build-Tests sind keine neuen Live-Tests. Vier ausgeschlossene Produkte nicht wiederherstellen, ARA-290-Zuordnung nicht erfinden.
+
+**Team:** bestehende sieben Rollen unverändert; zusätzlich am 12.11. vom Betreiber benannter AgeLess Consultant für Businessstrategie/Geldverdienen. Kein neuer Chat erzeugt. Aktiver GitHub-ACK des Consultant nicht nachgewiesen. Vor Änderungen an Aufgaben Übergaben im Issue #3 abgleichen.
+
+**Ausführung:** Universal-Arbeitsverfahren gilt für aktive Sitzungen; wiederaufnehmbarer GitHub-Checkpoint wird gepflegt. AgeLess-spezifischer lokaler Windows-/Ollama-Runner, Aufgabenadapter, Scheduler, automatischer E2E-/Wiederanlaufnachweis: NICHT EINGERICHTET / NICHT GEPRÜFT. Kein Hintergrundfortschritt behauptet. VHV-Pilot nicht auf AgeLess ausgedehnt.
+
+**Nächste Arbeit / klare Owner:** Work gleicht verwalteten Sites-Code mit GitHub ab und integriert nur geprüfte Beiträge; Back03 #32/#22, Front #21, Research #23, Beta Status #24, Tester unabhängige Mobil-/Daten-/Rechteprüfung, Line Up abgestimmte Vorarbeit. Detaillierte Ergebnisse/Schreibbereiche/Abnahmekriterien im Autopilot-Zusatz. Fehlender echter Datenexport blockiert Migration, nicht unabhängige Codevorbereitung.
+
+**Rückweg und Prüfgrenze dieser Änderung:** Nur additive Dokumentationsänderung auf separatem Branch/PR, keine App-/DNS-/Datenänderung. Vorversionen bleiben Git-Historie; Dokumentationscommit reversibel. Paketprüfung/Remote-Rücklesen getrennt von Shoptests. Keine manuelle Nutzerhandlung für diese Regelübernahme erforderlich.
+
+---
+
 ## AgeLess Work – echte Sites-Speicherprobe bestanden – 07.11.2026
 
 **Private Site:** `appgprj_6aeee73b27b481919180a3e3009abb3b`, Version 2, owner-only/custom, https://ageless-peptides-store.e-valuate-5668.chatgpt.site . Vorhandener AgeLess-Code mit Vinext/Worker-Adapter, gespeicherter Source-Commit `3d85bbcff53cab55b211aaa278086c25a56dfb36`; noch kein Merge des Sites-Adapters in den GitHub-Integrationsbranch behauptet.
