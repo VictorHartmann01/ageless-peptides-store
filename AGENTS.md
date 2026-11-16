@@ -1,3 +1,7 @@
+## Ausführungszusatz – Betreiberauftrag 16.11.2026
+
+[AgeLess Projekt-AutoPilot Universal v1.0](docs/team/AGELESS_AUTOPILOT.md) ist ergänzend anzuwenden. Bestehende Namen, Teamleitung, Daten, CI und projektspezifische Verbote haben Vorrang; insbesondere kein Railway. Vor unnötigen Rückfragen frühere erreichbare Quellen prüfen. GitHub-Mitteilung ist keine Teamaktivierung; Hintergrundbetrieb für AgeLess ist nicht eingerichtet. Neuer vom Betreiber ernannter AgeLess Consultant: Businessstrategie/Geldverdienen; eigener GitHub-ACK offen.
+
 ## Verbindliche Teamaufstellung – Betreiberentscheidung 07.11.2026
 
 | Rolle | Verbindliche Aufgabe |
